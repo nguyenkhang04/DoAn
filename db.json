@@ -1,0 +1,510 @@
+{
+  "products": [
+    {
+      "id": "Iphone 16 Pro Max",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/iphone_16_pro_max_bda3030b4b.png",
+      "name": "Iphone 16 Pro Max",
+      "price": "33.690.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Iphone"
+    },
+    {
+      "id": "Iphone 16 Pro",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/iphone_16_pro_37987b6def.png",
+      "name": "Iphone 16 Pro",
+      "price": "23.690.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Iphone"
+    },
+    {
+      "id": "Iphone 16 ",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/iphone_16_f27848b783.png",
+      "name": "Iphone 16",
+      "price": "20.690.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Iphone"
+    },
+    {
+      "id": "Iphone 16 Plus",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/iphone_16_plus_c7b3ef901b.png",
+      "name": "Iphone 16 Plus",
+      "price": "25.690.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Iphone"
+    },
+    {
+      "id": "Iphone 15 Pro Max ",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/iphone_15_pro_max_f589ed5358.png",
+      "name": "Iphone 15 Pro Max",
+      "price": "31.690.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Iphone"
+    },
+    {
+      "id": "Iphone 15 Pro ",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/iphone_15_a9308b6994.png",
+      "name": "Iphone 15 Pro",
+      "price": "26.990.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Iphone"
+    },
+    {
+      "id": "Iphone 15 ",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/iphone_15_a9308b6994.png",
+      "name": "Iphone 15",
+      "price": "19.690.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Iphone"
+    },
+    {
+      "id": "Iphone 11 ",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/iphone_11_3d0cd738fd.png",
+      "name": "Iphone 11",
+      "price": "8.690.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Iphone"
+    },
+    {
+      "id": "Iphone 11 Pro ",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/iphone_11_3d0cd738fd.png",
+      "name": "Iphone 11 Pro",
+      "price": "9.990.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Iphone"
+    },
+    {
+      "id": "Iphone 13 ",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/iphone_13_b06d633f18.png",
+      "name": "Iphone 13",
+      "price": "13.690.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Iphone"
+    },
+    {
+      "id": "Iphone 14",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/iphone_14_48a46d1684.png",
+      "name": "Iphone 14",
+      "price": "16.690.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Iphone"
+    },
+    {
+      "id": "Samsung",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/samsung_galaxy_a06_blue_black_1_46d3694f11.png",
+      "name": "Samsung Galaxy A06",
+      "price": "3.690.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Samsung"
+    },
+    {
+      "id": "Samsung_M55",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/samsung_galaxy_m55_den_4_d7f9674500.jpg",
+      "name": "Samsung Galaxy M55",
+      "price": "28,990,000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Samsung"
+    },
+    {
+      "id": "Samsung_ZFlip5",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/2024_3_28_638472353992099331_samsung-galaxy-zflip-5-xanh-ai.jpg",
+      "name": "Samsung Galaxy Z Flip 5",
+      "price": "25,490,000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Samsung"
+    },
+    {
+      "id": "Samsung_S24FE",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/samssung_galaxy_s24_fe_xanh_723e4e6443.png",
+      "name": "Samsung Galaxy S24 FE",
+      "price": "18,990,000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Samsung"
+    },
+    {
+      "id": "Samsung_S24Ultra",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/samsung_galaxy_s24_ultra_2f8a5ee174.png",
+      "name": "Samsung Galaxy S24 Ultra",
+      "price": "29,990,000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Samsung"
+    },
+    {
+      "id": "Samsung_ZFold6",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/samsung_galaxy_z_fold6_thumb_3c94cadb15.png",
+      "name": "Samsung Galaxy Z Fold 6",
+      "price": "29,490,000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Samsung"
+    },
+    {
+      "id": "Samsung_S24Plus",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/samsung_galaxy_s24_plus_9c167349d6.png",
+      "name": "Samsung Galaxy S24 Plus",
+      "price": "27,990,000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Samsung"
+    },
+    {
+      "id": "Samsung_A35",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/2024_3_19_638464663923276145_samsung-galaxy-a35-den-png-1.png",
+      "name": "Samsung Galaxy A35",
+      "price": "12,990,000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Samsung"
+    },
+    {
+      "id": "Samsung_ZFlip6",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/samsung_galaxy_z_flip6_thumb_3b90ddce0c.png",
+      "name": "Samsung Galaxy Z Flip 6",
+      "price": "26,490,000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Samsung"
+    },
+    {
+      "id": "Samsung_A05S",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/2024_6_10_638535778605131398_samsung-galaxy-a05s.png",
+      "name": "Samsung Galaxy A05s",
+      "price": "8,990,000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Samsung"
+    },
+    {
+      "id": "Samsung_A25",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/2023_12_11_638378882923497132_samsung-galaxy-a25-5g-den-1.jpg",
+      "name": "Samsung Galaxy A25 5G",
+      "price": "10,490,000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Samsung"
+    },
+    {
+      "id": "Samsung_S22",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/samsung_galaxy_s22_fac476f60b.png",
+      "name": "Samsung Galaxy S22",
+      "price": "24,490,000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Samsung"
+    },
+    {
+      "id": "Samsung_A05",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/2023_10_4_638320083060239206_samsung-galaxy-a05-xanh-3.jpg",
+      "name": "Samsung Galaxy A05",
+      "price": "6,990,000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Samsung"
+    },
+    {
+      "id": "Samsung_A16",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/samsung_galaxy_a16_lte_green_1_f774db8fa0.png",
+      "name": "Samsung Galaxy A16",
+      "price": "9,490,000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Samsung"
+    },
+    {
+      "id": "Samsung_ZFold5",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/2024_3_28_638472360222521133_samsung-galaxy-zfold-5-xanh-ai.jpg",
+      "name": "Samsung Galaxy Z Fold 5",
+      "price": "27,990,000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Samsung"
+    },
+    {
+      "id": "Oppo1",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/oppo_find_x8_space_black_1_6a9c3746b3.png",
+      "name": "Oppo Find X8",
+      "price": "28.490.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Oppo"
+    },
+    {
+      "id": "Oppo2",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/oppo_reno12_f_orange_a80affadd8.png",
+      "name": "Oppo Reno12 F",
+      "price": "10.690.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Oppo"
+    },
+    {
+      "id": "Oppo3",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/2024_5_10_638509283036082649_OPPO-A18-thumb.jpg",
+      "name": "Oppo A18",
+      "price": "6.490.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Oppo"
+    },
+    {
+      "id": "Oppo4",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/oppo_reno_12_trang_d776379731.jpg",
+      "name": "Oppo Reno12",
+      "price": "12.690.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Oppo"
+    },
+    {
+      "id": "Oppo5",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/180x0/filters:quality(100)/2023_11_7_638349536350266653_oppo-find-n3-5g-vang-8.jpg",
+      "name": "Oppo Find N3",
+      "price": "27.990.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Oppo"
+    },
+    {
+      "id": "Oppo6",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/2024_4_22_638493832157161657_oppo-reno11-f-green-1.png",
+      "name": "Oppo Reno11 F",
+      "price": "9.490.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Oppo"
+    },
+    {
+      "id": "Oppo7",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/2022_12_20_638071513576393682_oppo-a17-dd.jpg",
+      "name": "Oppo A17",
+      "price": "4.990.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Oppo"
+    },
+    {
+      "id": "Oppo8",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/2024_6_25_638549405401920070_oppo-a58-thumb.jpg",
+      "name": "Oppo A58",
+      "price": "8.490.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Oppo"
+    },
+    {
+      "id": "Oppo9",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/oppo_a3_tim_5_a81a5f4bf7.jpg",
+      "name": "Oppo A3",
+      "price": "3.990.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Oppo"
+    },
+    {
+      "id": "Oppo10",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/2024_6_14_638539252291388601_oppo-a60-den-1-dd.jpg",
+      "name": "Oppo A60",
+      "price": "7.990.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Oppo"
+    },
+    {
+      "id": "PocoM6Pro",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/poco_m6_pro_003aba177e.png",
+      "name": "Poco M6 Pro",
+      "price": "5,990,000 VND",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Xiaomi"
+    },
+    {
+      "id": "RedmiNote13",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/2024_1_5_638400663079293145_xiaomi-redmi-note-13-xanh.png",
+      "name": "Redmi Note 13",
+      "price": "6,490,000 VND",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Xiaomi"
+    },
+    {
+      "id": "PocoM6",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/poco_m6_cc5c059d02.png",
+      "name": "Poco M6",
+      "price": "7,990,000 VND",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Xiaomi"
+    },
+    {
+      "id": "RedmiA3",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/2024_3_11_638457544497489646_xiaomi-redmi-a3-xanh%20(1).jpg",
+      "name": "Redmi A3",
+      "price": "4,590,000 VND",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Xiaomi"
+    },
+    {
+      "id": "Redmi14C",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/xiaomi_redmi_14c_den_1_671192109b.jpg",
+      "name": "Redmi 14C",
+      "price": "5,490,000 VND",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Xiaomi"
+    },
+    {
+      "id": "Xiaomi14T",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/xiaomi_14t_black_1_bb226cd286.png",
+      "name": "Xiaomi 14T",
+      "price": "12,490,000 VND",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Xiaomi"
+    },
+    {
+      "id": "PocoM6Pro2",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/poco_m6_pro_003aba177e.png",
+      "name": "Poco M6 Pro",
+      "price": "5,990,000 VND",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Xiaomi"
+    },
+    {
+      "id": "Xiaomi14TPro",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/xiaomi_14t_pro_blue_1_784189e456.png",
+      "name": "Xiaomi 14T Pro",
+      "price": "18,990,000 VND",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Xiaomi"
+    },
+    {
+      "id": "Xiaomi14",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/2024_3_12_638458484678331118_xiaomi-14-xanh-png.png",
+      "name": "Xiaomi 14",
+      "price": "14,990,000 VND",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Xiaomi"
+    },
+    {
+      "id": "Xiaomi14Ultra",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/2024_5_18_638516296640266598_xiaomi-14-ultra-trang-5.png",
+      "name": "Xiaomi 14 Ultra",
+      "price": "29,990,000 VND",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Xiaomi"
+    },
+    {
+      "id": "Xiaomi14TProGray",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/xiaomi_14t_pro_titan_gray_1_a2eaabad5d.png",
+      "name": "Xiaomi 14T Pro Gray",
+      "price": "19,490,000 VND",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Xiaomi"
+    },
+
+    {
+      "id": "realme_c61_xanh_5",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/realme_c61_xanh_5_6390b0e884.jpg",
+      "name": "Realme C61 Xanh 5",
+      "price": "15.990.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Realme"
+    },
+    {
+      "id": "realme_c60_xanh_4",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/2024_2_23_638442955485720002_realme-c60-xanh-4.jpg",
+      "name": "Realme C60 Xanh 4",
+      "price": "18.290.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Realme"
+    },
+    {
+      "id": "realme_13_plus_5g_tim_5",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/realme_13_plus_5g_tim_5_4ed930bfe7.png",
+      "name": "Realme 13 Plus 5G Tim 5",
+      "price": "22.500.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Realme"
+    },
+    {
+      "id": "realme_note_60_xanh_4",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/realme_note_60_xanh_4_1e436a334b.jpg",
+      "name": "Realme Note 60 Xanh 4",
+      "price": "19.750.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Realme"
+    },
+    {
+      "id": "realme_c51_dd",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/2023_8_23_638283976760946791_realme-c51-dd.jpg",
+      "name": "Realme C51 DD",
+      "price": "17.999.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Realme"
+    },
+    {
+      "id": "realme_c61_xanh_5",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/realme_c61_xanh_5_6390b0e884.jpg",
+      "name": "Realme C61 Xanh 5",
+      "price": "16.490.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Realme"
+    },
+
+    {
+      "id": "nokia_220_4g_cam",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/2024_5_30_638526598199209755_nokia-220-4g-cam-3.jpg",
+      "name": "Nokia 220 4G Cam",
+      "price": "2.500.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Nokia"
+    },
+    {
+      "id": "nokia_3210_4g_vang",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/2024_5_30_638526854390164361_nokia-3210-4g-vang-3.jpg",
+      "name": "Nokia 3210 4G Vàng",
+      "price": "2.800.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Nokia"
+    },
+    {
+      "id": "nokia_105_ds_pro_4g",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/2023_8_14_638276308841835967_nokia-105-ds-pro-4g-dd.jpg",
+      "name": "Nokia 105 DS Pro 4G",
+      "price": "1.200.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Nokia"
+    },
+    {
+      "id": "nokia_110_ds_pro_4g",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/2023_8_14_638276301133266677_nokia-110-ds-pro-4g-dd.jpg",
+      "name": "Nokia 110 DS Pro 4G",
+      "price": "1.450.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Nokia"
+    },
+    {
+      "id": "honor_x7c_xanh_5",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/honor_x7c_xanh_5_560007b413.jpg",
+      "name": "Honor X7C Xanh 5",
+      "price": "8.990.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Honor"
+    },
+    {
+      "id": "honor_x6b_xanh_3",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/honor_x6b_xanh_3_524c482ee3.jpg",
+      "name": "Honor X6B Xanh 3",
+      "price": "7.500.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Honor"
+    },
+    {
+      "id": "honor_x7b_xanh_2",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/honor_x7b_xanh_2a9b19aba4.jpg",
+      "name": "Honor X7B Xanh 2",
+      "price": "9.200.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Honor"
+    },
+    {
+      "id": "honor_x9b_cam_4",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/honor_x9b_cam_4_99d6142e8b.jpg",
+      "name": "Honor X9B Cam 4",
+      "price": "12.500.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Honor"
+    },
+    {
+      "id": "honor_90_512gb_bac_4",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/honor_90_512gb_bac_4_2f3e21d020.jpg",
+      "name": "Honor 90 512GB Bạc 4",
+      "price": "16.900.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Honor"
+    },
+    {
+      "id": "honor_magic_v3_xanh_2",
+      "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/honor_magic_v3_xanh_2_2e82ae0429.png",
+      "name": "Honor Magic V3 Xanh 2",
+      "price": "23.500.000đ",
+      "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
+      "brand": "Honor"
+    }
+  ]
+}

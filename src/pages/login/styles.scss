@@ -1,0 +1,104 @@
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #ffffff; 
+    }
+  
+    .card {
+      border: none;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 4rem;
+      background: linear-gradient(145deg, #ffffff, #f3f3f3);
+    }
+  
+    .form-outline {
+      position: relative;
+      margin-bottom: 2rem;
+  
+      input {
+        font-size: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 0.5rem;
+        padding: 0.75rem;
+        background: #f9f9f9;
+        transition: all 0.3s;
+  
+        &:focus {
+          outline: none;
+          border-color: #508bfc;
+          background: #ffffff;
+          box-shadow: 0 0 5px rgba(80, 139, 252, 0.5);
+        }
+      }
+  
+      label {
+        font-size: 0.77rem;
+        color: #666;
+        position: absolute;
+        top: -10px;
+        left: 15px;
+        background: #fff;
+        padding: 0 5px;
+      }
+    }
+  
+    .form-check {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+  
+      .form-check-input {
+        accent-color: #508bfc;
+      }
+  
+      .form-check-label {
+        font-size: 0.9rem;
+        color: #444;
+      }
+    }
+  
+    .btn {
+      font-size: 1rem;
+      border-radius: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      transition: background-color 0.3s, box-shadow 0.3s;
+  
+      &.btn-primary {
+        margin: 5px 0;
+        background-color: #508bfc;
+        border: none;
+        color: #fff;
+  
+        &:hover {
+          background-color: #406fca;
+          box-shadow: 0 4px 6px rgba(80, 139, 252, 0.3);
+        }
+  
+        &:focus {
+          outline: none;
+          box-shadow: 0 0 8px rgba(80, 139, 252, 0.5);
+        }
+      }
+    }
+  
+    .link-primary {
+      color: #508bfc;
+      font-weight: bold;
+      text-decoration: underline;
+      cursor: pointer;
+  
+      &:hover {
+        color: #406fca;
+      }
+    }
+  
+    .text-muted {
+      font-size: 0.85rem;
+      color: #999;
+    }
+  
+  
