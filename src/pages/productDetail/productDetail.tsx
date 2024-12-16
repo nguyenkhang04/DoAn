@@ -1,18 +1,30 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { actFetchProductById } from "../redux/features/product/productSlice";
 import { AppDispatch, RootState } from "../redux/store";
 import "./styles.scss";
+import { addToCart } from "../redux/features/product/cartSlice";
+import { Button } from "antd";
 
 const ProductDetailPage = () => {
   const { productId } = useParams();
   const product = useSelector((state: RootState) => state.product.product);
   const dispatch = useDispatch<AppDispatch>();
+  const [animateButton, setAnimateButton] = useState<string | null>(null);
+  const [cartNotification, setCartNotification] = useState(false);
 
   useEffect(() => {
     dispatch(actFetchProductById(productId as string));
   }, [dispatch, productId]);
+
+  const handleAddToCart = (product: any) => {
+    dispatch(addToCart(product));
+    setAnimateButton(product.id);
+    setCartNotification(true);
+
+    setTimeout(() => setCartNotification(false), 3000);
+  };
 
   if (!product) {
     return <h1>No Product found</h1>;
@@ -51,8 +63,19 @@ const ProductDetailPage = () => {
         </div>
 
         <div className="product-actions">
-          <button className="buy-now">Mua ngay</button>
-          <button className="add-to-cart">Thêm vào giỏ hàng</button>
+          <Button type="primary" className="order-button">
+            Mua ngay
+          </Button>
+
+          <Button
+            type="primary"
+            className={`order-button add-to-cart ${
+              animateButton === product.id ? "animate" : ""
+            }`}
+            onClick={() => handleAddToCart(product)}
+          >
+            Thêm Vào Giỏ Hàng
+          </Button>
         </div>
       </div>
     </div>

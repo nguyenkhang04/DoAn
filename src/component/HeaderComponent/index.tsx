@@ -1,12 +1,28 @@
-import { Row, Col, Button, Badge } from "antd";
+import React, { useState, useEffect } from "react";
+import { Row, Col, Button } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import "./styles.scss";
 
-const HeaderComponent = () => {
+const HeaderComponent: React.FC = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const navigate = useNavigate();
-  const handleLogin = () => {
-    navigate("/login");
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setIsLoggedIn(true); 
+    }
+  }, []);
+
+  const handleLoginLogout = () => {
+    if (isLoggedIn) {
+      localStorage.removeItem("user");
+      setIsLoggedIn(false);
+      alert("Bạn đã đăng xuất thành công!");
+    } else {
+      navigate("/login"); 
+    }
   };
 
   return (
@@ -21,13 +37,13 @@ const HeaderComponent = () => {
         <Col>
           <ul className="navigation">
             <li className="navigation-item">
-              <Link to={"/"}>Home</Link>
+              <Link to={"/"}>Trang Chủ</Link>
             </li>
             <li className="navigation-item">
-              <Link to={"/about"}>Laptop</Link>
+              <Link to={"/product"}>Điện Thoại</Link>
             </li>
             <li className="navigation-item">
-              <Link to={"/product"}>Phone</Link>
+            <Link to={"/about"}>Bảo Hành</Link>
             </li>
           </ul>
         </Col>
@@ -44,8 +60,8 @@ const HeaderComponent = () => {
         </Col>
 
         <Col>
-          <Button onClick={handleLogin} className="login-button">
-            Log In
+          <Button onClick={handleLoginLogout} className="login-button">
+            {isLoggedIn ? "Đăng Xuất" : "Đăng Nhập"}
           </Button>
         </Col>
       </Row>

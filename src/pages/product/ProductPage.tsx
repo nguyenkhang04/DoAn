@@ -22,14 +22,14 @@ const ProductPage = () => {
 
   const handleAddToCart = (product: any) => {
     dispatch(addToCart(product));
-
     setAnimateButton(product.id);
-    
-    
     setCartNotification(true);
 
-    
     setTimeout(() => setCartNotification(false), 3000);
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -61,7 +61,9 @@ const ProductPage = () => {
                   {product.price.toLocaleString()} VND
                 </p>
                 <p className="product-description">{product.description}</p>
-                <p className="product-attribute">Thương hiệu: {product.brand}</p>
+                <p className="product-attribute">
+                  Thương hiệu: {product.brand}
+                </p>
               </div>
             </Link>
             <div className="btn-container">
@@ -70,7 +72,9 @@ const ProductPage = () => {
               </Button>
               <Button
                 type="primary"
-                className={`order-button add-to-cart ${animateButton === product.id ? "animate" : ""}`}
+                className={`order-button add-to-cart ${
+                  animateButton === product.id ? "animate" : ""
+                }`}
                 onClick={() => handleAddToCart(product)}
               >
                 Thêm Vào Giỏ Hàng
@@ -85,6 +89,9 @@ const ProductPage = () => {
           <p>Sản phẩm đã được thêm vào giỏ hàng!</p>
         </div>
       )}
+      <button className="scroll-to-top" onClick={scrollToTop}>
+        ↑
+      </button>
     </div>
   );
 };
