@@ -1,33 +1,21 @@
-import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "../redux/store";
-import {
-  Button,
-  Row,
-  Col,
-  Card,
-  Space,
-  Modal,
-  InputNumber,
-  Input,
-  Radio,
-} from "antd";
-import { DeleteOutlined } from "@ant-design/icons";
-import "./styles.scss";
-import { removeFromCart } from "../redux/features/product/cartSlice";
-import React from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from '../redux/store';
+import { Button, Row, Col, Card, Modal, InputNumber, Input, Radio } from 'antd';
+import { DeleteOutlined } from '@ant-design/icons';
+import './styles.scss';
+import { removeFromCart } from '../redux/features/product/cartSlice';
+import { submitUserInfo } from '../redux/features/product/userSlice';
+import React from 'react';
 
 const CartPage = () => {
   const dispatch = useDispatch<AppDispatch>();
   const cartItems = useSelector((state: RootState) => state.cart.cartItems);
 
-  const [name, setName] = React.useState<string>("");
-  const [phone, setPhone] = React.useState<string>("");
-  const [email, setEmail] = React.useState<string>("");
-  const [address, setAddress] = React.useState<string>("");
-  const [deliveryMethod, setDeliveryMethod] =
-    React.useState<string>("Giao Tận Nơi");
-
-  const SHIPPING_COST = 3500000;
+  const [name, setName] = React.useState<string>('');
+  const [phone, setPhone] = React.useState<string>('');
+  const [email, setEmail] = React.useState<string>('');
+  const [address, setAddress] = React.useState<string>('');
+  const [deliveryMethod, setDeliveryMethod] = React.useState<string>('Giao Tận Nơi');
 
   const handleRemoveFromCart = (productId: string) => {
     dispatch(removeFromCart(productId));
@@ -36,37 +24,41 @@ const CartPage = () => {
   const handlePayment = () => {
     if (!name || !phone || !email || !address) {
       Modal.error({
-        title: "Lỗi",
-        content: "Vui lòng nhập đầy đủ thông tin!",
+        title: 'Lỗi',
+        content: 'Vui lòng nhập đầy đủ thông tin!',
       });
       return;
     }
 
-    console.log("Proceeding to payment with:", {
+    const userInfo = {
       name,
       phone,
       email,
       address,
       deliveryMethod,
-    });
+      cartItems: cartItems.map(item => ({
+        productId: item.product.id,
+        quantity: item.quantity,
+      })),
+    };
+
+    dispatch(submitUserInfo(userInfo));
+
+    console.log('Proceeding to payment with:', userInfo);
   };
 
   return (
     <div className="cart-page">
       <h1 className="title">Giỏ Hàng</h1>
       {cartItems.length === 0 ? (
-        <p>Giỏ hàng của bạn hiện tại trống.</p>
+        <div>Giỏ hàng của bạn hiện tại trống.</div>
       ) : (
         <Row gutter={[16, 16]}>
-          {cartItems.map((item) => (
+          {cartItems.map(item => (
             <Col key={item.product.id} span={8}>
               <Card
                 title={item.product.name}
-                extra={
-                  <DeleteOutlined
-                    onClick={() => handleRemoveFromCart(item.product.id)}
-                  />
-                }
+                extra={<DeleteOutlined onClick={() => handleRemoveFromCart(item.product.id)} />}
                 hoverable
                 className="cart-item-card"
               >
@@ -82,7 +74,7 @@ const CartPage = () => {
                     <InputNumber
                       min={1}
                       defaultValue={item.quantity}
-                      onChange={(value) => console.log(value)}
+                      onChange={value => console.log(value)}
                     />
                   </p>
                 </div>
@@ -97,26 +89,26 @@ const CartPage = () => {
         <Input
           placeholder="Họ và tên"
           value={name}
-          onChange={(e) => setName(e.target.value)}
+          onChange={e => setName(e.target.value)}
           style={{ marginBottom: 10 }}
         />
         <Input
           placeholder="Điện thoại"
           value={phone}
-          onChange={(e) => setPhone(e.target.value)}
+          onChange={e => setPhone(e.target.value)}
           style={{ marginBottom: 10 }}
         />
         <Input
           placeholder="Email"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={e => setEmail(e.target.value)}
           style={{ marginBottom: 10 }}
         />
 
         <h3>Chọn cách thức nhận hàng</h3>
         <Radio.Group
           value={deliveryMethod}
-          onChange={(e) => setDeliveryMethod(e.target.value)}
+          onChange={e => setDeliveryMethod(e.target.value)}
           style={{ marginBottom: 10 }}
         >
           <Radio value="Giao Tận Nơi">Giao tận nơi</Radio>
@@ -127,20 +119,20 @@ const CartPage = () => {
         <Input
           placeholder="Tỉnh/Thành phố"
           value={address}
-          onChange={(e) => setAddress(e.target.value)}
+          onChange={e => setAddress(e.target.value)}
           style={{ marginBottom: 10 }}
         />
         <Input.TextArea
           placeholder="Địa chỉ"
           value={address}
-          onChange={(e) => setAddress(e.target.value)}
+          onChange={e => setAddress(e.target.value)}
           style={{ marginBottom: 10 }}
         />
 
-        <p>
+        <div>
           Ghi chú về đơn hàng, ví dụ: thời gian hay chỉ dẫn địa điểm giao hàng
           chi tiết hơn.
-        </p>
+        </div>
 
         <Button type="primary" block onClick={handlePayment}>
           TIẾN HÀNH ĐẶT HÀNG

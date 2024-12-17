@@ -61,7 +61,7 @@ const HeaderComponent: React.FC = () => {
 
         <Col>
           <Button onClick={handleLoginLogout} className="login-button">
-            {isLoggedIn ? "Đăng Xuất" : "Đăng Nhập"}
+            Tài Khoản
           </Button>
         </Col>
       </Row>

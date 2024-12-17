@@ -55,7 +55,6 @@ const BrandFilter: React.FC = () => {
           "Samsung",
           "Oppo",
           "Poco",
-          "Redmi",
           "Xiaomi",
           "Nokia",
           "Honor",
