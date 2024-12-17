@@ -9,7 +9,7 @@ const AboutPage = () => {
       <p>
         Phone VN rất tiếc và xin lỗi vì sự bất tiện của Quý khách khi sản phẩm
         không may phát sinh lỗi phải bảo hành. Hi vọng chi tiết chính sách đổi
-        trả , bảo hành tại CLICKBUY cũng như thông tin liên hệ các bộ phận hỗ
+        trả , bảo hành tại Phone VN cũng như thông tin liên hệ các bộ phận hỗ
         trợ dưới đây có thể giúp Quý khách yên tâm hơn trong quá trình sử dụng
         sản phẩm.
       </p>

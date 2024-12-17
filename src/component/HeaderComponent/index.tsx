@@ -11,7 +11,7 @@ const HeaderComponent: React.FC = () => {
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
-      setIsLoggedIn(true); 
+      setIsLoggedIn(true);
     }
   }, []);
 
@@ -21,7 +21,7 @@ const HeaderComponent: React.FC = () => {
       setIsLoggedIn(false);
       alert("Bạn đã đăng xuất thành công!");
     } else {
-      navigate("/login"); 
+      navigate("/login");
     }
   };
 
@@ -37,13 +37,13 @@ const HeaderComponent: React.FC = () => {
         <Col>
           <ul className="navigation">
             <li className="navigation-item">
-              <Link to={"/"}>Trang Chủ</Link>
-            </li>
-            <li className="navigation-item">
               <Link to={"/product"}>Điện Thoại</Link>
             </li>
             <li className="navigation-item">
-            <Link to={"/about"}>Bảo Hành</Link>
+              <Link to={"/accessory"}>Phụ Kiện</Link>
+            </li>
+            <li className="navigation-item">
+              <Link to={"/about"}>Bảo Hành</Link>
             </li>
           </ul>
         </Col>

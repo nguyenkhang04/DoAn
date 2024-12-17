@@ -7,6 +7,8 @@ import { actFetchAllProducts } from "../redux/features/product/productSlice";
 
 import "./styles.scss";
 import { addToCart } from "../redux/features/product/cartSlice";
+import Advertisement from "../advertisement/Advertisement";
+import BrandFilter from "../brandfilter/BrandFilter";
 
 const ProductPage = () => {
   const { loading, products } = useSelector(
@@ -15,6 +17,7 @@ const ProductPage = () => {
   const dispatch = useDispatch<AppDispatch>();
   const [animateButton, setAnimateButton] = useState<string | null>(null);
   const [cartNotification, setCartNotification] = useState(false);
+  const [showAll, setShowAll] = useState(false);  
 
   useEffect(() => {
     dispatch(actFetchAllProducts({}));
@@ -28,26 +31,28 @@ const ProductPage = () => {
     setTimeout(() => setCartNotification(false), 3000);
   };
 
+  const handleShowAll = () => {
+    setShowAll(true);
+  };
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  
+  const displayedProducts = showAll ? products : products.slice(0, 8);
+
   return (
     <div className="home-page">
-      <h1 className="title">Danh Sách Sản Phẩm</h1>
+      <h2 className="title">Các Hãng Sản Phẩm</h2>
       {loading && <Spin />}
       <div className="menu-container">
-        <Link to={"/product"}>IPhone</Link>
-        <Link to={"/product"}>Samsung</Link>
-        <Link to={"/product"}>Oppo</Link>
-        <Link to={"/product"}>Poco</Link>
-        <Link to={"/product"}>Redmi</Link>
-        <Link to={"/product"}>Xiaomi</Link>
-        <Link to={"/product"}>Nokia</Link>
-        <Link to={"/product"}>Honor</Link>
+        <BrandFilter></BrandFilter>
       </div>
+      <Advertisement></Advertisement>
+      <h2>Điện Thoại</h2>
       <div className="product-list">
-        {products.map((product) => (
+        {displayedProducts.map((product) => (
           <div key={product.id} className="product-card">
             <Link to={`/product/${product.id}`} className="product-link">
               <img
@@ -77,12 +82,18 @@ const ProductPage = () => {
                 }`}
                 onClick={() => handleAddToCart(product)}
               >
-                Thêm Vào Giỏ Hàng
+                Bỏ Vào Giỏ Hàng
               </Button>
             </div>
           </div>
         ))}
       </div>
+
+      {!showAll && (
+        <Button className="show-more-button" onClick={handleShowAll}>
+          Xem Thêm Sản Phẩm
+        </Button>
+      )}
 
       {cartNotification && (
         <div className="cart-notification">
