@@ -1,11 +1,13 @@
 .header-component {
-  background-color: #6299cf;
-  padding: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #5e8dc7;
+  padding: 15px 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 
   .ant-row {
     display: flex;
     align-items: center;
+    justify-content: space-between;
   }
 
   .navigation {
@@ -15,7 +17,9 @@
     padding: 0;
 
     .navigation-item {
-      padding: 0 15px;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
     }
 
     .navigation-item a {
@@ -23,19 +27,38 @@
       color: #ffffff;
       font-size: 18px;
       font-weight: 500;
-      transition: color 0.3s;
+      transition: color 0.3s, transform 0.2s;
+      position: relative;
 
       &:hover {
-        color: #a4bed9;
+        color: #e7e5e0; 
+        transform: scale(1.1);
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #d6d5d2;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      &:hover::after {
+        opacity: 1;
       }
     }
   }
 
   .logo {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 700;
-    color: #fff;
+    color: #ffffff;
     padding-left: 20px;
+    text-transform: uppercase;
     a {
       text-decoration: none;
       color: inherit;
@@ -44,51 +67,75 @@
 
   .login-button {
     background-color: #fff;
-    color: #000000;
-    border: none;
-    padding: 8px 16px;
+    color: #5e8dc7;
+    border: 2px solid #5e8dc7;
+    padding: 10px 20px;
     font-size: 18px;
     font-weight: 600;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
+    border-radius: 30px;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &:hover {
-      background-color: #a4bed9;
+      background-color: #ece9e2;
       color: #fff;
+      transform: scale(1.1);
+    }
+
+    .fi-rr-user {
+      margin-right: 10px;
+      font-size: 20px;
+      color: #000; 
     }
   }
 
   .cart-container {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 15px;
+    justify-content: center;
 
     .cart-button {
       background-color: #fff;
       color: #000;
-      border: none;
+      border: 2px solid #5e8dc7;
       display: flex;
       align-items: center;
-      padding: 8px 16px;
+      padding: 10px 20px;
       font-size: 16px;
-      border-radius: 5px;
-      transition: background-color 0.3s;
+      border-radius: 30px;
+      transition: background-color 0.3s, color 0.3s, transform 0.2s;
 
       &:hover {
-        background-color: #a4bed9;
-        color: #fff;
+        
+        transform: scale(1.1);
       }
 
       .anticon {
-        font-size: 22px;
-        margin-left: 5px;
+        font-size: 24px;
+        margin-left: 10px;
       }
     }
+  }
 
-    .total-price {
+  .search-container {
+    width: 300px; 
+    .search-input {
+      border-radius: 30px; 
+      padding: 10px 20px;
       font-size: 16px;
-      color: #ffffff;
-      margin-left: 10px;
+      width: 100%;
+      transition: border-color 0.3s;
+
+      &:focus {
+        border-color: #f0a500; 
+      }
+
+      .ant-input-prefix {
+        color: #5e8dc7; 
+      }
     }
   }
 }

@@ -1,20 +1,18 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { TProduct } from "./productSlice";
 
-
 type TCartItem = {
   product: TProduct;
   quantity: number;
-  
 };
-
 
 type TCartState = {
   cartItems: TCartItem[];
 };
 
+
 const initialState: TCartState = {
-  cartItems: [],
+  cartItems: JSON.parse(localStorage.getItem("cartItems") || "[]"), 
 };
 
 const cartSlice = createSlice({
@@ -26,18 +24,24 @@ const cartSlice = createSlice({
         (item) => item.product.id === action.payload.id
       );
       if (existingItem) {
-        existingItem.quantity += 1; 
+        existingItem.quantity += 1;
       } else {
-        state.cartItems.push({ product: action.payload, quantity: 1 }); 
+        state.cartItems.push({ product: action.payload, quantity: 1 });
       }
+      
+      localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
     removeFromCart: (state, action: PayloadAction<string>) => {
       state.cartItems = state.cartItems.filter(
         (item) => item.product.id !== action.payload
       );
+      
+      localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
     clearCart: (state) => {
       state.cartItems = [];
+      
+      localStorage.removeItem("cartItems");
     },
   },
 });

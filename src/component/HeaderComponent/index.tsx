@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col, Button } from "antd";
+import { Row, Col, Button, Input } from "antd";
 import { Link, useNavigate } from "react-router-dom";
-import { ShoppingCartOutlined } from "@ant-design/icons";
+import { ShoppingCartOutlined, SearchOutlined } from "@ant-design/icons"; 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-regular-svg-icons"; 
 import "./styles.scss";
 
 const HeaderComponent: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  const [searchQuery, setSearchQuery] = useState<string>(""); 
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -23,6 +26,14 @@ const HeaderComponent: React.FC = () => {
     } else {
       navigate("/login");
     }
+  };
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const handleSearchSubmit = () => {
+    navigate(`/search?query=${searchQuery}`);
   };
 
   return (
@@ -49,6 +60,19 @@ const HeaderComponent: React.FC = () => {
         </Col>
 
         <Col>
+          <div className="search-container">
+            <Input
+              placeholder="Tìm kiếm sản phẩm..."
+              value={searchQuery}
+              onChange={handleSearchChange}
+              onPressEnter={handleSearchSubmit}
+              className="search-input"
+              prefix={<SearchOutlined />} 
+            />
+          </div>
+        </Col>
+
+        <Col>
           <div className="cart-container">
             <Link to="/cart">
               <button className="cart-button">
@@ -61,6 +85,7 @@ const HeaderComponent: React.FC = () => {
 
         <Col>
           <Button onClick={handleLoginLogout} className="login-button">
+            <FontAwesomeIcon icon={faUser} size="1x" />
             Tài Khoản
           </Button>
         </Col>

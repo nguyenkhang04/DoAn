@@ -1,7 +1,6 @@
 import React, { useState, ChangeEvent, useEffect } from "react";
 import "./styles.scss";
 
-// Sửa URL API
 const API_URL = "http://localhost:9999/users"; 
 
 const LoginPage: React.FC = () => {
