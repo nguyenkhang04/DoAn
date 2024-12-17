@@ -3,6 +3,7 @@ import HeaderComponent from "../../component/HeaderComponent";
 import { Outlet } from "react-router-dom";
 import FooterComponent from "../../component/FooterComponent";
 import ProductPage from "../../pages/product/ProductPage";
+import Advertisement from "../../pages/advertisement/Advertisement";
 const HomeLayout = () => {
   return (
     <div className="home-layout">

@@ -49,7 +49,6 @@ const ProductPage = () => {
       <div className="menu-container">
         <BrandFilter></BrandFilter>
       </div>
-      <Advertisement></Advertisement>
       <h2>Điện Thoại</h2>
       <div className="product-list">
         {displayedProducts.map((product) => (

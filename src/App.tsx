@@ -11,6 +11,7 @@ import AdminProduct from "./pages/admin/products/adminProduct";
 import ProductDetailPage from "./pages/productDetail/productDetail";
 import AboutPage from "./pages/about/AboutPage";
 import CartPage from "./pages/cart/CartPage";
+import AccessoryPage from "./pages/accessory/AccessoryPage";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
               path="/product/:productId"
               element={<ProductDetailPage></ProductDetailPage>}
             ></Route>
+            <Route path="/accessory" element={<AccessoryPage></AccessoryPage>}></Route>
             <Route path="/login" element={<LoginPage></LoginPage>}></Route>
             <Route path="/cart" element={<CartPage></CartPage>}></Route>
           </Route>
