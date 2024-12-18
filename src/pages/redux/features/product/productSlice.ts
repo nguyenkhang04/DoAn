@@ -9,6 +9,7 @@ export type TProduct = {
   price: number; 
   description: string;
   brand: string;
+  category: string;
 };
 
 export type TProductState = {

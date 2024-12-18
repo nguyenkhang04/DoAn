@@ -41,7 +41,6 @@ const Advertisement: React.FC = () => {
       </div>
 
       <div className="slideshow-wrapper">
-        {/* Slideshow */}
         <div className="slideshow-container">
           {slides.map((slide, index) => (
             <div

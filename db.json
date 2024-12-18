@@ -479,6 +479,70 @@
       "price": "3,990,000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
       "brand": "Poco"
+    },
+    {
+      "id": 1,
+      "img": "https://clickbuy.com.vn/uploads/pro/op-lung-kem-but-s-pen-galaxy-z-fold-6-sm-217782.jpg",
+      "name": "Ốp Lưng Kèm Bút S-Pen Galaxy Z Fold 6",
+      "price": 1500000,
+      "brand": "Samsung",
+      "category": "accessory"
+    },
+    {
+      "id": 2,
+      "img": "https://clickbuy.com.vn/uploads/pro/op-lung-trong-samsung-galaxy-z-fold6-chinh-hang-sm-217767.jpg",
+      "name": "Ốp Lưng Trong Samsung Galaxy Z Fold 6",
+      "price": 1200000,
+      "brand": "Samsung",
+      "category": "accessory"
+    },
+    {
+      "id": 3,
+      "img": "https://clickbuy.com.vn/uploads/pro/sac-anker-powerport-iii-nano-20w-sm-196999.jpg",
+      "name": "Sạc Anker PowerPort III Nano 20W",
+      "price": 800000,
+      "brand": "Anker",
+      "category": "accessory"
+    },
+    {
+      "id": 4,
+      "img": "https://clickbuy.com.vn/uploads/pro/cap-sac-anker-322-type-c-lightning-09m-20w-chuan-mfi-sm-197006.jpg",
+      "name": "Cáp Sạc Anker 322 Type-C to Lightning 0.9m 20W",
+      "price": 600000,
+      "brand": "Anker",
+      "category": "accessory"
+    },
+    {
+      "id": 5,
+      "img": "https://clickbuy.com.vn/uploads/pro/bao-da-samsung-galaxy-tab-a8-chinh-hang-sm-189067.png",
+      "name": "Bao Da Samsung Galaxy Tab A8",
+      "price": 1000000,
+      "brand": "Samsung",
+      "category": "accessory"
+    },
+    {
+      "id": 6,
+      "img": "https://clickbuy.com.vn/uploads/pro/op-lung-trong-linh-hoat-z-flip5-chinh-hang-sm-192670.png",
+      "name": "Ốp Lưng Trong Linh Hoạt Z Flip 5",
+      "price": 1300000,
+      "brand": "Samsung",
+      "category": "accessory"
+    },
+    {
+      "id": 7,
+      "img": "https://clickbuy.com.vn/uploads/pro/sac-pisen-quick-ice-crystal-colorful-pd-30w-sm-173764.jpg",
+      "name": "Sạc Pisen Quick Ice Crystal Colorful PD 30W",
+      "price": 900000,
+      "brand": "Pisen",
+      "category": "accessory"
+    },
+    {
+      "id": 7,
+      "img": "https://clickbuy.com.vn/uploads/pro/sac-du-phong-samsung-10000mah-25w-chinh-hang-sm-183917.png",
+      "name": "Sạc Pisen Quick Ice Crystal Colorful PD 30W",
+      "price": 900000,
+      "brand": "Pisen",
+      "category": "accessory"
     }
   ],
   "users": [

@@ -4,10 +4,8 @@ import { Button, Spin } from "antd";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { actFetchAllProducts } from "../redux/features/product/productSlice";
-
 import "./styles.scss";
 import { addToCart } from "../redux/features/product/cartSlice";
-import Advertisement from "../advertisement/Advertisement";
 import BrandFilter from "../brandfilter/BrandFilter";
 
 const ProductPage = () => {
