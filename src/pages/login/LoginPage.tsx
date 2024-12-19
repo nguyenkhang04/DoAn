@@ -1,7 +1,7 @@
 import React, { useState, ChangeEvent, useEffect } from "react";
 import "./styles.scss";
 
-const API_URL = "http://localhost:9999/users"; 
+const API_URL = "http://localhost:9999/users";
 
 const LoginPage: React.FC = () => {
   const [isRegistering, setIsRegistering] = useState<boolean>(false);

@@ -6,6 +6,7 @@ import { AppDispatch, RootState } from "../redux/store";
 import "./styles.scss";
 import { addToCart } from "../redux/features/product/cartSlice";
 import { Button } from "antd";
+import ProductReview from "../productreview/ProductReview";
 
 const ProductDetailPage = () => {
   const { productId } = useParams();
@@ -32,51 +33,56 @@ const ProductDetailPage = () => {
 
   return (
     <div className="product-detail-page">
-      <div className="product-images">
-        <img src={product.img} alt={product.name} className="main-image" />
-        <div className="thumbnail-images">
-          <img src={product.img} alt="Thumbnail" />
-          <img src={product.img} alt="Thumbnail" />
-          <img src={product.img} alt="Thumbnail" />
+      <div className="product-detail-page-container">
+        <div className="product-images">
+          <img src={product.img} alt={product.name} className="main-image" />
+          <div className="thumbnail-images">
+            <img src={product.img} alt="Thumbnail" />
+            <img src={product.img} alt="Thumbnail" />
+            <img src={product.img} alt="Thumbnail" />
+          </div>
+        </div>
+
+        <div className="product-info">
+          <h1 className="product-name">{product.name}</h1>
+          <p className="product-price">{product.price.toLocaleString()} VND</p>
+
+          <div className="product-options">
+            <div className="color-options">
+              <label>Màu sắc: </label>
+              <button className="color-option">Xanh</button>
+              <button className="color-option">Đen</button>
+            </div>
+            <div className="storage-options">
+              <label>Dung lượng: </label>
+              <button className="storage-option">128 GB</button>
+            </div>
+          </div>
+
+          <div className="promotion">
+            <h3>Khuyến mãi nổi bật</h3>
+            <p>Giảm ngay 300.000đ khi mua sản phẩm này.</p>
+          </div>
+
+          <div className="product-actions">
+            <Button type="primary" className="order-button">
+              Mua ngay
+            </Button>
+
+            <Button
+              type="primary"
+              className={`order-button add-to-cart ${
+                animateButton === product.id ? "animate" : ""
+              }`}
+              onClick={() => handleAddToCart(product)}
+            >
+              Thêm Vào Giỏ Hàng
+            </Button>
+          </div>
         </div>
       </div>
-
-      <div className="product-info">
-        <h1 className="product-name">{product.name}</h1>
-        <p className="product-price">{product.price.toLocaleString()} VND</p>
-
-        <div className="product-options">
-          <div className="color-options">
-            <label>Màu sắc: </label>
-            <button className="color-option">Xanh</button>
-            <button className="color-option">Đen</button>
-          </div>
-          <div className="storage-options">
-            <label>Dung lượng: </label>
-            <button className="storage-option">128 GB</button>
-          </div>
-        </div>
-
-        <div className="promotion">
-          <h3>Khuyến mãi nổi bật</h3>
-          <p>Giảm ngay 300.000đ khi mua sản phẩm này.</p>
-        </div>
-
-        <div className="product-actions">
-          <Button type="primary" className="order-button">
-            Mua ngay
-          </Button>
-
-          <Button
-            type="primary"
-            className={`order-button add-to-cart ${
-              animateButton === product.id ? "animate" : ""
-            }`}
-            onClick={() => handleAddToCart(product)}
-          >
-            Thêm Vào Giỏ Hàng
-          </Button>
-        </div>
+      <div className="product-review">
+        <ProductReview />
       </div>
     </div>
   );

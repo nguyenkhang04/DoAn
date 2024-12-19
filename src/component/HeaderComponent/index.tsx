@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Button, Input } from "antd";
 import { Link, useNavigate } from "react-router-dom";
-import { ShoppingCartOutlined, SearchOutlined } from "@ant-design/icons"; 
+import { ShoppingCartOutlined, SearchOutlined } from "@ant-design/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-regular-svg-icons"; 
+import { faUser } from "@fortawesome/free-regular-svg-icons";
 import "./styles.scss";
 
 const HeaderComponent: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
-  const [searchQuery, setSearchQuery] = useState<string>(""); 
+  const [searchQuery, setSearchQuery] = useState<string>("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -42,6 +42,7 @@ const HeaderComponent: React.FC = () => {
         <Col>
           <div className="logo">
             <Link to={"/"}>PHONE VN</Link>
+            <div className="bouncing-gold">💰</div>
           </div>
         </Col>
 
@@ -51,25 +52,15 @@ const HeaderComponent: React.FC = () => {
               <Link to={"/product"}>Điện Thoại</Link>
             </li>
             <li className="navigation-item">
+              <Link to={"/laptop"}>Laptop</Link>
+            </li>
+            <li className="navigation-item">
               <Link to={"/accessory"}>Phụ Kiện</Link>
             </li>
             <li className="navigation-item">
               <Link to={"/about"}>Bảo Hành</Link>
             </li>
           </ul>
-        </Col>
-
-        <Col>
-          <div className="search-container">
-            <Input
-              placeholder="Tìm kiếm sản phẩm..."
-              value={searchQuery}
-              onChange={handleSearchChange}
-              onPressEnter={handleSearchSubmit}
-              className="search-input"
-              prefix={<SearchOutlined />} 
-            />
-          </div>
         </Col>
 
         <Col>

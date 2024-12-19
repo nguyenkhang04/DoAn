@@ -1,18 +1,102 @@
-.Tet-advertising {
-  padding: 5px;
-  justify-items: center;
+$max-width: 1200px;
+$spacing-small: 10px;
+$spacing-medium: 20px;
+$spacing-large: 30px;
+$primary-color: #6299cf;
+$secondary-color: #417cb0;
+$background-color: #f4f7fc;
+$text-color: #333;
 
-  h3 {
-    font-size: 20px;
+.home-page {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: $spacing-medium;
+
+  
+  .Tet-advertising,
+  .product-page,
+  .accessory-page {
+    max-width: $max-width;
+    margin: 110px auto;
   }
 
-  img {
-    height: 180px;
-    width: 350px;
-    padding: 10px;
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  .Tet-advertising {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: $spacing-small;
+
+    img {
+      height: 150px;
+      width: 70%;
+      max-width: 350px;
+      padding: $spacing-small;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: block;
+      margin: 0 auto;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      padding: $spacing-medium;
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .home-page {
+      padding: $spacing-small;
+    }
+
+    .product-page,
+    .accessory-page {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .home-page {
+      padding: $spacing-small;
+    }
+
+    .product-page,
+    .accessory-page {
+      width: 100%;
+    }
+
+    .Tet-advertising {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .home-page {
+      padding: $spacing-small;
+    }
+
+    .product-page,
+    .accessory-page {
+      width: 100%;
     }
   }
 }

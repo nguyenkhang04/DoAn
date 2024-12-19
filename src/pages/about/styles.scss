@@ -8,7 +8,7 @@ body {
 }
 
 .about-page {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 20px auto;
   padding: 20px;
   background: #fff;
@@ -46,7 +46,7 @@ body {
   img {
     display: block;
     margin: 20px auto;
-    max-width: 100%;
+    max-width: 300px;
     height: auto;
     border: 1px solid #ecf0f1;
     border-radius: 8px;
@@ -73,6 +73,106 @@ body {
         top: 0;
         font-size: 20px;
         color: #3498db;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding: 15px;
+    max-width: 95%;
+
+    h1 {
+      font-size: 24px;
+    }
+
+    h4 {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 15px;
+    }
+
+    img {
+      margin: 15px auto;
+      max-width: 600px;
+    }
+
+    .condition {
+      padding: 10px;
+
+      p {
+        font-size: 14px;
+        padding-left: 15px;
+
+        &:before {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 10px;
+
+    h1 {
+      font-size: 20px;
+    }
+
+    h4 {
+      font-size: 16px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    img {
+      margin: 10px auto;
+      max-width: 300px;
+    }
+
+    .condition {
+      padding: 8px;
+
+      p {
+        font-size: 13px;
+        padding-left: 10px;
+
+        &:before {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    h1 {
+      font-size: 18px;
+    }
+
+    h4 {
+      font-size: 14px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .condition {
+      padding: 6px;
+
+      p {
+        font-size: 11px;
+        padding-left: 8px;
+
+        &:before {
+          font-size: 12px;
+        }
       }
     }
   }

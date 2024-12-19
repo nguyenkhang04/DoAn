@@ -1,5 +1,5 @@
 .header-component {
-  background-color: #5e8dc7;
+  background-color: #cb1c22;
   padding: 15px 30px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
@@ -8,6 +8,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
   }
 
   .navigation {
@@ -31,12 +34,12 @@
       position: relative;
 
       &:hover {
-        color: #e7e5e0; 
+        color: #e7e5e0;
         transform: scale(1.1);
       }
 
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: -5px;
         left: 0;
@@ -52,23 +55,49 @@
       }
     }
   }
-
+  @keyframes red-envelope {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(50px); }
+  }
+  
+  .red-envelope {
+    position: absolute;
+    font-size: 30px;
+    color: red;
+    animation: red-envelope 2s infinite alternate;
+  }
+  @keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-25px); }
+    100% { transform: translateY(0); }
+  }
+  
+  .bouncing-gold {
+    position: absolute;
+    font-size: 20px;
+    color: #ffcc00;
+    animation: bounce 1s ease-in-out infinite;
+  }
+  
   .logo {
     font-size: 28px;
     font-weight: 700;
     color: #ffffff;
     padding-left: 20px;
     text-transform: uppercase;
+    
+
     a {
       text-decoration: none;
       color: inherit;
     }
   }
+  
 
   .login-button {
     background-color: #fff;
-    color: #5e8dc7;
-    border: 2px solid #5e8dc7;
+    color: rgb(116, 113, 113);
+    border: 2px solid #cb1c22;
     padding: 10px 20px;
     font-size: 18px;
     font-weight: 600;
@@ -79,7 +108,7 @@
     justify-content: center;
 
     &:hover {
-      background-color: #ece9e2;
+      background-color: #cb1c22;
       color: #fff;
       transform: scale(1.1);
     }
@@ -87,7 +116,7 @@
     .fi-rr-user {
       margin-right: 10px;
       font-size: 20px;
-      color: #000; 
+      color: #000;
     }
   }
 
@@ -100,7 +129,7 @@
     .cart-button {
       background-color: #fff;
       color: #000;
-      border: 2px solid #5e8dc7;
+      border: 2px solid #cb1c22;
       display: flex;
       align-items: center;
       padding: 10px 20px;
@@ -109,7 +138,6 @@
       transition: background-color 0.3s, color 0.3s, transform 0.2s;
 
       &:hover {
-        
         transform: scale(1.1);
       }
 
@@ -121,21 +149,116 @@
   }
 
   .search-container {
-    width: 300px; 
+    width: 300px;
+
     .search-input {
-      border-radius: 30px; 
+      border-radius: 30px;
       padding: 10px 20px;
       font-size: 16px;
       width: 100%;
       transition: border-color 0.3s;
 
       &:focus {
-        border-color: #f0a500; 
+        border-color: #cb1c22;
       }
 
       .ant-input-prefix {
-        color: #5e8dc7; 
+        color: #5e8dc7;
       }
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding: 10px 20px;
+
+    .ant-row {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .logo {
+      text-align: center;
+      padding-left: 0;
+      margin-bottom: 10px;
+    }
+
+    .navigation {
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .navigation-item {
+        padding: 5px 10px;
+      }
+
+      .navigation-item a {
+        font-size: 16px;
+      }
+    }
+
+    .search-container {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .login-button,
+    .cart-button {
+      font-size: 14px;
+      padding: 8px 15px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .header-component {
+      max-width: 600px;
+    }
+
+    .navigation {
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .navigation-item {
+        padding: 5px 10px;
+      }
+
+      .navigation-item a {
+        font-size: 16px;
+      }
+    }
+
+    .search-container {
+      width: 100%;
+    }
+
+    .login-button,
+    .cart-button {
+      font-size: 14px;
+      padding: 8px 15px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .header-component {
+      max-width: 300px;
+    }
+
+    .navigation {
+      flex-direction: column;
+      align-items: center;
+
+      .navigation-item {
+        padding: 5px 0;
+      }
+    }
+
+    .search-container {
+      margin-top: 15px;
+    }
+
+    .login-button,
+    .cart-button {
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 20px;
     }
   }
 }

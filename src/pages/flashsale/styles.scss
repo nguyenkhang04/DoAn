@@ -1,25 +1,36 @@
+$max-width: 1200px;
+$spacing-small: 10px;
+$spacing-medium: 20px;
+$spacing-large: 30px;
+$primary-color: #6299cf;
+$secondary-color: #417cb0;
+$background-color: #f4f7fc;
+$text-color: #333;
+
 .flash-sale {
-  background-color: #f7f7f7;
-  padding: 30px;
+  background-color: $background-color;
+  padding: $spacing-medium;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  
+  max-width: $max-width;
+  margin: 0 auto;
+
   .title {
     text-align: center;
     font-size: 2rem;
     font-weight: bold;
-    color: #333;
-    margin-bottom: 30px;
+    color: $text-color;
+    margin-bottom: $spacing-large;
     text-transform: uppercase;
   }
 
   .flash-sale-products {
     display: flex;
     overflow-x: scroll;
-    gap: 20px;
-    padding-bottom: 10px;
-    margin-top: 20px;
-    
+    gap: $spacing-medium;
+    padding-bottom: $spacing-small;
+    margin-top: $spacing-medium;
+
     ::-webkit-scrollbar {
       height: 8px;
     }
@@ -31,7 +42,7 @@
 
     .product-card {
       background-color: #fff;
-      padding: 15px;
+      padding: $spacing-small;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       width: 250px;
@@ -51,18 +62,18 @@
         height: 200px;
         object-fit: cover;
         border-radius: 8px;
-        margin-bottom: 15px;
+        margin-bottom: $spacing-medium;
       }
 
       .product-info {
         text-align: center;
-        padding: 0 10px;
+        padding: 0 $spacing-small;
 
         .product-name {
           font-size: 1.1rem;
           font-weight: bold;
-          color: #333;
-          margin-bottom: 10px;
+          color: $text-color;
+          margin-bottom: $spacing-small;
           line-height: 1.4;
         }
 
@@ -70,13 +81,13 @@
           font-size: 1.2rem;
           color: #f76b1c;
           font-weight: bold;
-          margin-bottom: 15px;
+          margin-bottom: $spacing-medium;
         }
 
         .product-description {
           font-size: 0.9rem;
           color: #555;
-          margin-bottom: 10px;
+          margin-bottom: $spacing-small;
           display: -webkit-box;
           -webkit-line-clamp: 2;
           -webkit-box-orient: vertical;
@@ -88,11 +99,11 @@
         display: flex;
         justify-content: center;
         width: 100%;
-        
+
         .order-button {
           background-color: #4caf50;
           color: white;
-          padding: 10px;
+          padding: $spacing-small;
           border-radius: 5px;
           border: none;
           cursor: pointer;
@@ -110,10 +121,10 @@
 
   .view-more-button {
     display: block;
-    margin: 20px auto;
-    background-color: #007bff;
+    margin: $spacing-medium auto;
+    background-color: $primary-color;
     color: white;
-    padding: 12px 20px;
+    padding: $spacing-small 20px;
     border-radius: 5px;
     text-align: center;
     cursor: pointer;
@@ -122,7 +133,40 @@
     transition: background-color 0.3s ease;
 
     &:hover {
-      background-color: #0056b3;
+      background-color: $secondary-color;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .flash-sale-products {
+      flex-direction: column;
+      align-items: center;
+      overflow-x: visible;
+    }
+
+    .product-card {
+      width: 100%;
+      max-width: 600px;
+      margin-bottom: $spacing-medium;
+    }
+
+    .view-more-button {
+      width: 100%;
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .product-card {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .view-more-button {
+      font-size: 0.9rem;
+      padding: $spacing-small 15px;
     }
   }
 }

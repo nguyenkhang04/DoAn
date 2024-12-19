@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../redux/store";
-import { Button, Spin } from "antd";
+import { Button, Spin, Input } from "antd";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { actFetchAllProducts } from "../redux/features/product/productSlice";
@@ -15,7 +15,8 @@ const ProductPage = () => {
   const dispatch = useDispatch<AppDispatch>();
   const [animateButton, setAnimateButton] = useState<string | null>(null);
   const [cartNotification, setCartNotification] = useState(false);
-  const [showAll, setShowAll] = useState(false);  
+  const [showAll, setShowAll] = useState(false);
+  const [searchQuery, setSearchQuery] = useState<string>("");
 
   useEffect(() => {
     dispatch(actFetchAllProducts({}));
@@ -29,24 +30,45 @@ const ProductPage = () => {
     setTimeout(() => setCartNotification(false), 3000);
   };
 
-  const handleShowAll = () => {
-    setShowAll(true);
+  const handleToggleShowAll = () => {
+    setShowAll((prev) => !prev);
   };
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  
-  const displayedProducts = showAll ? products : products.slice(0, 8);
+  const filteredProducts = products.filter(
+    (product) =>
+      product.category === "phone" &&
+      product.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const displayedProducts = showAll
+    ? filteredProducts
+    : filteredProducts.slice(0, 8);
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+  };
 
   return (
     <div className="home-page">
       <h2 className="title">Các Hãng Sản Phẩm</h2>
       {loading && <Spin />}
       <div className="menu-container">
-        <BrandFilter></BrandFilter>
+        <BrandFilter />
       </div>
+
+      <div className="search-container">
+        <Input
+          placeholder="Tìm kiếm sản phẩm..."
+          value={searchQuery}
+          onChange={handleSearchChange}
+          className="search-input"
+        />
+      </div>
+
       <h2>Điện Thoại</h2>
       <div className="product-list">
         {displayedProducts.map((product) => (
@@ -69,9 +91,6 @@ const ProductPage = () => {
               </div>
             </Link>
             <div className="btn-container">
-              <Button type="primary" className="order-button">
-                Mua ngay
-              </Button>
               <Button
                 type="primary"
                 className={`order-button add-to-cart ${
@@ -86,17 +105,16 @@ const ProductPage = () => {
         ))}
       </div>
 
-      {!showAll && (
-        <Button className="show-more-button" onClick={handleShowAll}>
-          Xem Thêm Sản Phẩm
-        </Button>
-      )}
+      <Button className="show-more-button" onClick={handleToggleShowAll}>
+        {showAll ? "Ẩn Bớt" : "Xem Thêm"}
+      </Button>
 
       {cartNotification && (
         <div className="cart-notification">
           <p>Sản phẩm đã được thêm vào giỏ hàng!</p>
         </div>
       )}
+
       <button className="scroll-to-top" onClick={scrollToTop}>
         ↑
       </button>

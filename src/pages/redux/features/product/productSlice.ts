@@ -1,12 +1,13 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { productApis } from "../../../../apis/product";
 import { message } from "antd";
+import { RootState } from "../../store";
 
 export type TProduct = {
   id: string;
   img: string;
   name: string;
-  price: number; 
+  price: number;
   description: string;
   brand: string;
   category: string;
@@ -15,15 +16,16 @@ export type TProduct = {
 export type TProductState = {
   products: TProduct[];
   loading: boolean;
-  product: TProduct | null; 
+  product: TProduct | null;
+  searchQuery: string;
 };
 
 const initialState: TProductState = {
   products: [],
   loading: false,
   product: null,
+  searchQuery: "",
 };
-
 
 export const actFetchProductById = createAsyncThunk(
   "products/actFetchProductById",
@@ -50,7 +52,11 @@ export const actFetchAllProducts = createAsyncThunk(
 const productSlice = createSlice({
   name: "products",
   initialState,
-  reducers: {},
+  reducers: {
+    setSearchQuery: (state, action) => {
+      state.searchQuery = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(actFetchAllProducts.pending, (state) => {
@@ -73,4 +79,13 @@ const productSlice = createSlice({
   },
 });
 
+export const { setSearchQuery } = productSlice.actions;
+
 export const productReducer = productSlice.reducer;
+
+export const selectFilteredProducts = (state: RootState) => {
+  const { products, searchQuery } = state.product;
+  return products.filter((product) =>
+    product.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+};

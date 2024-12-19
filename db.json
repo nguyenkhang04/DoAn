@@ -6,7 +6,8 @@
       "name": "Samsung Galaxy M55",
       "price": "28,990,000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "samsung" 
+      "brand": "samsung",
+      "category": "phone"
     },
     {
       "id": "Iphone 16 Pro",
@@ -14,7 +15,8 @@
       "name": "Iphone 16 Pro",
       "price": "23.690.000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Iphone"
+      "brand": "Iphone",
+      "category": "phone"
     },
     {
       "id": "Samsung_ZFold6",
@@ -22,7 +24,8 @@
       "name": "Samsung Galaxy Z Fold 6",
       "price": "29,490,000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Samsung"
+      "brand": "Samsung",
+      "category": "phone"
     },
     {
       "id": "Iphone 16 Plus",
@@ -30,7 +33,8 @@
       "name": "Iphone 16 Plus",
       "price": "25.690.000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Iphone"
+      "brand": "Iphone",
+      "category": "phone"
     },
     {
       "id": "Iphone 13",
@@ -38,7 +42,8 @@
       "name": "Iphone 13",
       "price": "13.690.000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Iphone"
+      "brand": "Iphone",
+      "category": "phone"
     },
     {
       "id": "Iphone 16 Pro Max",
@@ -46,7 +51,8 @@
       "name": "Iphone 16 Pro Max",
       "price": "33.690.000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Iphone"
+      "brand": "Iphone",
+      "category": "phone"
     },
     {
       "id": "Samsung_S24Plus",
@@ -54,7 +60,8 @@
       "name": "Samsung Galaxy S24 Plus",
       "price": "27,990,000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Samsung"
+      "brand": "Samsung",
+      "category": "phone"
     },
     {
       "id": "Iphone 11 Pro",
@@ -62,7 +69,8 @@
       "name": "Iphone 11 Pro",
       "price": "9.990.000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Iphone"
+      "brand": "Iphone",
+      "category": "phone"
     },
     {
       "id": "Iphone 15 Pro Max ",
@@ -70,7 +78,8 @@
       "name": "Iphone 15 Pro Max",
       "price": "31.690.000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Iphone"
+      "brand": "Iphone",
+      "category": "phone"
     },
     {
       "id": "Samsung",
@@ -78,7 +87,8 @@
       "name": "Samsung Galaxy A06",
       "price": "3.690.000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Samsung"
+      "brand": "Samsung",
+      "category": "phone"
     },
     {
       "id": "Iphone 11",
@@ -86,7 +96,8 @@
       "name": "Iphone 11",
       "price": "8.690.000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Iphone"
+      "brand": "Iphone",
+      "category": "phone"
     },
     {
       "id": "Iphone 15",
@@ -94,7 +105,8 @@
       "name": "Iphone 15",
       "price": "19.690.000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Iphone"
+      "brand": "Iphone",
+      "category": "phone"
     },
     {
       "id": "Iphone 14",
@@ -102,7 +114,8 @@
       "name": "Iphone 14",
       "price": "16.690.000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Iphone"
+      "brand": "Iphone",
+      "category": "phone"
     },
     {
       "id": "Iphone 16 ",
@@ -110,7 +123,8 @@
       "name": "Iphone 16",
       "price": "20.690.000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Iphone"
+      "brand": "Iphone",
+      "category": "phone"
     },
     {
       "id": "Oppo7",
@@ -118,7 +132,8 @@
       "name": "Oppo A17",
       "price": "4.990.000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Oppo"
+      "brand": "Oppo",
+      "category": "phone"
     },
     {
       "id": "PocoM6Pro11",
@@ -126,7 +141,8 @@
       "name": "Poco M6 Pro",
       "price": "5,990,000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Xiaomi"
+      "brand": "Xiaomi",
+      "category": "phone"
     },
     {
       "id": "Oppo10",
@@ -134,7 +150,8 @@
       "name": "Oppo A60",
       "price": "7.990.000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Oppo"
+      "brand": "Oppo",
+      "category": "phone"
     },
     {
       "id": "Samsung_A05S",
@@ -142,7 +159,8 @@
       "name": "Samsung Galaxy A05s",
       "price": "8,990,000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Samsung"
+      "brand": "Samsung",
+      "category": "phone"
     },
     {
       "id": "PocoM611",
@@ -150,7 +168,8 @@
       "name": "Poco M6",
       "price": "7,990,000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Xiaomi"
+      "brand": "Xiaomi",
+      "category": "phone"
     },
     {
       "id": "Oppo3",
@@ -158,7 +177,8 @@
       "name": "Oppo A18",
       "price": "6.490.000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Oppo"
+      "brand": "Oppo",
+      "category": "phone"
     },
     {
       "id": "Samsung_A25",
@@ -166,7 +186,8 @@
       "name": "Samsung Galaxy A25 5G",
       "price": "10,490,000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Samsung"
+      "brand": "Samsung",
+      "category": "phone"
     },
     {
       "id": "Oppo9",
@@ -174,7 +195,8 @@
       "name": "Oppo A3",
       "price": "3.990.000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Oppo"
+      "brand": "Oppo",
+      "category": "phone"
     },
     {
       "id": "Samsung_ZFlip6",
@@ -182,7 +204,8 @@
       "name": "Samsung Galaxy Z Flip 6",
       "price": "26,490,000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Samsung"
+      "brand": "Samsung",
+      "category": "phone"
     },
     {
       "id": "RedmiNote1311",
@@ -190,7 +213,8 @@
       "name": "Redmi Note 13",
       "price": "6,490,000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Xiaomi"
+      "brand": "Xiaomi",
+      "category": "phone"
     },
     {
       "id": "Samsung_S22",
@@ -198,7 +222,8 @@
       "name": "Samsung Galaxy S22",
       "price": "24,490,000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Samsung"
+      "brand": "Samsung",
+      "category": "phone"
     },
     {
       "id": "Samsung_A35",
@@ -206,7 +231,8 @@
       "name": "Samsung Galaxy A35",
       "price": "12,990,000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Samsung"
+      "brand": "Samsung",
+      "category": "phone"
     },
     {
       "id": "Oppo4",
@@ -214,7 +240,8 @@
       "name": "Oppo Reno12",
       "price": "12,690,000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Oppo"
+      "brand": "Oppo",
+      "category": "phone"
     },
     {
       "id": "Samsung_A16",
@@ -222,7 +249,8 @@
       "name": "Samsung Galaxy A16",
       "price": "9,490,000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Samsung"
+      "brand": "Samsung",
+      "category": "phone"
     },
     {
       "id": "Oppo2",
@@ -230,7 +258,8 @@
       "name": "Oppo Reno12 F",
       "price": "10.690.000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Oppo"
+      "brand": "Oppo",
+      "category": "phone"
     },
     {
       "id": "Samsung_ZFold5",
@@ -238,7 +267,8 @@
       "name": "Samsung Galaxy Z Fold 5",
       "price": "27,990,000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Samsung"
+      "brand": "Samsung",
+      "category": "phone"
     },
     {
       "id": "Oppo5",
@@ -246,7 +276,8 @@
       "name": "Oppo Find N3",
       "price": "27.990.000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Oppo"
+      "brand": "Oppo",
+      "category": "phone"
     },
     {
       "id": "Samsung_S24FE",
@@ -254,7 +285,8 @@
       "name": "Samsung Galaxy S24 FE",
       "price": "18,990,000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Samsung"
+      "brand": "Samsung",
+      "category": "phone"
     },
     {
       "id": "Samsung_ZFlip5",
@@ -262,7 +294,8 @@
       "name": "Samsung Galaxy Z Flip 5",
       "price": "25,490,000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Samsung"
+      "brand": "Samsung",
+      "category": "phone"
     },
     {
       "id": "Oppo6",
@@ -270,7 +303,8 @@
       "name": "Oppo Reno11 F",
       "price": "9.490.000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Oppo"
+      "brand": "Oppo",
+      "category": "phone"
     },
     {
       "id": "Oppo8",
@@ -278,7 +312,8 @@
       "name": "Oppo A58",
       "price": "8.490.000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Oppo"
+      "brand": "Oppo",
+      "category": "phone"
     },
     {
       "id": "RedmiA333",
@@ -286,7 +321,8 @@
       "name": "Redmi A3",
       "price": "4,590,000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Xiaomi"
+      "brand": "Xiaomi",
+      "category": "phone"
     },
     {
       "id": "PocoM6Pro2231231",
@@ -294,7 +330,8 @@
       "name": "Poco M6 Pro",
       "price": "5,990,000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Xiaomi"
+      "brand": "Xiaomi",
+      "category": "phone"
     },
     {
       "id": "Xiaomi14T4444",
@@ -302,7 +339,8 @@
       "name": "Xiaomi 14T",
       "price": "12,490,000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Xiaomi"
+      "brand": "Xiaomi",
+      "category": "phone"
     },
     {
       "id": "Xiaomi142525",
@@ -310,7 +348,8 @@
       "name": "Xiaomi 14",
       "price": "14,990,000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Xiaomi"
+      "brand": "Xiaomi",
+      "category": "phone"
     },
     {
       "id": "Redmi14C3131",
@@ -318,7 +357,8 @@
       "name": "Redmi 14C",
       "price": "5,490,000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Xiaomi"
+      "brand": "Xiaomi",
+      "category": "phone"
     },
     {
       "id": "Xiaomi14TPro43344334",
@@ -326,7 +366,8 @@
       "name": "Xiaomi 14T Pro",
       "price": "18,990,000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Xiaomi"
+      "brand": "Xiaomi",
+      "category": "phone"
     },
     {
       "id": "Xiaomi14Ultra56565656",
@@ -334,7 +375,8 @@
       "name": "Xiaomi 14 Ultra",
       "price": "29,990,000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Xiaomi"
+      "brand": "Xiaomi",
+      "category": "phone"
     },
     {
       "id": "realme_c61_xanh_5515515",
@@ -342,7 +384,8 @@
       "name": "Realme C61 Xanh 5",
       "price": "15.990.000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Realme"
+      "brand": "Realme",
+      "category": "phone"
     },
     {
       "id": "realme_c60_xanh_4456452456452",
@@ -350,7 +393,8 @@
       "name": "Realme C60 Xanh 4",
       "price": "18.290.000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Realme"
+      "brand": "Realme",
+      "category": "phone"
     },
     {
       "id": "realme_13_plus_5g_tim_525623562562356",
@@ -358,7 +402,8 @@
       "name": "Realme 13 Plus 5G Tim 5",
       "price": "22.500.000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Realme"
+      "brand": "Realme",
+      "category": "phone"
     },
     {
       "id": "realme_note_60_xanh_413451345",
@@ -366,7 +411,8 @@
       "name": "Realme Note 60 Xanh 4",
       "price": "19.750.000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Realme"
+      "brand": "Realme",
+      "category": "phone"
     },
     {
       "id": "realme_c51_dd5671356713",
@@ -374,7 +420,8 @@
       "name": "Realme C51 DD",
       "price": "17.999.000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Realme"
+      "brand": "Realme",
+      "category": "phone"
     },
     {
       "id": "realme_c61_xanh_5784578784578",
@@ -382,7 +429,8 @@
       "name": "Realme C61 Xanh 5",
       "price": "16.490.000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Realme"
+      "brand": "Realme",
+      "category": "phone"
     },
     {
       "id": "nokia_220_4g_cam3568335683",
@@ -390,7 +438,8 @@
       "name": "Nokia 220 4G Cam",
       "price": "2.500.000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Nokia"
+      "brand": "Nokia",
+      "category": "phone"
     },
     {
       "id": "nokia_3210_4g_vang356835356835",
@@ -398,7 +447,8 @@
       "name": "Nokia 3210 4G Vàng",
       "price": "2.800.000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Nokia"
+      "brand": "Nokia",
+      "category": "phone"
     },
     {
       "id": "nokia_105_ds_pro_4g3568735635687356",
@@ -406,7 +456,8 @@
       "name": "Nokia 105 DS Pro 4G",
       "price": "1.200.000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Nokia"
+      "brand": "Nokia",
+      "category": "phone"
     },
     {
       "id": "nokia_110_ds_pro_4g356783568356783568",
@@ -414,7 +465,8 @@
       "name": "Nokia 110 DS Pro 4G",
       "price": "1.450.000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Nokia"
+      "brand": "Nokia",
+      "category": "phone"
     },
     {
       "id": "honor_x7c_xanh_535683563568356",
@@ -422,7 +474,8 @@
       "name": "Honor X7C Xanh 5",
       "price": "8.990.000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Honor"
+      "brand": "Honor",
+      "category": "phone"
     },
     {
       "id": "honor_x6b_xanh_3356783568356783568",
@@ -430,7 +483,8 @@
       "name": "Honor X6B Xanh 3",
       "price": "7.500.000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Honor"
+      "brand": "Honor",
+      "category": "phone"
     },
     {
       "id": "honor_x7b_xanh_235624673562467",
@@ -438,7 +492,8 @@
       "name": "Honor X7B Xanh 2",
       "price": "9.200.000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Honor"
+      "brand": "Honor",
+      "category": "phone"
     },
     {
       "id": "honor_x9b_cam_4356824673467356824673467",
@@ -446,7 +501,8 @@
       "name": "Honor X9B Cam",
       "price": "10.500.000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Honor"
+      "brand": "Honor",
+      "category": "phone"
     },
     {
       "id": "poco_m6_12345",
@@ -454,7 +510,8 @@
       "name": "Poco M6",
       "price": "4,890,000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Poco"
+      "brand": "Poco",
+      "category": "phone"
     },
     {
       "id": "poco_x6_blue_67890",
@@ -462,7 +519,8 @@
       "name": "Poco X6 Blue",
       "price": "5,290,000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Poco"
+      "brand": "Poco",
+      "category": "phone"
     },
     {
       "id": "poco_m6_pro_112233",
@@ -470,7 +528,8 @@
       "name": "Poco M6 Pro",
       "price": "6,490,000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Poco"
+      "brand": "Poco",
+      "category": "phone"
     },
     {
       "id": "poco_x6_glass_445566",
@@ -478,7 +537,8 @@
       "name": "Poco X6 Glass",
       "price": "3,990,000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Poco"
+      "brand": "Poco",
+      "category": "phone"
     },
     {
       "id": 1,
@@ -521,11 +581,27 @@
       "category": "accessory"
     },
     {
+      "id": 8,
+      "img": "https://clickbuy.com.vn/uploads/pro/sac-du-phong-samsung-10000mah-25w-chinh-hang-sm-183917.png",
+      "name": "Sạc Pisen Quick Ice Crystal Colorful PD 30W",
+      "price": 900000,
+      "brand": "Pisen",
+      "category": "accessory"
+    },
+    {
       "id": 6,
       "img": "https://clickbuy.com.vn/uploads/pro/op-lung-trong-linh-hoat-z-flip5-chinh-hang-sm-192670.png",
       "name": "Ốp Lưng Trong Linh Hoạt Z Flip 5",
       "price": 1300000,
       "brand": "Samsung",
+      "category": "accessory"
+    },
+    {
+      "id": 3,
+      "img": "https://clickbuy.com.vn/uploads/pro/sac-anker-powerport-iii-nano-20w-sm-196999.jpg",
+      "name": "Sạc Anker PowerPort III Nano 20W",
+      "price": 800000,
+      "brand": "Anker",
       "category": "accessory"
     },
     {
@@ -537,7 +613,7 @@
       "category": "accessory"
     },
     {
-      "id": 7,
+      "id": 8,
       "img": "https://clickbuy.com.vn/uploads/pro/sac-du-phong-samsung-10000mah-25w-chinh-hang-sm-183917.png",
       "name": "Sạc Pisen Quick Ice Crystal Colorful PD 30W",
       "price": 900000,

@@ -33,9 +33,10 @@ const Advertisement: React.FC = () => {
       <div className="Advertisement-category">
         <div>
           <Link to={"/product"}>Điện Thoại</Link>
-          <Link to={"/"}>Iphone</Link>
-          <Link to={"/"}>Samsung</Link>
-          <Link to={"/"}>Phụ Kiện</Link>
+          <Link to={"/laptop"}>Laptop</Link>
+          <Link to={"/accessory"}>Phụ Kiện</Link>
+          <Link to={"/"}>Điện Thoại Cũ</Link>
+          <Link to={"/"}>Âm Thanh</Link>
           <Link to={"/about"}>Bảo Hành</Link>
         </div>
       </div>

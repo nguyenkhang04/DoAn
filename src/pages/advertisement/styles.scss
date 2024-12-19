@@ -4,18 +4,22 @@ $box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 
 .Advertisement-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
   box-sizing: border-box;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
 
   .Advertisement-category {
-    flex: 1;
+    flex: 1 1 200px;
     max-width: 200px;
 
     div {
       display: flex;
       flex-direction: column;
-      gap: 29px;
+      gap: 14.5px;
 
       a {
         display: block;
@@ -31,8 +35,8 @@ $box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         transition: all 0.3s ease;
 
         &:hover {
-          background-color: $light-gray;
-          color: $primary-color;
+          background-color:#cb1c22;
+          color: white;
           transform: translateY(-2px);
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
@@ -41,7 +45,7 @@ $box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   }
 
   .slideshow-wrapper {
-    flex: 2;
+    flex: 2 1 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -49,6 +53,7 @@ $box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     .slideshow-container {
       position: relative;
       flex: 3;
+      max-width: 100%;
 
       .mySlides {
         display: none;
@@ -59,10 +64,11 @@ $box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 
         img {
           width: 100%;
-          height: 250px;
+          height: auto;
           object-fit: cover;
           border-radius: 8px;
           box-shadow: $box-shadow;
+          transition: transform 0.3s ease;
         }
       }
 
@@ -101,7 +107,8 @@ $box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 
         img {
           width: 100%;
-          height: 100px;
+          height: auto;
+          max-height: 100px;
           object-fit: cover;
           border-radius: 8px;
           box-shadow: $box-shadow;
@@ -111,7 +118,7 @@ $box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   }
 
   .Advertisement-promo {
-    flex: 1;
+    flex: 1 1 200px;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -119,7 +126,8 @@ $box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     .promo-item {
       img {
         width: 100%;
-        height: 110px;
+        height: auto;
+        max-height: 110px;
         object-fit: cover;
         border-radius: 8px;
         box-shadow: $box-shadow;
@@ -129,6 +137,57 @@ $box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
           transform: scale(1.05);
         }
       }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    padding: 15px;
+    gap: 15px;
+
+    .Advertisement-category,
+    .slideshow-wrapper,
+    .Advertisement-promo {
+      flex: 1 1 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .Advertisement-container {
+      padding: 10px;
+    }
+
+    .Advertisement-category,
+    .slideshow-wrapper,
+    .Advertisement-promo {
+      max-width: 600px;
+    }
+
+    .slideshow-wrapper .slideshow-container img {
+      max-width: 300px;
+      height: auto;
+    }
+
+    .Advertisement-promo img {
+      max-height: 100px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .Advertisement-category a,
+    .slideshow-wrapper .prev,
+    .slideshow-wrapper .next {
+      font-size: 12px;
+      padding: 8px 12px;
+    }
+
+    .slideshow-wrapper .slideshow-container img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .Advertisement-promo img {
+      max-height: 80px;
     }
   }
 }

@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import { actFetchAllProducts } from "../redux/features/product/productSlice";
 import "./styles.scss";
 import { addToCart } from "../redux/features/product/cartSlice";
-import Advertisement from "../advertisement/Advertisement";
 
 const AccessoryPage = () => {
   const { loading, products } = useSelector(
@@ -15,6 +14,7 @@ const AccessoryPage = () => {
   const dispatch = useDispatch<AppDispatch>();
   const [animateButton, setAnimateButton] = useState<string | null>(null);
   const [cartNotification, setCartNotification] = useState(false);
+  const [expanded, setExpanded] = useState(false);  
 
   useEffect(() => {
     dispatch(actFetchAllProducts({}));
@@ -32,13 +32,17 @@ const AccessoryPage = () => {
     setTimeout(() => setCartNotification(false), 3000);
   };
 
+  const handleShowMore = () => {
+    setExpanded(!expanded);
+  };
+
   return (
     <div className="accessory-page">
       <h2 className="title">Phụ Kiện</h2>
       {loading && <Spin />}
-      <div className="product-list">
+      <div className={`product-list ${expanded ? 'expanded' : ''}`}>
         {accessories.length > 0 ? (
-          accessories.map((product) => (
+          accessories.slice(0, expanded ? accessories.length : 6).map((product) => (
             <div key={product.id} className="product-card">
               <Link to={`/product/${product.id}`} className="product-link">
                 <img
@@ -59,9 +63,7 @@ const AccessoryPage = () => {
               <div className="btn-container">
                 <Button
                   type="primary"
-                  className={`order-button add-to-cart ${
-                    animateButton === product.id ? "animate" : ""
-                  }`}
+                  className={`order-button add-to-cart ${animateButton === product.id ? "animate" : ""}`}
                   onClick={() => handleAddToCart(product)}
                 >
                   Bỏ Vào Giỏ Hàng
@@ -74,14 +76,16 @@ const AccessoryPage = () => {
         )}
       </div>
 
+      <Button onClick={handleShowMore} className="show-more-button">
+        {expanded ? "Ẩn bớt" : "Xem Thêm"}
+      </Button>
+
       {cartNotification && (
         <div className="cart-notification">
           <p>Sản phẩm đã được thêm vào giỏ hàng!</p>
         </div>
       )}
-      
     </div>
-    
   );
 };
 
