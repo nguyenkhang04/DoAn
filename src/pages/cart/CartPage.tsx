@@ -134,7 +134,7 @@ const CartPage = () => {
           chi tiết hơn.
         </div>
 
-        <Button type="primary" block onClick={handlePayment}>
+        <Button className='buy' type="primary" block onClick={handlePayment}>
           TIẾN HÀNH ĐẶT HÀNG
         </Button>
       </div>

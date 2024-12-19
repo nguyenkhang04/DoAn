@@ -11,8 +11,7 @@ $text-color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  padding: $spacing-medium;
+  padding: 30px;
   max-width: $max-width;
   margin: 0 auto;
   flex-direction: column;
@@ -82,12 +81,12 @@ $text-color: #333;
 
   &.btn-primary {
     margin: 5px 0;
-    background-color: #508bfc;
+    background-color: #cb1c22;
     border: none;
     color: #fff;
 
     &:hover {
-      background-color: #406fca;
+      background-color: #b6585b;
       box-shadow: 0 4px 6px rgba(80, 139, 252, 0.3);
     }
 
@@ -99,13 +98,13 @@ $text-color: #333;
 }
 
 .link-primary {
-  color: #508bfc;
+  color: #cb1c22;
   font-weight: bold;
   text-decoration: underline;
   cursor: pointer;
 
   &:hover {
-    color: #406fca;
+    color: #c55054;
   }
 }
 

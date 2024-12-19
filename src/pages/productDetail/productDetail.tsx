@@ -52,10 +52,7 @@ const ProductDetailPage = () => {
               <label>Màu sắc: </label>
               <button className="color-option">Xanh</button>
               <button className="color-option">Đen</button>
-            </div>
-            <div className="storage-options">
-              <label>Dung lượng: </label>
-              <button className="storage-option">128 GB</button>
+              <button className="color-option">Trắng</button>
             </div>
           </div>
 
@@ -65,10 +62,6 @@ const ProductDetailPage = () => {
           </div>
 
           <div className="product-actions">
-            <Button type="primary" className="order-button">
-              Mua ngay
-            </Button>
-
             <Button
               type="primary"
               className={`order-button add-to-cart ${

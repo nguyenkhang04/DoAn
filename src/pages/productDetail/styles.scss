@@ -20,7 +20,7 @@
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    max-width: 600px;
+    max-width: 500px;
 
     &:hover {
       transform: translateY(-10px);
@@ -28,7 +28,7 @@
     }
 
     .main-image {
-      width: 100%;
+      width: 80%;
       max-width: 300px;
       height: auto;
       border-radius: 10px;
@@ -46,7 +46,7 @@
       margin-top: 10px;
 
       img {
-        width: 80px;
+        width: 70px;
         height: auto;
         cursor: pointer;
         border-radius: 8px;
@@ -73,7 +73,7 @@
       transition: color 0.3s ease;
 
       &:hover {
-        color: #1e88e5;
+        color: #e53935;
       }
     }
 
@@ -119,7 +119,7 @@
     }
 
     .promotion {
-      background-color: #eee7d0;
+      background-color: #ecebe8;
       padding: 15px;
       border-radius: 5px;
       margin-bottom: 20px;

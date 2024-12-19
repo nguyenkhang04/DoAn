@@ -32,19 +32,19 @@ $text-color: #333;
     }
 
     .payment-form {
-      width: 320px;
+      width: 250px;
       padding: $spacing-medium;
       background-color: #fff;
-      border-radius: 10px;
+      border-radius: 20px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       position: sticky;
       top: $spacing-small;
-
+      
       @media (max-width: 1024px) {
         width: 100%;
         position: static;
       }
-
+      
       h3 {
         font-size: 24px;
         font-weight: 600;
@@ -64,6 +64,7 @@ $text-color: #333;
         color: white;
         width: 100%;
         padding: 12px 0;
+        
       }
 
       .ant-btn:hover {
@@ -71,10 +72,10 @@ $text-color: #333;
       }
     }
   }
-
+  
   .cart-items .product-card {
-    width: 100%; /* Make all product cards the same size */
-    max-width: 300px; /* Add a max-width to limit the size */
+    width: 80%; 
+    max-width: 300px; 
     padding: $spacing-small;
     background-color: #fff;
     border-radius: 8px;
@@ -82,7 +83,7 @@ $text-color: #333;
     margin-bottom: $spacing-medium;
 
     .product-image {
-      width: 100%;
+      width: 80%;
       height: auto;
       border-radius: 5px;
     }

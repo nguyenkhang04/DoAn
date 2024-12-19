@@ -151,10 +151,10 @@ const LoginPage: React.FC = () => {
             <div className="card-body p-5 text-center">
               <h3 className="mb-5">
                 {isRegistering
-                  ? "Register"
+                  ? "Đăng Ký"
                   : isLoggedIn
                   ? `Welcome, ${user?.fullName || ""}`
-                  : "Sign In"}
+                  : "Đăng Nhập"}
               </h3>
 
               {!isLoggedIn ? (
@@ -173,7 +173,7 @@ const LoginPage: React.FC = () => {
                           required
                         />
                         <label className="form-label" htmlFor="fullName">
-                          Full Name
+                          Họ Tên
                         </label>
                       </div>
 
@@ -189,7 +189,7 @@ const LoginPage: React.FC = () => {
                           required
                         />
                         <label className="form-label" htmlFor="age">
-                          Age
+                          Tuổi
                         </label>
                       </div>
 
@@ -205,7 +205,7 @@ const LoginPage: React.FC = () => {
                           required
                         />
                         <label className="form-label" htmlFor="phone">
-                          Phone Number
+                          Số Điện Thoại
                         </label>
                       </div>
                     </>
@@ -239,7 +239,7 @@ const LoginPage: React.FC = () => {
                       required
                     />
                     <label className="form-label" htmlFor="password">
-                      Password
+                      Mật Khẩu
                     </label>
                   </div>
 
@@ -256,7 +256,7 @@ const LoginPage: React.FC = () => {
                         required
                       />
                       <label className="form-label" htmlFor="confirmPassword">
-                        Confirm Password
+                        Nhập Lại Mật Khẩu
                       </label>
                     </div>
                   )}
@@ -268,7 +268,7 @@ const LoginPage: React.FC = () => {
                     type="button"
                     onClick={handleSubmit}
                   >
-                    {isRegistering ? "Register" : "Sign In"}
+                    {isRegistering ? "Đăng Ký" : "Đăng Nhập"}
                   </button>
 
                   <div className="mt-3">
@@ -281,7 +281,7 @@ const LoginPage: React.FC = () => {
                         style={{ cursor: "pointer" }}
                         onClick={toggleForm}
                       >
-                        {isRegistering ? "Sign In" : "Register"}
+                        {isRegistering ? "Đăng Nhập" : "Đăng Ký"}
                       </span>
                     </p>
                   </div>
@@ -297,7 +297,7 @@ const LoginPage: React.FC = () => {
                     className="btn btn-danger btn-lg btn-block"
                     onClick={handleLogout}
                   >
-                    Log Out
+                    Đăng Xuất
                   </button>
                 </div>
               )}

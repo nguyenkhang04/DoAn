@@ -619,6 +619,86 @@
       "price": 900000,
       "brand": "Pisen",
       "category": "accessory"
+    },
+    {
+      "id": "921345601",
+      "img": "https://clickbuy.com.vn/uploads/pro/macbook-air-2020-13-inch-apple-m1-8gb-ram-256gb-ssd-chinh-hang-viet-nam-sm-120332.jpg",
+      "name": "MacBook Air 2020 Apple M1",
+      "price": "29800000",
+      "brand": "Apple",
+      "category": "Laptop"
+    },
+    {
+      "id": "654387921",
+      "img": "https://clickbuy.com.vn/uploads/pro/macbook-air-2022-13-inch-apple-m2-8gb-ram-256gb-ssd-chinh-hang-vietnam-sm-159308.jpg",
+      "name": "MacBook Air 2022 Apple M2",
+      "price": "27500000",
+      "brand": "Apple",
+      "category": "Laptop"
+    },
+    {
+      "id": "832910756",
+      "img": "https://clickbuy.com.vn/uploads/pro/macbook-air-2024-13-inches-apple-m3-8gb-256gb-chinh-hang-sm-197665.jpg",
+      "name": "MacBook Air 2024 Apple M3",
+      "price": "28900000",
+      "brand": "Apple",
+      "category": "Laptop"
+    },
+    {
+      "id": "470129834",
+      "img": "https://clickbuy.com.vn/uploads/pro/macbook-air-2023-15-inch-apple-m2-8gb-256gb-chinh-hang-viet-nam-sm-191449.jpg",
+      "name": "MacBook Air 2023 Apple M2",
+      "price": "26200000",
+      "brand": "Apple",
+      "category": "Laptop"
+    },
+    {
+      "id": "310582476",
+      "img": "https://clickbuy.com.vn/uploads/pro/laptop-hp-240-g8-518v5pa-core-i5-1135g7-8gb-256gb-intel-iris-xe-140-inch-fhd-win-10-bac-sm-142091.png",
+      "name": "HP 240 G8 Core i5",
+      "price": "24500000",
+      "brand": "HP",
+      "category": "Laptop"
+    },
+    {
+      "id": "981602473",
+      "img": "https://clickbuy.com.vn/uploads/pro/laptop-hp-340s-g7-36a35pa-core-i5-1035g1-8gb-512gb-intel-uhd-140-inch-fhd-win-10-xam-sm-143370.png",
+      "name": "HP 340S G7 Core i5",
+      "price": "22200000",
+      "brand": "HP",
+      "category": "Laptop"
+    },
+    {
+      "id": "547819032",
+      "img": "https://clickbuy.com.vn/uploads/pro/laptop-dell-vostro-5515-r5-5500u-8gb-ram-256gb-ssd-156-inch-fhd-win10-xam-nhap-khau-2021-sm-146433.jpg",
+      "name": "Dell Vostro 5515 R5",
+      "price": "21500000",
+      "brand": "Dell",
+      "category": "Laptop"
+    },
+    {
+      "id": "784321095",
+      "img": "https://clickbuy.com.vn/uploads/pro/laptop-dell-inspiron-5510-0wt8r1-i5-11300h-8gb-ram-256gb-ssd-156-inch-fhd-win10office-bac-2021-sm-147993.jpg",
+      "name": "Dell Inspiron 5510 i5",
+      "price": "25500000",
+      "brand": "Dell",
+      "category": "Laptop"
+    },
+    {
+      "id": "623419087",
+      "img": "https://clickbuy.com.vn/uploads/pro/dell-inspiron-15-3501-i5-1035g1-8gb-ram-256gb-pcie-156-fhd-win10-den-touch-sm-140466.png",
+      "name": "Dell Inspiron 15 3501",
+      "price": "23500000",
+      "brand": "Dell",
+      "category": "Laptop"
+    },
+    {
+      "id": "891034572",
+      "img": "https://clickbuy.com.vn/uploads/pro/microsoft-surface-pro-x-sq1-ram-16gb-ssd-256gb-new-sm-144029.png",
+      "name": "Microsoft Surface Pro X SQ1",
+      "price": "28900000",
+      "brand": "Microsoft",
+      "category": "Laptop"
     }
   ],
   "users": [

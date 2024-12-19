@@ -13,10 +13,13 @@ $text-color: #333;
   margin: 0 auto;
 
   .title {
-    font-size: 24px;
-    font-weight: 600;
+    font-size: 28px;
+    font-weight: 700;
     margin-bottom: 30px;
-    text-align: center;
+    color: #333;
+    letter-spacing: 1px;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
   .menu-container {
@@ -72,10 +75,11 @@ $text-color: #333;
       text-decoration: none;
 
       .product-image {
-        width: 70%;
-        height: auto;
-        border-radius: 4px;
-        transition: transform 0.3s ease;
+      width: 70%;
+      max-width: 300px;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s ease, filter 0.3s ease;
 
         &:hover {
           transform: scale(1.05);
@@ -115,36 +119,23 @@ $text-color: #333;
 
     .btn-container {
       display: flex;
-      justify-content: space-between;
-      margin-top: 20px;
-
-      .order-button {
-        width: 48%;
-        background-color: #cb1c22;
-        border-color: #e1e5e7;
-        font-size: 14px;
-        border-radius: 7px;
-        color: #fff;
-        transition: background-color 0.3s, transform 0.3s ease;
-
-        &:hover {
-          background-color: #cb1c22;
-          border-color: #d4d4d4;
-          transform: scale(1.05);
-        }
-      }
-
+      justify-content: center;
+      margin-top: 15px;
+      
       .add-to-cart {
         background-color: #cb1c22;
-        border-color: #dadada;
-        font-size: 14px;
-        border-radius: 7px;
-        transition: background-color 0.3s, transform 0.3s ease;
+        border-color: #c9c9c9;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: background-color 0.3s, transform 0.3s ease, box-shadow 0.3s ease;
 
         &:hover {
-          background-color: #cb1c22;
-          border-color: #cecece;
+          background-color: #b4363a;
+          border-color: #567f9f;
           transform: scale(1.05);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         &.animate {
@@ -183,16 +174,16 @@ $text-color: #333;
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #e3e9ec;
-    color: #000000;
+    background-color: #2b2828;
+    color: #ffffff;
     padding: 10px;
-    border-radius: 60%;
+    border-radius: 50%;
     font-size: 20px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s ease;
 
     &:hover {
-      background-color: #ced7dd;
+      background-color: #cb1c22;
       transform: translateY(-5px);
     }
   }
