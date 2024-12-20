@@ -55,6 +55,9 @@ const HeaderComponent: React.FC = () => {
               <Link to={"/laptop"}>Laptop</Link>
             </li>
             <li className="navigation-item">
+              <Link to={"/sound"}>Âm Thanh</Link>
+            </li>
+            <li className="navigation-item">
               <Link to={"/accessory"}>Phụ Kiện</Link>
             </li>
             <li className="navigation-item">

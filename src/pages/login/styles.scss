@@ -11,7 +11,7 @@ $text-color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px;
+  padding: 20px;
   max-width: $max-width;
   margin: 0 auto;
   flex-direction: column;
@@ -21,10 +21,10 @@ $text-color: #333;
   border: none;
   border-radius: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 4rem;
+  padding: 3rem;
   background: linear-gradient(145deg, #ffffff, #f3f3f3);
-  max-width: 500px;
-  width: 100%;
+  max-width: 4400px;
+  width: 90%;
 }
 
 .form-outline {
