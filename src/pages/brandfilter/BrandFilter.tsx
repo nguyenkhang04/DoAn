@@ -96,9 +96,6 @@ const BrandFilter: React.FC = () => {
                   </div>
                 </Link>
                 <div className="btn-container">
-                  <Button type="primary" className="order-button">
-                    Mua ngay
-                  </Button>
                   <Button
                     type="primary"
                     className={`order-button add-to-cart ${

@@ -122,7 +122,7 @@ const CartPage = () => {
           onChange={e => setAddress(e.target.value)}
           style={{ marginBottom: 10 }}
         />
-        <Input.TextArea
+        <Input
           placeholder="Địa chỉ"
           value={address}
           onChange={e => setAddress(e.target.value)}
