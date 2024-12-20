@@ -11,6 +11,17 @@ $text-color: #333;
   padding: 20px 100px;
   max-width: $max-width;
   margin: 0 auto;
+
+  .total-price {
+    margin-top: 110px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ff4500;
+    span {
+      color: #000;
+      font-weight: normal;
+    }
+  }
   .cart-item-card {
     width: 350px;
     height: 280px;

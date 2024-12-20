@@ -13,6 +13,7 @@ import AboutPage from "./pages/about/AboutPage";
 import CartPage from "./pages/cart/CartPage";
 import AccessoryPage from "./pages/accessory/AccessoryPage";
 import LaptopPage from "./pages/laptop/LaptopPage";
+import SoundPage from "./pages/soundpage/SoundPage";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             ></Route>
             <Route path="/login" element={<LoginPage></LoginPage>}></Route>
             <Route path="/cart" element={<CartPage></CartPage>}></Route>
+            <Route path="/sound" element={<SoundPage></SoundPage>}></Route>
             <Route
               path="/laptop"
               element={<LaptopPage></LaptopPage>}

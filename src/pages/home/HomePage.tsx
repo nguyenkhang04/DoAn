@@ -4,6 +4,7 @@ import Advertisement from "../advertisement/Advertisement";
 import AccessoryPage from "../accessory/AccessoryPage";
 import LaptopPage from "../laptop/LaptopPage";
 import "./styles.scss";
+import SoundPage from "../soundpage/SoundPage";
 
 const HomePage = () => {
   return (
@@ -46,6 +47,7 @@ const HomePage = () => {
         />
       </div>
       <LaptopPage />
+      <SoundPage></SoundPage>
     </div>
   );
 };

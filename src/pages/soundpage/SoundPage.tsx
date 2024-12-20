@@ -6,7 +6,7 @@ import { addToCart } from "../redux/features/product/cartSlice";
 import { Button, Input, Spin } from "antd";
 import { Link } from "react-router-dom";
 
-const LaptopPage: React.FC = () => {
+const SoundPage: React.FC = () => {
   const { loading, products } = useSelector(
     (state: RootState) => state.product
   );
@@ -36,7 +36,7 @@ const LaptopPage: React.FC = () => {
   };
   const filteredProducts = products.filter(
     (product) =>
-      product.category === "Laptop" &&
+      product.category === "Sound" &&
       product.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
   const displayedProducts = showAll
@@ -47,7 +47,7 @@ const LaptopPage: React.FC = () => {
   };
   return (
     <div className="home-page">
-      <h2>Laptop</h2>
+      <h2>Âm Thanh</h2>
       <div className="product-list">
         {displayedProducts.map((product) => (
           <div key={product.id} className="product-card">
@@ -100,4 +100,4 @@ const LaptopPage: React.FC = () => {
   );
 };
 
-export default LaptopPage;
+export default SoundPage;

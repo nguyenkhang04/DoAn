@@ -36,7 +36,7 @@ const Advertisement: React.FC = () => {
           <Link to={"/laptop"}>Laptop</Link>
           <Link to={"/accessory"}>Phụ Kiện</Link>
           <Link to={"/"}>Sửa Chữa</Link>
-          <Link to={"/"}>Âm Thanh</Link>
+          <Link to={"/sound"}>Âm Thanh</Link>
           <Link to={"/about"}>Bảo Hành</Link>
         </div>
       </div>
