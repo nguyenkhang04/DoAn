@@ -1,5 +1,6 @@
 import React, { useState, ChangeEvent, useEffect } from "react";
 import "./styles.scss";
+import { Link } from "react-router-dom";
 
 const API_URL = "http://localhost:9999/users";
 
@@ -63,18 +64,32 @@ const LoginPage: React.FC = () => {
       return false;
     }
 
+    const isEmailValid = /^\S+@\S+\.\S+$/.test(email);
+    const isPhoneValid = /^\d{10,11}$/.test(phone);
+
+    if (!isEmailValid) {
+      setError("Email không hợp lệ!");
+      return false;
+    }
+
+    if (!isPhoneValid) {
+      setError("Số điện thoại không hợp lệ!");
+      return false;
+    }
+
+    if (age < 16) {
+      setError("Tuổi phải lớn hơn hoặc bằng 16!");
+      return false;
+    }
+
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+    if (!passwordRegex.test(password)) {
+      setError("Mật khẩu phải có ít nhất 6 ký tự, bao gồm cả chữ và số!");
+      return false;
+    }
+
     if (password !== confirmPassword) {
       setError("Mật khẩu không khớp!");
-      return false;
-    }
-
-    if (age < 18) {
-      setError("Tuổi phải lớn hơn hoặc bằng 18!");
-      return false;
-    }
-
-    if (!/^\d{10,11}$/.test(phone)) {
-      setError("Số điện thoại không hợp lệ!");
       return false;
     }
 
@@ -87,10 +102,33 @@ const LoginPage: React.FC = () => {
     if (isRegistering) {
       if (!validateForm()) return;
 
-      const newUser = { fullName, age, phone, email, password };
+      const response = await fetch(`${API_URL}?email=${email}`);
+      const users = await response.json();
+
+      if (users.length > 0) {
+        setError("Email đã được đăng ký!");
+        return;
+      }
+
+      const phoneResponse = await fetch(`${API_URL}?phone=${phone}`);
+      const phoneUsers = await phoneResponse.json();
+
+      if (phoneUsers.length > 0) {
+        setError("Số điện thoại đã được đăng ký!");
+        return;
+      }
+
+      const newUser = {
+        fullName,
+        age,
+        phone,
+        email,
+        password,
+        userId: Date.now(),
+      };
 
       try {
-        const response = await fetch(API_URL, {
+        const registerResponse = await fetch(API_URL, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -98,7 +136,7 @@ const LoginPage: React.FC = () => {
           body: JSON.stringify(newUser),
         });
 
-        if (response.ok) {
+        if (registerResponse.ok) {
           alert("Đăng ký thành công!");
           setIsRegistering(false);
         } else {
@@ -116,7 +154,10 @@ const LoginPage: React.FC = () => {
           const loggedInUser = users[0];
           setUser(loggedInUser);
           setIsLoggedIn(true);
+
           sessionStorage.setItem("user", JSON.stringify(loggedInUser));
+          sessionStorage.setItem("userId", loggedInUser.userId);
+
           alert("Đăng nhập thành công!");
         } else {
           setError("Email hoặc mật khẩu không đúng!");
@@ -127,13 +168,15 @@ const LoginPage: React.FC = () => {
     }
   };
 
-  const handleLogout = (): void => {
+  const handleUpdateInfo = () => {
+    console.log("Cập nhật thông tin");
+  };
+
+  const handleLogout = () => {
     setIsLoggedIn(false);
     setUser(null);
-    setEmail("");
-    setPassword("");
-    setShowAccountForm(false);
     sessionStorage.removeItem("user");
+    sessionStorage.removeItem("userId");
   };
 
   const toggleAccountForm = (): void => {
@@ -148,8 +191,8 @@ const LoginPage: React.FC = () => {
             className="card shadow-2-strong"
             style={{ borderRadius: "1rem" }}
           >
-            <div className="card-body p-5 text-center">
-              <h3 className="mb-5">
+            <div className="card-body p-5">
+              <h3 className="form-header mb-5">
                 {isRegistering
                   ? "Đăng Ký"
                   : isLoggedIn
@@ -158,113 +201,154 @@ const LoginPage: React.FC = () => {
               </h3>
 
               {!isLoggedIn ? (
-                <form>
-                  {isRegistering && (
-                    <>
-                      <div className="form-outline mb-4">
+                <form
+                  className={isRegistering ? "form-register" : "form-login"}
+                >
+                  {isRegistering ? (
+                    <div className="form-row row">
+                      <div className="col-md-6">
+                        <div className="form-group mb-4">
+                          <input
+                            type="text"
+                            id="fullName"
+                            name="fullName"
+                            className="form-control form-control-lg"
+                            placeholder="Full Name"
+                            value={fullName}
+                            onChange={handleInputChange}
+                            required
+                          />
+                          <label className="form-label" htmlFor="fullName">
+                            Họ Tên
+                          </label>
+                        </div>
+
+                        <div className="form-group mb-4">
+                          <input
+                            type="number"
+                            id="age"
+                            name="age"
+                            className="form-control form-control-lg"
+                            placeholder="Age"
+                            value={age}
+                            onChange={handleInputChange}
+                            required
+                          />
+                          <label className="form-label" htmlFor="age">
+                            Tuổi
+                          </label>
+                        </div>
+
+                        <div className="form-group mb-4">
+                          <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            className="form-control form-control-lg"
+                            placeholder="Phone Number"
+                            value={phone}
+                            onChange={handleInputChange}
+                            required
+                          />
+                          <label className="form-label" htmlFor="phone">
+                            Số Điện Thoại
+                          </label>
+                        </div>
+                      </div>
+
+                      <div className="col-md-6">
+                        <div className="form-group mb-4">
+                          <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            className="form-control form-control-lg"
+                            placeholder="Email"
+                            value={email}
+                            onChange={handleInputChange}
+                            required
+                          />
+                          <label className="form-label" htmlFor="email">
+                            Email
+                          </label>
+                        </div>
+
+                        <div className="form-group mb-4">
+                          <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            className="form-control form-control-lg"
+                            placeholder="Password"
+                            value={password}
+                            onChange={handleInputChange}
+                            required
+                          />
+                          <label className="form-label" htmlFor="password">
+                            Mật Khẩu
+                          </label>
+                        </div>
+
+                        <div className="form-group mb-4">
+                          <input
+                            type="password"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            className="form-control form-control-lg"
+                            placeholder="Confirm Password"
+                            value={confirmPassword}
+                            onChange={handleInputChange}
+                            required
+                          />
+                          <label
+                            className="form-label"
+                            htmlFor="confirmPassword"
+                          >
+                            Nhập Lại Mật Khẩu
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <div>
+                      <div className="form-group mb-4">
                         <input
-                          type="text"
-                          id="fullName"
-                          name="fullName"
+                          type="email"
+                          id="email"
+                          name="email"
                           className="form-control form-control-lg"
-                          placeholder="Full Name"
-                          value={fullName}
+                          placeholder="Email"
+                          value={email}
                           onChange={handleInputChange}
                           required
                         />
-                        <label className="form-label" htmlFor="fullName">
-                          Họ Tên
+                        <label className="form-label" htmlFor="email">
+                          Email
                         </label>
                       </div>
 
-                      <div className="form-outline mb-4">
+                      <div className="form-group mb-4">
                         <input
-                          type="number"
-                          id="age"
-                          name="age"
+                          type="password"
+                          id="password"
+                          name="password"
                           className="form-control form-control-lg"
-                          placeholder="Age"
-                          value={age}
+                          placeholder="Password"
+                          value={password}
                           onChange={handleInputChange}
                           required
                         />
-                        <label className="form-label" htmlFor="age">
-                          Tuổi
+                        <label className="form-label" htmlFor="password">
+                          Mật Khẩu
                         </label>
                       </div>
-
-                      <div className="form-outline mb-4">
-                        <input
-                          type="tel"
-                          id="phone"
-                          name="phone"
-                          className="form-control form-control-lg"
-                          placeholder="Phone Number"
-                          value={phone}
-                          onChange={handleInputChange}
-                          required
-                        />
-                        <label className="form-label" htmlFor="phone">
-                          Số Điện Thoại
-                        </label>
-                      </div>
-                    </>
-                  )}
-
-                  <div className="form-outline mb-4">
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      className="form-control form-control-lg"
-                      placeholder="Email"
-                      value={email}
-                      onChange={handleInputChange}
-                      required
-                    />
-                    <label className="form-label" htmlFor="email">
-                      Email
-                    </label>
-                  </div>
-
-                  <div className="form-outline mb-4">
-                    <input
-                      type="password"
-                      id="password"
-                      name="password"
-                      className="form-control form-control-lg"
-                      placeholder="Password"
-                      value={password}
-                      onChange={handleInputChange}
-                      required
-                    />
-                    <label className="form-label" htmlFor="password">
-                      Mật Khẩu
-                    </label>
-                  </div>
-
-                  {isRegistering && (
-                    <div className="form-outline mb-4">
-                      <input
-                        type="password"
-                        id="confirmPassword"
-                        name="confirmPassword"
-                        className="form-control form-control-lg"
-                        placeholder="Confirm Password"
-                        value={confirmPassword}
-                        onChange={handleInputChange}
-                        required
-                      />
-                      <label className="form-label" htmlFor="confirmPassword">
-                        Nhập Lại Mật Khẩu
-                      </label>
                     </div>
                   )}
 
                   {error && <p className="text-danger">{error}</p>}
 
                   <button
-                    className="btn btn-primary btn-lg btn-block"
+                    className="btn btn-primary btn-lg btn-block submit-btn"
                     type="button"
                     onClick={handleSubmit}
                   >
@@ -277,7 +361,7 @@ const LoginPage: React.FC = () => {
                         ? "Already have an account? "
                         : "Don't have an account? "}
                       <span
-                        className="link-primary"
+                        className="link-primary toggle-form"
                         style={{ cursor: "pointer" }}
                         onClick={toggleForm}
                       >
@@ -287,18 +371,34 @@ const LoginPage: React.FC = () => {
                   </div>
                 </form>
               ) : (
-                <div>
-                  <h4>Welcome, {user?.fullName || "User"}</h4>
-                  <p>Email: {user?.email}</p>
-                  <p>Phone: {user?.phone}</p>
-                  <p>Age: {user?.age}</p>
+                <div className="profile-container">
+                  <h4>Thông Tin Người Dùng</h4>
+                  <p>
+                    <strong>Họ tên:</strong> {user?.fullName}
+                  </p>
+                  <p>
+                    <strong>Tuổi:</strong> {user?.age}
+                  </p>
+                  <p>
+                    <strong>Email:</strong> {user?.email}
+                  </p>
+                  <p>
+                    <strong>Số điện thoại:</strong> {user?.phone}
+                  </p>
 
-                  <button
-                    className="btn btn-danger btn-lg btn-block"
-                    onClick={handleLogout}
-                  >
-                    Đăng Xuất
-                  </button>
+                  <div className="button-container">
+                    <Link to={"/login/update-profile"} className="link-btn">
+                      Cập nhật thông tin
+                    </Link>
+
+                    <Link to={"/login/order-history"} className="link-btn">
+                      Lịch sử mua hàng
+                    </Link>
+
+                    <button className="logout-btn" onClick={handleLogout}>
+                      Đăng Xuất
+                    </button>
+                  </div>
                 </div>
               )}
             </div>

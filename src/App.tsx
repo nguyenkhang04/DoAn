@@ -11,45 +11,27 @@ import AdminProduct from "./pages/admin/products/adminProduct";
 import ProductDetailPage from "./pages/productDetail/productDetail";
 import AboutPage from "./pages/about/AboutPage";
 import CartPage from "./pages/cart/CartPage";
-import AccessoryPage from "./pages/accessory/AccessoryPage";
-import LaptopPage from "./pages/laptop/LaptopPage";
-import SoundPage from "./pages/soundpage/SoundPage";
+import OrderHistoryPage from "./pages/orderHistoryPage/OrderHistoryPage";
+import UpdateProfilePage from "./pages/updateprofile/UpdateProfilePage";
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/" element={<HomeLayout></HomeLayout>}>
-            <Route index element={<HomePage></HomePage>}></Route>
-            <Route path="/about" element={<AboutPage></AboutPage>}></Route>
-            <Route
-              path="/product"
-              element={<ProductPage></ProductPage>}
-            ></Route>
-            <Route
-              path="/product/:productId"
-              element={<ProductDetailPage></ProductDetailPage>}
-            ></Route>
-            <Route
-              path="/accessory"
-              element={<AccessoryPage></AccessoryPage>}
-            ></Route>
-            <Route path="/login" element={<LoginPage></LoginPage>}></Route>
-            <Route path="/cart" element={<CartPage></CartPage>}></Route>
-            <Route path="/sound" element={<SoundPage></SoundPage>}></Route>
-            <Route
-              path="/laptop"
-              element={<LaptopPage></LaptopPage>}
-            ></Route>
+          <Route path="/" element={<HomeLayout />}>
+            <Route index element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/product" element={<ProductPage />} />
+            <Route path="/product/:productId" element={<ProductDetailPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/login/order-history" element={<OrderHistoryPage></OrderHistoryPage>} />
+            <Route path="/login/update-profile" element={<UpdateProfilePage></UpdateProfilePage>} />
+            <Route path="/cart" element={<CartPage />} />
           </Route>
-
-          <Route path="/admin" element={<AdminLayout></AdminLayout>}>
-            <Route index element={<AdminUsers></AdminUsers>}></Route>
-            <Route
-              path="products"
-              element={<AdminProduct></AdminProduct>}
-            ></Route>
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route index element={<AdminUsers />} />
+            <Route path="products" element={<AdminProduct />} />
           </Route>
         </Routes>
       </Router>

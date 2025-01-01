@@ -1,15 +1,33 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col, Button, Input } from "antd";
+import { Row, Col, Button } from "antd";
 import { Link, useNavigate } from "react-router-dom";
-import { ShoppingCartOutlined, SearchOutlined } from "@ant-design/icons";
+import { ShoppingCartOutlined } from "@ant-design/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
+import { useSelector } from "react-redux";
 import "./styles.scss";
+
+interface TCartItem {
+  product: {
+    id: string;
+    name: string;
+    price: number;
+  };
+  quantity: number;
+}
 
 const HeaderComponent: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const [searchQuery, setSearchQuery] = useState<string>("");
+
   const navigate = useNavigate();
+
+  const cartItems = useSelector((state: any) => state.cart.cartItems || []);
+
+  const cartItemCount = cartItems.reduce(
+    (total: number, item: TCartItem) => total + item.quantity,
+    0
+  );
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
@@ -49,16 +67,16 @@ const HeaderComponent: React.FC = () => {
         <Col>
           <ul className="navigation">
             <li className="navigation-item">
-              <Link to={"/product"}>Điện Thoại</Link>
+              <Link to="/product?categoryId=1">Điện thoại</Link>
             </li>
             <li className="navigation-item">
-              <Link to={"/laptop"}>Laptop</Link>
+              <Link to="/product?categoryId=2">Laptop</Link>
             </li>
             <li className="navigation-item">
-              <Link to={"/sound"}>Âm Thanh</Link>
+              <Link to="/product?categoryId=3">Phụ Kiện</Link>
             </li>
             <li className="navigation-item">
-              <Link to={"/accessory"}>Phụ Kiện</Link>
+              <Link to="/product?categoryId=4">Âm Thanh</Link>
             </li>
             <li className="navigation-item">
               <Link to={"/about"}>Bảo Hành</Link>
@@ -72,6 +90,9 @@ const HeaderComponent: React.FC = () => {
               <button className="cart-button">
                 Giỏ Hàng
                 <ShoppingCartOutlined />
+                {cartItemCount > 0 && (
+                  <span className="cart-item-count">{cartItemCount}</span>
+                )}
               </button>
             </Link>
           </div>

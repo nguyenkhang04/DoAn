@@ -32,11 +32,11 @@ const Advertisement: React.FC = () => {
     <div className="Advertisement-container">
       <div className="Advertisement-category">
         <div>
-          <Link to={"/product"}>Điện Thoại</Link>
-          <Link to={"/laptop"}>Laptop</Link>
-          <Link to={"/accessory"}>Phụ Kiện</Link>
+          <Link to="/product?categoryId=1">Điện thoại</Link>
+          <Link to="/product?categoryId=2">Laptop</Link>
+          <Link to="/product?categoryId=3">Phụ Kiện</Link>
           <Link to={"/"}>Sửa Chữa</Link>
-          <Link to={"/sound"}>Âm Thanh</Link>
+          <Link to="/product?categoryId=4">Âm Thanh</Link>
           <Link to={"/about"}>Bảo Hành</Link>
         </div>
       </div>

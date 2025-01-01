@@ -1,31 +1,106 @@
 {
+  "brands": [
+    {
+      "id": 1,
+      "name": "Iphone"
+    },
+    {
+      "id": 2,
+      "name": "Samsung"
+    },
+    {
+      "id": 3,
+      "name": "Oppo"
+    },
+    {
+      "id": 4,
+      "name": "Poco"
+    },
+    {
+      "id": 5,
+      "name": "Xiaomi"
+    },
+    {
+      "id": 6,
+      "name": "Nokia"
+    },
+    {
+      "id": 7,
+      "name": "Honor"
+    },
+    {
+      "id": 8,
+      "name": "Anker"
+    },
+    {
+      "id": 9,
+      "name": "Pisen"
+    },
+    {
+      "id": 10,
+      "name": "Apple"
+    },
+    {
+      "id": 11,
+      "name": "HP"
+    },
+    {
+      "id": 12,
+      "name": "Dell"
+    },
+    {
+      "id": 13,
+      "name": "Microsoft"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Phone"
+    },
+    {
+      "id": 2,
+      "name": "Laptop"
+    },
+    {
+      "id": 3,
+      "name": "Accessory"
+    },
+    {
+      "id": 4,
+      "name": "Sound"
+    }
+  ],
   "products": [
     {
       "id": "Samsung_M55",
       "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/samsung_galaxy_m55_den_4_d7f9674500.jpg",
+      "subImgs": [],
       "name": "Samsung Galaxy M55",
       "price": 28990000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "samsung",
-      "category": "phone"
+      "brandId": "2",
+      "categoryId": "1"
     },
     {
       "id": "Iphone 16 Pro",
       "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/iphone_16_pro_37987b6def.png",
+      "subImgs": [],
       "name": "Iphone 16 Pro",
       "price": 23690000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Iphone",
-      "category": "phone"
+      "brandId": "1",
+      "categoryId": "1"
     },
     {
       "id": "Samsung_ZFold6",
       "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/samsung_galaxy_z_fold6_thumb_3c94cadb15.png",
+      "subImgs": [],
       "name": "Samsung Galaxy Z Fold 6",
       "price": 29490000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Samsung",
-      "category": "phone"
+      "brandId": "2",
+      "categoryId": "1"
     },
     {
       "id": "Iphone 16 Plus",
@@ -33,8 +108,8 @@
       "name": "Iphone 16 Plus",
       "price": 25690000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Iphone",
-      "category": "phone"
+      "brandId": "1",
+      "categoryId": "1"
     },
     {
       "id": "Iphone 13",
@@ -42,8 +117,8 @@
       "name": "Iphone 13",
       "price": 13690000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Iphone",
-      "category": "phone"
+      "brandId": "1",
+      "categoryId": "1"
     },
     {
       "id": "Iphone 16 Pro Max",
@@ -51,8 +126,8 @@
       "name": "Iphone 16 Pro Max",
       "price": 33690000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Iphone",
-      "category": "phone"
+      "brandId": "1",
+      "categoryId": "1"
     },
     {
       "id": "Samsung_S24Plus",
@@ -60,8 +135,8 @@
       "name": "Samsung Galaxy S24 Plus",
       "price": 27990000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Samsung",
-      "category": "phone"
+      "brandId": "2",
+      "categoryId": "1"
     },
     {
       "id": "Iphone 11 Pro",
@@ -69,8 +144,8 @@
       "name": "Iphone 11 Pro",
       "price": 9990000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Iphone",
-      "category": "phone"
+      "brandId": "1",
+      "categoryId": "1"
     },
     {
       "id": "Iphone 15 Pro Max ",
@@ -78,8 +153,8 @@
       "name": "Iphone 15 Pro Max",
       "price": 31690000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Iphone",
-      "category": "phone"
+      "brandId": "1",
+      "categoryId": "1"
     },
     {
       "id": "Samsung",
@@ -87,8 +162,8 @@
       "name": "Samsung Galaxy A06",
       "price": 3690000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Samsung",
-      "category": "phone"
+      "brandId": "2",
+      "categoryId": "1"
     },
     {
       "id": "Iphone 11",
@@ -96,8 +171,8 @@
       "name": "Iphone 11",
       "price": 8690000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Iphone",
-      "category": "phone"
+      "brandId": "1",
+      "categoryId": "1"
     },
     {
       "id": "Iphone 15",
@@ -105,8 +180,8 @@
       "name": "Iphone 15",
       "price": 19690000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Iphone",
-      "category": "phone"
+      "brandId": "1",
+      "categoryId": "1"
     },
     {
       "id": "Iphone 14",
@@ -114,8 +189,8 @@
       "name": "Iphone 14",
       "price": 16690000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Iphone",
-      "category": "phone"
+      "brandId": "1",
+      "categoryId": "1"
     },
     {
       "id": "Iphone 16 ",
@@ -123,8 +198,8 @@
       "name": "Iphone 16",
       "price": 20690000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Iphone",
-      "category": "phone"
+      "brandId": "1",
+      "categoryId": "1"
     },
     {
       "id": "Oppo7",
@@ -132,8 +207,8 @@
       "name": "Oppo A17",
       "price": 4990000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Oppo",
-      "category": "phone"
+      "brandId": "3",
+      "categoryId": "1"
     },
     {
       "id": "PocoM6Pro11",
@@ -141,8 +216,8 @@
       "name": "Poco M6 Pro",
       "price": 5999000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Xiaomi",
-      "category": "phone"
+      "brandId": "5",
+      "categoryId": "1"
     },
     {
       "id": "Oppo10",
@@ -150,8 +225,8 @@
       "name": "Oppo A60",
       "price": 7990000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Oppo",
-      "category": "phone"
+      "brandId": "3",
+      "categoryId": "1"
     },
     {
       "id": "Samsung_A05S",
@@ -159,8 +234,8 @@
       "name": "Samsung Galaxy A05s",
       "price": 8990000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Samsung",
-      "category": "phone"
+      "brandId": "2",
+      "categoryId": "1"
     },
     {
       "id": "PocoM611",
@@ -168,8 +243,8 @@
       "name": "Poco M6",
       "price": 7990000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Xiaomi",
-      "category": "phone"
+      "brandId": "5",
+      "categoryId": "1"
     },
     {
       "id": "Oppo3",
@@ -177,8 +252,8 @@
       "name": "Oppo A18",
       "price": 6490000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Oppo",
-      "category": "phone"
+      "brandId": "3",
+      "categoryId": "1"
     },
     {
       "id": "Samsung_A25",
@@ -186,8 +261,8 @@
       "name": "Samsung Galaxy A25 5G",
       "price": 10490000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Samsung",
-      "category": "phone"
+      "brandId": "2",
+      "categoryId": "1"
     },
     {
       "id": "Oppo9",
@@ -195,8 +270,8 @@
       "name": "Oppo A3",
       "price": "3.990.000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Oppo",
-      "category": "phone"
+      "brandId": "3",
+      "categoryId": "1"
     },
     {
       "id": "Samsung_ZFlip6",
@@ -204,8 +279,8 @@
       "name": "Samsung Galaxy Z Flip 6",
       "price": 26490000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Samsung",
-      "category": "phone"
+      "brandId": "2",
+      "categoryId": "1"
     },
     {
       "id": "RedmiNote1311",
@@ -213,8 +288,8 @@
       "name": "Redmi Note 13",
       "price": 6490000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Xiaomi",
-      "category": "phone"
+      "brandId": "5",
+      "categoryId": "1"
     },
     {
       "id": "Samsung_S22",
@@ -222,8 +297,8 @@
       "name": "Samsung Galaxy S22",
       "price": 4499000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Samsung",
-      "category": "phone"
+      "brandId": "2",
+      "categoryId": "1"
     },
     {
       "id": "Samsung_A35",
@@ -231,8 +306,8 @@
       "name": "Samsung Galaxy A35",
       "price": 12990000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Samsung",
-      "category": "phone"
+      "brandId": "2",
+      "categoryId": "1"
     },
     {
       "id": "Oppo4",
@@ -240,8 +315,8 @@
       "name": "Oppo Reno12",
       "price": "12,690,000",
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Oppo",
-      "category": "phone"
+      "brandId": "3",
+      "categoryId": "1"
     },
     {
       "id": "Samsung_A16",
@@ -249,8 +324,8 @@
       "name": "Samsung Galaxy A16",
       "price": 9490000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Samsung",
-      "category": "phone"
+      "brandId": "2",
+      "categoryId": "1"
     },
     {
       "id": "Oppo2",
@@ -258,8 +333,8 @@
       "name": "Oppo Reno12 F",
       "price": 10690000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Oppo",
-      "category": "phone"
+      "brandId": "3",
+      "categoryId": "1"
     },
     {
       "id": "Samsung_ZFold5",
@@ -267,8 +342,8 @@
       "name": "Samsung Galaxy Z Fold 5",
       "price": 21990000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Samsung",
-      "category": "phone"
+      "brandId": "2",
+      "categoryId": "1"
     },
     {
       "id": "Oppo5",
@@ -276,8 +351,8 @@
       "name": "Oppo Find N3",
       "price": 27990000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Oppo",
-      "category": "phone"
+      "brandId": "3",
+      "categoryId": "1"
     },
     {
       "id": "Samsung_S24FE",
@@ -285,8 +360,8 @@
       "name": "Samsung Galaxy S24 FE",
       "price": 18990000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Samsung",
-      "category": "phone"
+      "brandId": "2",
+      "categoryId": "1"
     },
     {
       "id": "Samsung_ZFlip5",
@@ -294,8 +369,8 @@
       "name": "Samsung Galaxy Z Flip 5",
       "price": 25490000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Samsung",
-      "category": "phone"
+      "brandId": "2",
+      "categoryId": "1"
     },
     {
       "id": "Oppo6",
@@ -303,8 +378,8 @@
       "name": "Oppo Reno11 F",
       "price": 9490000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Oppo",
-      "category": "phone"
+      "brandId": "3",
+      "categoryId": "1"
     },
     {
       "id": "Oppo8",
@@ -312,8 +387,8 @@
       "name": "Oppo A58",
       "price": 8490000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Oppo",
-      "category": "phone"
+      "brandId": "3",
+      "categoryId": "1"
     },
     {
       "id": "RedmiA333",
@@ -321,8 +396,8 @@
       "name": "Redmi A3",
       "price": 4590000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Xiaomi",
-      "category": "phone"
+      "brandId": "5",
+      "categoryId": "1"
     },
     {
       "id": "PocoM6Pro2231231",
@@ -330,8 +405,8 @@
       "name": "Poco M6 Pro",
       "price": 5990000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Xiaomi",
-      "category": "phone"
+      "brandId": "4",
+      "categoryId": "1"
     },
     {
       "id": "Xiaomi14T4444",
@@ -339,17 +414,17 @@
       "name": "Xiaomi 14T",
       "price": 12490000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Xiaomi",
-      "category": "phone"
+      "brandId": "5",
+      "categoryId": "1"
     },
     {
       "id": "Xiaomi142525",
       "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/2024_3_12_638458484678331118_xiaomi-14-xanh-png.png",
       "name": "Xiaomi 14",
-      "price":14990000,
+      "price": 14990000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Xiaomi",
-      "category": "phone"
+      "brandId": "5",
+      "categoryId": "1"
     },
     {
       "id": "Redmi14C3131",
@@ -357,8 +432,8 @@
       "name": "Redmi 14C",
       "price": 5490000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Xiaomi",
-      "category": "phone"
+      "brandId": "5",
+      "categoryId": "1"
     },
     {
       "id": "Xiaomi14TPro43344334",
@@ -366,8 +441,8 @@
       "name": "Xiaomi 14T Pro",
       "price": 18990000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Xiaomi",
-      "category": "phone"
+      "brandId": "5",
+      "categoryId": "1"
     },
     {
       "id": "Xiaomi14Ultra56565656",
@@ -375,8 +450,8 @@
       "name": "Xiaomi 14 Ultra",
       "price": 29990000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Xiaomi",
-      "category": "phone"
+      "brandId": "5",
+      "categoryId": "1"
     },
     {
       "id": "realme_c61_xanh_5515515",
@@ -384,8 +459,8 @@
       "name": "Realme C61 Xanh 5",
       "price": 15990000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Realme",
-      "category": "phone"
+      "brandId": "5",
+      "categoryId": "1"
     },
     {
       "id": "realme_c60_xanh_4456452456452",
@@ -393,8 +468,8 @@
       "name": "Realme C60 Xanh 4",
       "price": 18290000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Realme",
-      "category": "phone"
+      "brandId": "5",
+      "categoryId": "1"
     },
     {
       "id": "realme_13_plus_5g_tim_525623562562356",
@@ -402,8 +477,8 @@
       "name": "Realme 13 Plus 5G Tim 5",
       "price": 22500000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Realme",
-      "category": "phone"
+      "brandId": "5",
+      "categoryId": "1"
     },
     {
       "id": "realme_note_60_xanh_413451345",
@@ -411,8 +486,8 @@
       "name": "Realme Note 60 Xanh 4",
       "price": 19750000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Realme",
-      "category": "phone"
+      "brandId": "5",
+      "categoryId": "1"
     },
     {
       "id": "realme_c51_dd5671356713",
@@ -420,8 +495,8 @@
       "name": "Realme C51 DD",
       "price": 16999000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Realme",
-      "category": "phone"
+      "brandId": "5",
+      "categoryId": "1"
     },
     {
       "id": "realme_c61_xanh_5784578784578",
@@ -429,8 +504,8 @@
       "name": "Realme C61 Xanh 5",
       "price": 16490000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Realme",
-      "category": "phone"
+      "brandId": "5",
+      "categoryId": "1"
     },
     {
       "id": "nokia_220_4g_cam3568335683",
@@ -438,8 +513,8 @@
       "name": "Nokia 220 4G Cam",
       "price": 2500000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Nokia",
-      "category": "phone"
+      "brandId": "6",
+      "categoryId": "1"
     },
     {
       "id": "nokia_3210_4g_vang356835356835",
@@ -447,8 +522,8 @@
       "name": "Nokia 3210 4G Vàng",
       "price": 2800000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Nokia",
-      "category": "phone"
+      "brandId": "6",
+      "categoryId": "1"
     },
     {
       "id": "nokia_105_ds_pro_4g3568735635687356",
@@ -456,8 +531,8 @@
       "name": "Nokia 105 DS Pro 4G",
       "price": 1200000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Nokia",
-      "category": "phone"
+      "brandId": "6",
+      "categoryId": "1"
     },
     {
       "id": "nokia_110_ds_pro_4g356783568356783568",
@@ -465,8 +540,8 @@
       "name": "Nokia 110 DS Pro 4G",
       "price": 1450000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Nokia",
-      "category": "phone"
+      "brandId": "6",
+      "categoryId": "1"
     },
     {
       "id": "honor_x7c_xanh_535683563568356",
@@ -474,8 +549,8 @@
       "name": "Honor X7C Xanh 5",
       "price": 8990000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Honor",
-      "category": "phone"
+      "brandId": "7",
+      "categoryId": "1"
     },
     {
       "id": "honor_x6b_xanh_3356783568356783568",
@@ -483,8 +558,8 @@
       "name": "Honor X6B Xanh 3",
       "price": 7500000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Honor",
-      "category": "phone"
+      "brandId": "7",
+      "categoryId": "1"
     },
     {
       "id": "honor_x7b_xanh_235624673562467",
@@ -492,8 +567,8 @@
       "name": "Honor X7B Xanh 2",
       "price": 9200000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Honor",
-      "category": "phone"
+      "brandId": "7",
+      "categoryId": "1"
     },
     {
       "id": "honor_x9b_cam_4356824673467356824673467",
@@ -501,8 +576,8 @@
       "name": "Honor X9B Cam",
       "price": 10500000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Honor",
-      "category": "phone"
+      "brandId": "7",
+      "categoryId": "1"
     },
     {
       "id": "poco_m6_12345",
@@ -510,8 +585,8 @@
       "name": "Poco M6",
       "price": 60500000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Poco",
-      "category": "phone"
+      "brandId": "4",
+      "categoryId": "1"
     },
     {
       "id": "poco_x6_blue_67890",
@@ -519,8 +594,8 @@
       "name": "Poco X6 Blue",
       "price": 60590000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Poco",
-      "category": "phone"
+      "brandId": "4",
+      "categoryId": "1"
     },
     {
       "id": "poco_m6_pro_112233",
@@ -528,8 +603,8 @@
       "name": "Poco M6 Pro",
       "price": 80590000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Poco",
-      "category": "phone"
+      "brandId": "4",
+      "categoryId": "1"
     },
     {
       "id": "poco_x6_glass_445566",
@@ -537,306 +612,325 @@
       "name": "Poco X6 Glass",
       "price": 3900000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
-      "brand": "Poco",
-      "category": "phone"
+      "brandId": "4",
+      "categoryId": "1"
     },
     {
       "id": "310582476",
       "img": "https://clickbuy.com.vn/uploads/pro/op-lung-kem-but-s-pen-galaxy-z-fold-6-sm-217782.jpg",
       "name": "Ốp Lưng Kèm Bút S-Pen Galaxy Z Fold 6",
       "price": 1500000,
-      "brand": "Samsung",
-      "category": "accessory"
+      "brandId": "2",
+      "categoryId": "33"
     },
     {
       "id": "1012345678",
       "img": "https://clickbuy.com.vn/uploads/pro/op-lung-trong-samsung-galaxy-z-fold6-chinh-hang-sm-217767.jpg",
       "name": "Ốp Lưng Trong Samsung Galaxy Z Fold 6",
       "price": 1200000,
-      "brand": "Samsung",
-      "category": "accessory"
+      "brandId": "2",
+      "categoryId": "3"
     },
     {
       "id": "365632466563246",
       "img": "https://clickbuy.com.vn/uploads/pro/sac-anker-powerport-iii-nano-20w-sm-196999.jpg",
       "name": "Sạc Anker PowerPort III Nano 20W",
       "price": 800000,
-      "brand": "Anker",
-      "category": "accessory"
+      "brandId": "8",
+      "categoryId": "3"
     },
     {
       "id": "4234234234234",
       "img": "https://clickbuy.com.vn/uploads/pro/cap-sac-anker-322-type-c-lightning-09m-20w-chuan-mfi-sm-197006.jpg",
       "name": "Cáp Sạc Anker 322 Type-C to Lightning 0.9m 20W",
       "price": 600000,
-      "brand": "Anker",
-      "category": "accessory"
+      "brandId": "8",
+      "categoryId": "3"
     },
     {
       "id": "5234234234234",
       "img": "https://clickbuy.com.vn/uploads/pro/bao-da-samsung-galaxy-tab-a8-chinh-hang-sm-189067.png",
       "name": "Bao Da Samsung Galaxy Tab A8",
       "price": 1000000,
-      "brand": "Samsung",
-      "category": "accessory"
+      "brandId": "2",
+      "categoryId": "3"
     },
     {
       "id": "82342323423",
       "img": "https://clickbuy.com.vn/uploads/pro/sac-du-phong-samsung-10000mah-25w-chinh-hang-sm-183917.png",
       "name": "Sạc Pisen Quick Ice Crystal Colorful PD 30W",
       "price": 900000,
-      "brand": "Pisen",
-      "category": "accessory"
+      "brandId": "9",
+      "categoryId": "3"
     },
     {
       "id": "623421342342134",
       "img": "https://clickbuy.com.vn/uploads/pro/op-lung-trong-linh-hoat-z-flip5-chinh-hang-sm-192670.png",
       "name": "Ốp Lưng Trong Linh Hoạt Z Flip 5",
       "price": 1300000,
-      "brand": "Samsung",
-      "category": "accessory"
+      "brandId": "2",
+      "categoryId": "3"
     },
     {
       "id": "312342341234234",
       "img": "https://clickbuy.com.vn/uploads/pro/sac-anker-powerport-iii-nano-20w-sm-196999.jpg",
       "name": "Sạc Anker PowerPort III Nano 20W",
       "price": 800000,
-      "brand": "Anker",
-      "category": "accessory"
+      "brandId": "8",
+      "categoryId": "3"
     },
     {
       "id": "7273562345",
       "img": "https://clickbuy.com.vn/uploads/pro/sac-pisen-quick-ice-crystal-colorful-pd-30w-sm-173764.jpg",
       "name": "Sạc Pisen Quick Ice Crystal Colorful PD 30W",
       "price": 900000,
-      "brand": "Pisen",
-      "category": "accessory"
+      "brandId": "9",
+      "categoryId": "3"
     },
     {
       "id": "7834576835476857",
       "img": "https://clickbuy.com.vn/uploads/pro/sac-du-phong-samsung-10000mah-25w-chinh-hang-sm-183917.png",
       "name": "Sạc Pisen Quick Ice Crystal Colorful PD 30W",
       "price": 900000,
-      "brand": "Pisen",
-      "category": "accessory"
+      "brandId": "9",
+      "categoryId": "3"
     },
     {
       "id": "921345601",
       "img": "https://clickbuy.com.vn/uploads/pro/macbook-air-2020-13-inch-apple-m1-8gb-ram-256gb-ssd-chinh-hang-viet-nam-sm-120332.jpg",
       "name": "MacBook Air 2020 Apple M1",
       "price": 23500000,
-      "brand": "Apple",
-      "category": "Laptop"
+      "brandId": "10",
+      "categoryId": "2"
     },
     {
       "id": "654387921",
       "img": "https://clickbuy.com.vn/uploads/pro/macbook-air-2022-13-inch-apple-m2-8gb-ram-256gb-ssd-chinh-hang-vietnam-sm-159308.jpg",
       "name": "MacBook Air 2022 Apple M2",
-      "price": 33500000 ,
-      "brand": "Apple",
-      "category": "Laptop"
+      "price": 33500000,
+      "brandId": "10",
+      "categoryId": "2"
     },
     {
       "id": "832910756",
       "img": "https://clickbuy.com.vn/uploads/pro/macbook-air-2024-13-inches-apple-m3-8gb-256gb-chinh-hang-sm-197665.jpg",
       "name": "MacBook Air 2024 Apple M3",
       "price": 28990000,
-      "brand": "Apple",
-      "category": "Laptop"
+      "brandId": "10",
+      "categoryId": "2"
     },
     {
       "id": "470129834",
       "img": "https://clickbuy.com.vn/uploads/pro/macbook-air-2023-15-inch-apple-m2-8gb-256gb-chinh-hang-viet-nam-sm-191449.jpg",
       "name": "MacBook Air 2023 Apple M2",
       "price": 32000000,
-      "brand": "Apple",
-      "category": "Laptop"
+      "brandId": "10",
+      "categoryId": "2"
     },
     {
       "id": "310582476",
       "img": "https://clickbuy.com.vn/uploads/pro/laptop-hp-240-g8-518v5pa-core-i5-1135g7-8gb-256gb-intel-iris-xe-140-inch-fhd-win-10-bac-sm-142091.png",
       "name": "HP 240 G8 Core i5",
       "price": 27690000,
-      "brand": "HP",
-      "category": "Laptop"
+      "brandId": "11",
+      "categoryId": "2"
     },
     {
       "id": "981602473",
       "img": "https://clickbuy.com.vn/uploads/pro/laptop-hp-340s-g7-36a35pa-core-i5-1035g1-8gb-512gb-intel-uhd-140-inch-fhd-win-10-xam-sm-143370.png",
       "name": "HP 340S G7 Core i5",
       "price": 22000000,
-      "brand": "HP",
-      "category": "Laptop"
+      "brandId": "11",
+      "categoryId": "2"
     },
     {
       "id": "547819032",
       "img": "https://clickbuy.com.vn/uploads/pro/laptop-dell-vostro-5515-r5-5500u-8gb-ram-256gb-ssd-156-inch-fhd-win10-xam-nhap-khau-2021-sm-146433.jpg",
       "name": "Dell Vostro 5515 R5",
       "price": 21350000,
-      "brand": "Dell",
-      "category": "Laptop"
+      "brandId": "12",
+      "categoryId": "2"
     },
     {
       "id": "784321095",
       "img": "https://clickbuy.com.vn/uploads/pro/laptop-dell-inspiron-5510-0wt8r1-i5-11300h-8gb-ram-256gb-ssd-156-inch-fhd-win10office-bac-2021-sm-147993.jpg",
       "name": "Dell Inspiron 5510 i5",
       "price": 15690000,
-      "brand": "Dell",
-      "category": "Laptop"
+      "brandId": "12",
+      "categoryId": "2"
     },
     {
       "id": "623419087",
       "img": "https://clickbuy.com.vn/uploads/pro/dell-inspiron-15-3501-i5-1035g1-8gb-ram-256gb-pcie-156-fhd-win10-den-touch-sm-140466.png",
       "name": "Dell Inspiron 15 3501",
       "price": 23500000,
-      "brand": "Dell",
-      "category": "Laptop"
+      "brandId": "12",
+      "categoryId": "2"
     },
     {
       "id": "891034572",
       "img": "https://clickbuy.com.vn/uploads/pro/microsoft-surface-pro-x-sq1-ram-16gb-ssd-256gb-new-sm-144029.png",
       "name": "Microsoft Surface Pro X SQ1",
       "price": 23500000,
-      "brand": "Microsoft",
-      "category": "Laptop"
+      "brandId": "13",
+      "categoryId": "2"
     },
     {
       "id": "1012345678",
       "img": "https://clickbuy.com.vn/uploads/pro/samsung-galaxy-buds-fe-chinh-hang-sm-197518.png",
       "name": "Samsung Galaxy Buds FE",
       "price": 2490000,
-      "brand": "Samsung",
-      "category": "Sound"
+      "brandId": "2",
+      "categoryId": "4"
     },
     {
       "id": "1023456789",
       "img": "https://clickbuy.com.vn/uploads/pro/tai-nghe-samsung-galaxy-buds-2-pro-chinh-hang-sm-164643.jpg",
       "name": "Samsung Galaxy Buds 2 Pro",
       "price": 4490000,
-      "brand": "Samsung",
-      "category": "Sound"
+      "brandId": "2",
+      "categoryId": "4"
     },
     {
       "id": "1034567890",
       "img": "https://clickbuy.com.vn/uploads/pro/tai-nghe-samsung-galaxy-buds-3-chinh-hang-sm-217760.png",
       "name": "Samsung Galaxy Buds 3",
       "price": 4990000,
-      "brand": "Samsung",
-      "category": "Sound"
+      "brandId": "2",
+      "categoryId": "4"
     },
     {
       "id": "1045678901",
       "img": "https://clickbuy.com.vn/uploads/pro/tai-nghe-black-shark-t9-4808-snuk-300x300-217828.jpg",
       "name": "Black Shark T9 Headphones",
       "price": 1890000,
-      "brand": "Black Shark",
-      "category": "Sound"
+      "brandId": "2",
+      "categoryId": "4"
     },
     {
       "id": "1056789012",
       "img": "https://clickbuy.com.vn/uploads/pro/tai-nghe-black-shark-t11-1873-algl-300x300-217829.jpg",
       "name": "Black Shark T11 Headphones",
       "price": 2190000,
-      "brand": "Black Shark",
-      "category": "Sound"
+      "brandId": "2",
+      "categoryId": "4"
     },
     {
       "id": "1067890123",
       "img": "https://clickbuy.com.vn/uploads/pro/tai-nghe-bluetooth-apple-airpods-4-khong-chong-on-chinh-hang-vn-a-sm-217883.jpg",
       "name": "Apple AirPods 4",
       "price": 3990000,
-      "brand": "Apple",
-      "category": "Sound"
+      "brandId": "10",
+      "categoryId": "4"
     },
     {
       "id": "1078901234",
       "img": "https://clickbuy.com.vn/uploads/pro/tai-nghe-bluetooth-apple-airpods-2-chinh-hang-vn-a-sm-124898.png",
       "name": "Apple AirPods 2",
       "price": 3490000,
-      "brand": "Apple",
-      "category": "Sound"
+      "brandId": "10",
+      "categoryId": "4"
     },
     {
       "id": "1089012345",
       "img": "https://clickbuy.com.vn/uploads/pro/tai-nghe-bluetooth-apple-airpods-3-chinh-hang-vna-sm-145666.png",
       "name": "Apple AirPods 3",
       "price": 3990000,
-      "brand": "Apple",
-      "category": "Sound"
+      "brandId": "10",
+      "categoryId": "4"
     },
     {
       "id": "1090123456",
       "img": "https://clickbuy.com.vn/uploads/pro/tai-nghe-apple-earpods-lightning-chinh-hang-vna-sm-326.png",
       "name": "Apple EarPods Lightning",
       "price": 1490000,
-      "brand": "Apple",
-      "category": "Sound"
+      "brandId": "10",
+      "categoryId": "4"
     },
     {
       "id": "1101234567",
       "img": "https://clickbuy.com.vn/uploads/pro/tai-nghe-bluetooth-soundcore-r50i-den-ket-noi-bluetooth-50-sm-197017.png",
       "name": "Soundcore R50i Bluetooth Headphones",
       "price": 1590000,
-      "brand": "Soundcore",
-      "category": "Sound"
+      "brandId": "10",
+      "categoryId": "4"
     },
     {
       "id": "1112345678",
       "img": "https://clickbuy.com.vn/uploads/pro/loa-thong-minh-olli-maika-tro-ly-ao-tieng-viet-sm-197542.jpg",
       "name": "Olli Maika Smart Speaker",
       "price": 3290000,
-      "brand": "Olli",
-      "category": "Sound"
+      "brandId": "10",
+      "categoryId": "4"
     },
     {
       "id": "1123456789",
       "img": "https://clickbuy.com.vn/uploads/pro/loa-jbl-partybox-club-120-chinh-hang-pgi-sm-207754.jpg",
       "name": "JBL PartyBox Club 120",
       "price": 4990000,
-      "brand": "JBL",
-      "category": "Sound"
+      "brandId": "10",
+      "categoryId": "4"
     },
     {
       "id": "1134567890",
       "img": "https://clickbuy.com.vn/uploads/pro/loa-bluetooth-harman-kardon-go-play-mini-sm-197548.jpg",
       "name": "Harman Kardon Go Play Mini",
       "price": 4190000,
-      "brand": "Harman Kardon",
-      "category": "Sound"
+      "brandId": "10",
+      "categoryId": "4"
     },
     {
       "id": "1145678901",
       "img": "https://clickbuy.com.vn/uploads/pro/loa-harman-kardon-aura-studio-3-sm-197549.jpg",
       "name": "Harman Kardon Aura Studio 3",
       "price": 4990000,
-      "brand": "Harman Kardon",
-      "category": "Sound"
+      "brandId": "10",
+      "categoryId": "4"
     },
     {
       "id": "1156789012",
       "img": "https://clickbuy.com.vn/uploads/pro/loa-bluetooth-mi-compact-bluetooth-speaker-2-sm-124925.jpg",
       "name": "Mi Compact Bluetooth Speaker 2",
       "price": 1290000,
-      "brand": "Mi",
-      "category": "Sound"
+      "brandId": "10",
+      "categoryId": "4"
     }
   ],
   "users": [
     {
       "fullName": "Khang phạm",
-      "age": 25,
+      "age": 20,
       "phone": "0981631267",
+      "email": "kit@123",
+      "password": "kit123",
+      "userId": 1735481404310,
+      "id": 4
+    },
+    {
+      "fullName": "Khang phạm",
+      "age": 20,
+      "phone": "0981631267",
+      "email": "khangkhang@gmail.com",
+      "password": "kit1111",
+      "userId": 1735565716472,
+      "id": 5
+    },
+    {
+      "fullName": "Khang phạm",
+      "age": 18,
+      "phone": "0981631266",
       "email": "khangkhangphampham@gmail.com",
-      "password": "kit112",
-      "id": 1
+      "password": "kit1123",
+      "userId": 1735566355859,
+      "id": 6
     }
   ],
-  "userscarts": [
+  "orders": [
     {
       "name": "kit",
-      "phone": "khang@gmai.com",
-      "email": "0981631267",
-      "address": "Đà Nẵng",
+      "phone": "00934934",
+      "email": "343434",
+      "address": "34",
       "deliveryMethod": "Giao Tận Nơi",
       "cartItems": [
         {
@@ -844,11 +938,31 @@
           "quantity": 1
         },
         {
-          "productId": "Samsung_M55",
+          "productId": "Iphone 16 Plus",
           "quantity": 1
         }
       ],
+      "userId": 1735565716472,
       "id": 1
+    },
+    {
+      "name": "sd",
+      "phone": "sdg",
+      "email": "sdg",
+      "address": "sdg",
+      "deliveryMethod": "Giao Tận Nơi",
+      "cartItems": [
+        {
+          "productId": "Iphone 16 Pro",
+          "quantity": 1
+        },
+        {
+          "productId": "Iphone 16 Plus",
+          "quantity": 1
+        }
+      ],
+      "userId": 1735566355859,
+      "id": 2
     }
   ]
 }
