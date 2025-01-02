@@ -52,29 +52,31 @@ const OrderHistoryPage: React.FC = () => {
       {orders.length === 0 ? (
         <p className="order-history__empty">Chưa Có Lịch Sử Mua Hàng</p>
       ) : (
-        <ul className="order-history__list">
-          {orders.map((order) => (
-            <li key={order.id} className="order-history__item">
-              <h2 className="order-history__order-id">Mã Đơn Hàng: {order.id}</h2>
-              <p className="order-history__detail">Tên: {order.name}</p>
-              <p className="order-history__detail">Số Điện Thoại: {order.phone}</p>
-              <p className="order-history__detail">Email: {order.email}</p>
-              <p className="order-history__detail">Địa Chỉ: {order.address}</p>
-              <p className="order-history__detail">Kiểu Giao Hàng: {order.deliveryMethod}</p>
-              <h3 className="order-history__cart-title">Sản Phẩm:</h3>
-              <ul className="order-history__cart-list">
-                {order.cartItems.map((item, index) => (
-                  <li key={index} className="order-history__cart-item">
-                    Tên Sản Phẩm: {item.productId}, Số Lượng: {item.quantity}
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ))}
-        </ul>
+        <div className="order-history__container">
+          <ul className="order-history__list">
+            {orders.map((order) => (
+              <li key={order.id} className="order-history__item">
+                <h2 className="order-history__order-id">Mã Đơn Hàng: {order.id}</h2>
+                <p className="order-history__detail">Tên: {order.name}</p>
+                <p className="order-history__detail">Số Điện Thoại: {order.phone}</p>
+                <p className="order-history__detail">Email: {order.email}</p>
+                <p className="order-history__detail">Địa Chỉ: {order.address}</p>
+                <p className="order-history__detail">Kiểu Giao Hàng: {order.deliveryMethod}</p>
+                <h3 className="order-history__cart-title">Sản Phẩm:</h3>
+                <ul className="order-history__cart-list">
+                  {order.cartItems.map((item, index) => (
+                    <li key={index} className="order-history__cart-item">
+                      .  Tên Sản Phẩm: {item.productId}, Số Lượng: {item.quantity}
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
     </div>
-  );
+  );  
 };
 
 export default OrderHistoryPage;

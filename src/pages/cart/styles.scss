@@ -1,4 +1,4 @@
-$max-width: 1200px;
+$max-width: 1170px; 
 $spacing-small: 10px;
 $spacing-medium: 20px;
 $spacing-large: 30px;
@@ -24,8 +24,7 @@ $text-color: #333;
   }
 
   .cart-item-card {
-    width: 250px;
-    height: 250px;
+    height: 265px;
     gap: 5px;
     .cart-item-image {
       width: 80px;
@@ -53,6 +52,7 @@ $text-color: #333;
     justify-content: space-between;
     width: 100%;
     gap: $spacing-medium;
+    
 
     .cart-items {
       width: 65%;
@@ -67,7 +67,12 @@ $text-color: #333;
       align-items: stretch;
       gap: $spacing-medium;
       transition: all 0.3s ease;
-
+  
+      
+      @media (max-width: 1024px) {
+        width: 100%; 
+      }
+    
       .product-card {
         width: 100%;
         padding: $spacing-small;
@@ -133,7 +138,7 @@ $text-color: #333;
 
       .ant-btn {
         border-radius: 4px;
-        background-color:$primary-color;
+        background-color: $primary-color;
         color: white;
         width: 100%;
         padding: 12px 0;

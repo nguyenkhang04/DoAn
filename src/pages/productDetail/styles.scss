@@ -2,18 +2,18 @@ $max-width: 1200px;
 $spacing-small: 15px;
 $spacing-medium: 30px;
 $spacing-large: 45px;
-$primary-color: #cb1c22;
+$primary-color: #ff4d4f;  
 $secondary-color: #ff6f61;
-$highlight-color: #ff4d4f;
+$highlight-color: #e74c3c;
 $background-color: #f7f7f7;
 $text-color: #333;
+$border-color: #e0e0e0;
 $shadow-light: rgba(0, 0, 0, 0.1);
 $shadow-dark: rgba(0, 0, 0, 0.3);
 $gradient: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
+$font-primary: 'Roboto', sans-serif;
 
 .product-detail-page {
-  display: flex;
-  justify-content: center;
   background-color: $background-color;
   padding: $spacing-large 0;
 
@@ -21,16 +21,12 @@ $gradient: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
     display: grid;
     grid-template-columns: 1fr 1.6fr;
     gap: $spacing-large;
-    max-width: $max-width;
-    width: 80%;
-    background-color: white;
+    max-width: 1121px;
+    margin: 0 auto;
+    background-color: #fff;
     padding: $spacing-medium;
     border-radius: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-    &:hover {
-      transform: translateY(-5px);
-    }
+    transition: all 0.3s ease;
 
     @media (max-width: 1024px) {
       grid-template-columns: 1fr;
@@ -41,38 +37,37 @@ $gradient: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
 
       .main-image {
-        width: 70%;
+        width: 80%;
         height: auto;
         border-radius: 15px;
-        box-shadow: 0 4px 20px $shadow-light;
-        transition: transform 0.4s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 30px $shadow-light;
+        transition: all 0.3s ease;
 
         &:hover {
-          transform: scale(1.1);
-          box-shadow: 0 8px 30px $shadow-dark;
+          transform: scale(1.05);
+          box-shadow: 0 6px 40px $shadow-dark;
         }
       }
 
       .thumbnail-images {
         display: flex;
         gap: $spacing-small;
-        margin-top: $spacing-small;
         justify-content: center;
+        margin-top: $spacing-small;
 
         img {
-          width: 80px;
-          height: 80px;
+          width: 60px;
+          height: 60px;
           object-fit: cover;
           border-radius: 10px;
           cursor: pointer;
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          transition: transform 0.3s ease;
 
           &:hover {
             transform: scale(1.1);
-            box-shadow: 0 2px 10px $shadow-dark;
+            box-shadow: 0 4px 20px $shadow-dark;
           }
         }
       }
@@ -82,13 +77,13 @@ $gradient: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: $spacing-medium;
 
       .product-name {
-        font-size: 1.5rem;
-        font-weight: 600;
+        font-size: 1.6rem;
+        font-weight: 700;
         color: $text-color;
         margin-bottom: $spacing-small;
+        font-family: $font-primary;
         transition: color 0.3s ease;
 
         &:hover {
@@ -97,36 +92,38 @@ $gradient: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
       }
 
       .product-price {
-        font-size: 1rem;
+        font-size: 1.4rem;
         font-weight: 600;
         color: $highlight-color;
         margin-bottom: $spacing-medium;
+        font-family: $font-primary;
       }
 
       .product-options {
         .color-options {
           display: flex;
-          justify-content: flex-start;
           gap: $spacing-small;
           margin-bottom: $spacing-medium;
         }
       }
 
       .promotion {
-        background: rgb(179, 177, 177);
+        background: #f7f7f7;
         padding: $spacing-small;
         border-radius: 10px;
-        color: white;
+        color: #666;
+        box-shadow: 0 4px 15px $shadow-light;
         margin-bottom: $spacing-medium;
-        box-shadow: 0 2px 15px $shadow-light;
-        
+
         h3 {
-          font-size: 1.3rem;
+          font-size: 1.4rem;
+          font-weight: 600;
+          color: $primary-color;
           margin-bottom: $spacing-small;
         }
 
         p {
-          font-size: 1rem;
+          font-size: 1.1rem;
         }
       }
 
@@ -138,12 +135,14 @@ $gradient: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
         .order-button {
           padding: $spacing-small $spacing-medium;
           font-size: 1.2rem;
-          background: $primary-color;
+          background: #cb1c22;
           color: white;
           border: none;
           border-radius: 8px;
+          transition: all 0.3s ease;
+          cursor: pointer;
+          text-transform: uppercase;
           box-shadow: 0 4px 12px $shadow-light;
-          transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 
           &:hover {
             background: darken($primary-color, 10%);
@@ -158,12 +157,12 @@ $gradient: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
 
         .cart-notification {
           font-size: 1.2rem;
-          color: #ffffff;
-          text-align: center;
+          color: rgb(190, 80, 80);
+          background-color: #e4dadc;
           padding: $spacing-small;
-          background-color: rgb(156, 148, 148);
           border-radius: 8px;
-          box-shadow: 0 2px 5px $shadow-light;
+          text-align: center;
+          margin-top: $spacing-medium;
         }
       }
     }
@@ -172,7 +171,7 @@ $gradient: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
     .endowendow,
     .WarrantyPolicy {
       margin-top: $spacing-large;
-      
+
       h5 {
         font-size: 1.7rem;
         font-weight: 600;
@@ -191,7 +190,47 @@ $gradient: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
     .product-review {
       margin-top: $spacing-large;
       padding-top: $spacing-medium;
-      border-top: 2px solid #f1f1f1;
+      border-top: 2px solid #e0e0e0;
+
+      .review-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: $spacing-small;
+        margin-bottom: $spacing-medium;
+
+        .rating-stars {
+          display: flex;
+          gap: 5px;
+
+          .star {
+            font-size: 1.5rem;
+            color: $primary-color;
+            cursor: pointer;
+
+            &:hover {
+              color: $highlight-color;
+            }
+          }
+        }
+
+        .review-input {
+          width: 100%;
+          border: 1px solid $border-color;
+          padding: $spacing-small;
+          border-radius: 10px;
+          font-size: 1rem;
+          resize: none;
+          box-sizing: border-box;
+          max-height: 120px;
+          transition: border-color 0.3s ease;
+
+          &:focus {
+            border-color: $primary-color;
+            outline: none;
+          }
+        }
+      }
     }
   }
 }

@@ -6,7 +6,7 @@ $card-border-radius: 15px;
 $transition-duration: 0.3s;
 $box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 $hover-box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-$max-width-large: 1200px;
+$max-width-large: 1170px;
 $max-width-medium: 600px;
 $max-width-small: 190px;
 $thumbnail-size: 80px;
@@ -169,7 +169,6 @@ button {
   text-align: center;
 
   .product-card {
-    border: 1px solid $primary-color;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);

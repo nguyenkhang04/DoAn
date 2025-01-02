@@ -1,4 +1,3 @@
-
 $order-bg-color: #f9f9f9;
 $primary-color: #cb1c22;
 $secondary-color: #f6b1b1;
@@ -7,19 +6,21 @@ $background-color: #ffffff;
 $spacing-small: 15px;
 $spacing-medium: 25px;
 $spacing-large: 35px;
-$max-width: 1200px;
+$max-width-container: 1170px;
+$max-width-info: 600px;
+$max-width-image-main: 300px;
+$max-width-thumbnail: 100px;
 $border-radius: 12px;
 $shadow-color: rgba(0, 0, 0, 0.1);
-
 
 $order-history-bg: linear-gradient(135deg, #cb1c22 0%, #f6b1b1 100%);
 
 .order-history {
-  padding: 0px 25px;
+  padding: 5px 10px;
   background: $order-history-bg;
   border-radius: $border-radius;
-  max-width: $max-width;
-  margin: 0 auto;
+  max-width: $max-width-container;
+  margin: 40px auto;
   box-shadow: 0 2px 15px $shadow-color;
   color: $text-color;
   font-family: 'Arial', sans-serif;
@@ -44,6 +45,12 @@ $order-history-bg: linear-gradient(135deg, #cb1c22 0%, #f6b1b1 100%);
   &__list {
     list-style-type: none;
     padding: 0;
+    max-height: 450px; 
+    overflow-y: auto; 
+    background-color: $order-bg-color;
+    border: 1px solid $shadow-color; 
+    padding: $spacing-small; 
+    border-radius: $border-radius;
   }
 
   &__item {
@@ -64,7 +71,6 @@ $order-history-bg: linear-gradient(135deg, #cb1c22 0%, #f6b1b1 100%);
     &:last-child {
       margin-bottom: 0;
     }
-
 
     &::after {
       content: "✔️";
@@ -124,7 +130,6 @@ $order-history-bg: linear-gradient(135deg, #cb1c22 0%, #f6b1b1 100%);
   }
 }
 
-
 .loading, .error {
   text-align: center;
   font-size: 2rem;
@@ -137,17 +142,26 @@ $order-history-bg: linear-gradient(135deg, #cb1c22 0%, #f6b1b1 100%);
   color: red;
 }
 
+@media (max-width: 1024px) {
+  .order-history {
+    flex-direction: column;
+    max-width: 500px;
+  }
+}
+
 @media (max-width: 768px) {
   .order-history {
     padding: $spacing-small;
+    max-width: $max-width-info;
   }
 
   .order-history__title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .order-history__item {
     padding: $spacing-small;
+    font-size: 1rem;
   }
 
   .order-history__order-id {
@@ -164,5 +178,21 @@ $order-history-bg: linear-gradient(135deg, #cb1c22 0%, #f6b1b1 100%);
 
   .order-history__cart-item {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .order-history {
+    max-width: 100%;
+    padding: $spacing-small;
+  }
+
+  .order-history__title {
+    font-size: 1.5rem;
+  }
+
+  .order-history__item {
+    padding: $spacing-small;
+    font-size: 0.9rem;
   }
 }

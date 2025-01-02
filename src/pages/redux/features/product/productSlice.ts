@@ -16,6 +16,10 @@ export type TProduct = {
   description: string;
   brandId: string;
   categoryId: string;
+  subImgs: {
+    white: string;
+    black: string;
+  }; 
 };
 
 export type TProductState = {
