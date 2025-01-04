@@ -9,6 +9,7 @@ import "./styles.scss";
 const { Panel } = Collapse;
 const { Option } = Select;
 
+
 const ProductPage: React.FC = () => {
   const dispatch = useDispatch();
   const location = useLocation();
@@ -47,6 +48,7 @@ const ProductPage: React.FC = () => {
   const handleAddToCart = (product: any) => {
     console.log("Đang thêm vào giỏ hàng:", product);
     dispatch(addToCart(product));
+
   };
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {

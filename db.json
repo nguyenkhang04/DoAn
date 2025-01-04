@@ -75,12 +75,15 @@
     {
       "id": "Samsung_M55",
       "img": "https://cdn2.fptshop.com.vn/unsafe/150x0/filters:quality(100)/samsung_galaxy_m55_den_4_d7f9674500.jpg",
-      "subImgs": [],
       "name": "Samsung Galaxy M55",
       "price": 28990000,
       "description": "Tặng phiếu mua hàng 50,000đ khi mua sim FPT kèm máy",
       "brandId": "2",
-      "categoryId": "1"
+      "categoryId": "1",
+      "subImgs": {
+        "white": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/42/320721/samsung-galaxy-fold6-white-1-638687501101098014-750x500.jpg",
+        "black": "https://img.tgdd.vn/imgt/old/f_webp,fit_outside,quality_75/https://cdn.tgdd.vn/Products/Images/42/320721/samsung-galaxy-z-fold6-xam-thumbn-200x200.jpg"
+      }
     },
     {
       "id": "Iphone 16 Pro",
@@ -916,7 +919,6 @@
         "white": "https://cdn2.fptshop.com.vn/unsafe/384x0/filters:quality(100)/2023_8_1_638265095005080404_bao-da-thong-minh-galaxy-tab-s9-trang-3.jpg",
         "black": "https://cdn2.fptshop.com.vn/unsafe/384x0/filters:quality(100)/2019_10_11_637063844617149100_C%C3%A1p%20USB-C%20to%20Lightning%200.9m%20Anker%20PowerLine%20Select%20A8612%20%C4%90en.jpg"
       }
-
     },
     {
       "id": "623421342342134",
@@ -1280,7 +1282,7 @@
     {
       "fullName": "Khang phạm",
       "phone": "0981631267",
-      "email": "khangkhangphampham@gmail.com",
+      "email": "khangkhangpham@gmail.com",
       "password": "khangpham148",
       "gender": "male",
       "dob": "2004-08-14",
@@ -1303,6 +1305,15 @@
       "district": "",
       "ward": "",
       "id": 6
+    },
+    {
+      "fullName": "Khang phạm",
+      "age": 20,
+      "phone": "0981631269",
+      "email": "khangphampham@gmail.com",
+      "password": "khang123",
+      "userId": 1735991378276,
+      "id": 7
     }
   ],
   "orders": [

@@ -1,8 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { TProduct } from "./productSlice";
+import { TProduct } from "./productSlice";  
+import { RootState } from "../../store";
 
 type TCartItem = {
-  product: TProduct;
+  product: TProduct; 
   quantity: number;
 };
 
@@ -11,34 +12,79 @@ type TCartState = {
 };
 
 const initialState: TCartState = {
-  cartItems: JSON.parse(localStorage.getItem("cartItems") || "[]"),
+  cartItems: (() => {
+    const savedCart = localStorage.getItem("cartItems");
+    if (savedCart) {
+      try {
+        return JSON.parse(savedCart);
+      } catch (error) {
+        console.error("Error parsing cart items from localStorage", error);
+        return [];
+      }
+    }
+    return [];
+  })(),
 };
 
 const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
+
+    setCartItems: (state, action: PayloadAction<TCartItem[]>) => {
+      state.cartItems = action.payload;
+      localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+    },
     addToCart: (state, action: PayloadAction<TProduct>) => {
-      const existingItem = state.cartItems.find(
-        (item) => item.product.id === action.payload.id
+      const existingProduct = state.cartItems.find(
+        (item) => item.product.id === action.payload.id 
       );
-      if (existingItem) {
-        existingItem.quantity += 1;
+    
+      console.log(existingProduct);
+      console.log(action);
+      
+
+      if (existingProduct) {
+   
+        existingProduct.quantity += 1;
       } else {
-        state.cartItems.push({ product: action.payload, quantity: 1 });
+
+        state.cartItems.push({
+          product: action.payload,
+          quantity: 1,
+        });
       }
-      localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+
+      const cartItemsToSave = state.cartItems.map(item => ({
+        product: item.product,
+        quantity: item.quantity,
+      }));
+    
+      console.log('Giỏ hàng sau khi thêm:', cartItemsToSave);
+      localStorage.setItem("cartItems", JSON.stringify(cartItemsToSave));
     },
+    
+
     removeFromCart: (state, action: PayloadAction<string>) => {
-      state.cartItems = state.cartItems.filter(
-        (item) => item.product.id !== action.payload
+      const productId = action.payload;
+      const existingItem = state.cartItems.find(
+        (item) => item.product.id === productId
       );
+
+      if (existingItem) {
+        state.cartItems = state.cartItems.filter(
+          (item) => item.product.id !== productId
+        );
+      }
+
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
+
     clearCart: (state) => {
       state.cartItems = [];
       localStorage.removeItem("cartItems");
     },
+
     updateCartItemQuantity: (
       state,
       action: PayloadAction<{ productId: string; quantity: number }>
@@ -59,6 +105,7 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addToCart, removeFromCart, clearCart, updateCartItemQuantity } =
+
+export const { setCartItems, addToCart, removeFromCart, clearCart, updateCartItemQuantity } =
   cartSlice.actions;
 export const cartReducer = cartSlice.reducer;

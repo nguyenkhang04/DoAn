@@ -8,6 +8,7 @@ import "./styles.scss";
 import {
   clearCart,
   removeFromCart,
+  setCartItems,
   updateCartItemQuantity,
 } from "../redux/features/product/cartSlice";
 import { submitUserInfo } from "../redux/features/product/userSlice";
@@ -48,7 +49,19 @@ const CartPage = () => {
     } else {
       console.error("UserId not found in sessionStorage!");
     }
-  }, []);
+
+
+    const savedCart = localStorage.getItem("cartItems");
+    if (savedCart) {
+      try {
+        const cart = JSON.parse(savedCart);
+   
+        dispatch(setCartItems(cart));
+      } catch (error) {
+        console.error("Error parsing cart items from localStorage", error);
+      }
+    }
+  }, [dispatch]);
 
   const handleRemoveFromCart = (productId: string) => {
     dispatch(removeFromCart(productId));
@@ -147,11 +160,12 @@ const CartPage = () => {
   };
 
   const totalPrice = cartItems.reduce((total, item) => {
-    const price = Number(item.product.price);
-    const quantity = Number(item.quantity);
-
+    const price = item.product?.price ? Number(item.product.price) : 0; 
+    const quantity = item.quantity ? Number(item.quantity) : 0; 
+  
     return total + price * quantity;
   }, 0);
+
   return (
     <div className="cart-page">
       <h1 className="title">Giỏ Hàng</h1>
@@ -163,7 +177,6 @@ const CartPage = () => {
             <Row gutter={[16, 16]}>
               {cartItems.map((item) => (
                 <Col key={item.product.id} span={8}>
-                
                   <Card
                     title={item.product.name}
                     extra={
