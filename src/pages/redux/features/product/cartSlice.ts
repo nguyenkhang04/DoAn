@@ -1,10 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { TProduct } from "./productSlice";  
+import { TProduct } from "./productSlice";
 import { RootState } from "../../store";
 
-type TCartItem = {
-  product: TProduct; 
+ type TCartItem = {
+  product: TProduct;
   quantity: number;
+  selectedColor: string;
 };
 
 type TCartState = {
@@ -30,40 +31,37 @@ const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-
     setCartItems: (state, action: PayloadAction<TCartItem[]>) => {
       state.cartItems = action.payload;
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
     addToCart: (state, action: PayloadAction<TProduct>) => {
       const existingProduct = state.cartItems.find(
-        (item) => item.product.id === action.payload.id 
+        (item) => item.product.id === action.payload.id
       );
-    
+
       console.log(existingProduct);
       console.log(action);
-      
 
       if (existingProduct) {
-   
         existingProduct.quantity += 1;
       } else {
-
         state.cartItems.push({
           product: action.payload,
           quantity: 1,
+          selectedColor: action.payload.brandId
         });
       }
 
-      const cartItemsToSave = state.cartItems.map(item => ({
+      const cartItemsToSave = state.cartItems.map((item) => ({
         product: item.product,
         quantity: item.quantity,
+        selectedColor: item.selectedColor,
       }));
-    
-      console.log('Giỏ hàng sau khi thêm:', cartItemsToSave);
+
+      console.log("Giỏ hàng sau khi thêm:", cartItemsToSave);
       localStorage.setItem("cartItems", JSON.stringify(cartItemsToSave));
     },
-    
 
     removeFromCart: (state, action: PayloadAction<string>) => {
       const productId = action.payload;
@@ -105,7 +103,11 @@ const cartSlice = createSlice({
   },
 });
 
-
-export const { setCartItems, addToCart, removeFromCart, clearCart, updateCartItemQuantity } =
-  cartSlice.actions;
+export const {
+  setCartItems,
+  addToCart,
+  removeFromCart,
+  clearCart,
+  updateCartItemQuantity,
+} = cartSlice.actions;
 export const cartReducer = cartSlice.reducer;

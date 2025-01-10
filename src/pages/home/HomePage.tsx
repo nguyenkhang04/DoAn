@@ -47,11 +47,6 @@ const HomePage = () => {
     fetchProducts();
   }, []);
 
-  const handleAddToCart = (product: any) => {
-      console.log("Đang thêm vào giỏ hàng:", product);
-      dispatch(addToCart(product));
-    };
-
   const toggleShowMore = (category: string) => {
     if (category === "phone") {
       setShowMorePhones(!showMorePhones);
@@ -104,13 +99,6 @@ const HomePage = () => {
                       </p>
                     </div>
                   </Link>
-                  <Button
-                    type="primary"
-                    className="add-to-cart-btn"
-                    onClick={() => handleAddToCart(product)}
-                  >
-                    Thêm vào giỏ hàng
-                  </Button>
                 </div>
               ))
           )}
@@ -167,18 +155,14 @@ const HomePage = () => {
                       </p>
                     </div>
                   </Link>
-                  <Button
-                    type="primary"
-                    className="add-to-cart-btn"
-                    onClick={() => handleAddToCart(product)}
-                  >
-                    Thêm vào giỏ hàng
-                  </Button>
                 </div>
               ))
           )}
         </div>
-        <button className="btnshowmore" onClick={() => toggleShowMore("laptop")}>
+        <button
+          className="btnshowmore"
+          onClick={() => toggleShowMore("laptop")}
+        >
           {showMoreLaptops ? "Ẩn bớt" : "Xem thêm"}
         </button>
       </div>
@@ -232,19 +216,15 @@ const HomePage = () => {
                       </p>
                     </div>
                   </Link>
-                  <Button
-                    type="primary"
-                    className="add-to-cart-btn"
-                    onClick={() => handleAddToCart(product)}
-                  >
-                    Thêm vào giỏ hàng
-                  </Button>
                 </div>
               ))
           )}
         </div>
 
-        <button className="btnshowmore" onClick={() => toggleShowMore("accessory")}>
+        <button
+          className="btnshowmore"
+          onClick={() => toggleShowMore("accessory")}
+        >
           {showMoreAccessories ? "Ẩn bớt" : "Xem thêm"}
         </button>
       </div>
@@ -282,18 +262,14 @@ const HomePage = () => {
                       </p>
                     </div>
                   </Link>
-                  <Button
-                    type="primary"
-                    className="add-to-cart-btn"
-                    onClick={() => handleAddToCart(product)}
-                  >
-                    Thêm vào giỏ hàng
-                  </Button>
                 </div>
               ))
           )}
         </div>
-        <button className="btnshowmore" onClick={() => toggleShowMore("accessory")}>
+        <button
+          className="btnshowmore"
+          onClick={() => toggleShowMore("accessory")}
+        >
           {showMoreAccessories ? "Ẩn bớt" : "Xem thêm"}
         </button>
       </div>

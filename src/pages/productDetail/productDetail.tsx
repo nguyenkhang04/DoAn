@@ -1,30 +1,23 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { actFetchProductById } from "../redux/features/product/productSlice";
 import { AppDispatch, RootState } from "../redux/store";
-import "./styles.scss";
 import { addToCart } from "../redux/features/product/cartSlice";
-import { Button, Spin } from "antd";
+import { Button, Spin, message } from "antd";
 import ProductReview from "../productreview/ProductReview";
+import "./styles.scss";
+
 
 const ProductDetailPage = () => {
   const { productId } = useParams();
-  const location = useLocation();
   const dispatch = useDispatch<AppDispatch>();
-
-  const queryParams = new URLSearchParams(location.search);
-  const categoryId = queryParams.get("categoryId");
-  const brand = queryParams.get("brandId");
-  const searchQuery = queryParams.get("search");
 
   const product = useSelector((state: RootState) => state.product.product);
   const loading = useSelector((state: RootState) => state.product.loading);
   const [animateButton, setAnimateButton] = useState<string | null>(null);
   const [cartNotification, setCartNotification] = useState(false);
-  const [selectedColor, setSelectedColor] = useState<"white" | "black">(
-    "white"
-  );
+  const [selectedColor, setSelectedColor] = useState<"white" | "black">("white");
 
   useEffect(() => {
     if (productId) {
@@ -33,7 +26,12 @@ const ProductDetailPage = () => {
   }, [dispatch, productId]);
 
   const handleAddToCart = (product: any) => {
-    dispatch(addToCart(product));
+    if (!selectedColor) {
+      message.warning("Vui lòng chọn màu sắc trước khi thêm vào giỏ hàng!");
+      return;
+    }
+
+    dispatch(addToCart({ ...product, selectedColor }));
     setAnimateButton(product.id);
     setCartNotification(true);
 
@@ -52,23 +50,31 @@ const ProductDetailPage = () => {
     return <h1>Không tìm thấy sản phẩm</h1>;
   }
 
+
+  const selectedImage = product.subImgs.find(
+    (img) => img.color === selectedColor
+  )?.url;
+
   return (
     <div className="product-detail-page">
       <div className="product-detail-page-container">
         <div className="product-images">
-          <img
-            src={product.subImgs[selectedColor]}
-            alt={product.name}
-            className="main-image"
-          />
+         
+          {selectedImage && (
+            <img
+              src={selectedImage}
+              alt={product.name}
+              className="main-image"
+            />
+          )}
           <div className="thumbnail-images">
-            {Object.keys(product.subImgs).map((color) => (
+            {product.subImgs.map((img) => (
               <img
-                key={color}
-                src={product.subImgs[color as "white" | "black"]}
-                alt={color}
+                key={img.color}
+                src={img.url}
+                alt={img.color}
                 className="thumbnail"
-                onClick={() => handleColorChange(color as "white" | "black")}
+                onClick={() => handleColorChange(img.color as "white" | "black")}
               />
             ))}
           </div>
@@ -87,13 +93,9 @@ const ProductDetailPage = () => {
                 borderRadius: "8px",
                 border: "none",
                 cursor: "pointer",
-                backgroundColor:
-                  selectedColor === "white" ? "#cb1c22" : "#f5f5f5",
+                backgroundColor: selectedColor === "white" ? "#cb1c22" : "#f5f5f5",
                 color: selectedColor === "white" ? "white" : "#333",
-                boxShadow:
-                  selectedColor === "white"
-                    ? "0 4px 12px rgba(0, 0, 0, 0.3)"
-                    : "0 4px 6px rgba(0, 0, 0, 0.1)",
+                boxShadow: selectedColor === "white" ? "0 4px 12px rgba(0, 0, 0, 0.3)" : "0 4px 6px rgba(0, 0, 0, 0.1)",
                 transition: "all 0.3s ease",
               }}
               type={selectedColor === "white" ? "primary" : "default"}
@@ -102,16 +104,23 @@ const ProductDetailPage = () => {
               Trắng
             </Button>
             <Button
-              style={{}}
+              style={{
+                padding: "15px",
+                margin: "5px",
+                fontSize: "1rem",
+                borderRadius: "8px",
+                border: "none",
+                cursor: "pointer",
+                backgroundColor: selectedColor === "black" ? "#cb1c22" : "#f5f5f5",
+                color: selectedColor === "black" ? "white" : "#333",
+                boxShadow: selectedColor === "black" ? "0 4px 12px rgba(0, 0, 0, 0.3)" : "0 4px 6px rgba(0, 0, 0, 0.1)",
+                transition: "all 0.3s ease",
+              }}
               type={selectedColor === "black" ? "primary" : "default"}
               onClick={() => handleColorChange("black")}
             >
               Đen
             </Button>
-          </div>
-
-          <div className="product-options">
-            <div className="color-options"></div>
           </div>
 
           <div className="promotion">
@@ -134,6 +143,9 @@ const ProductDetailPage = () => {
             )}
           </div>
         </div>
+        <div className="product-review">
+          <ProductReview  />
+        </div>
 
         <div className="ProductInformation">
           <h5>Thông tin sản phẩm</h5>
@@ -145,10 +157,6 @@ const ProductDetailPage = () => {
           </p>
           <p>Bảo hành chính hãng 18 tháng tại Xiaomi trên toàn quốc</p>
           <p>Lỗi là đổi trong 30 ngày</p>
-        </div>
-
-        <div className="product-review">
-          <ProductReview />
         </div>
       </div>
     </div>

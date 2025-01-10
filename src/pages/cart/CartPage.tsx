@@ -1,10 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../redux/store";
-import { Button, Row, Col, Card, Modal, InputNumber, Input, Radio } from "antd";
+import {
+  Button,
+  Row,
+  Col,
+  Card,
+  Modal,
+  InputNumber,
+  Input,
+  Radio,
+  message,
+} from "antd";
 import { DeleteOutlined } from "@ant-design/icons";
 import axios from "axios";
-import "./styles.scss";
 import {
   clearCart,
   removeFromCart,
@@ -14,6 +23,7 @@ import {
 import { submitUserInfo } from "../redux/features/product/userSlice";
 import emailjs from "emailjs-com";
 import { Link } from "react-router-dom";
+import "./styles.scss";
 
 const CartPage = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -25,10 +35,6 @@ const CartPage = () => {
   const [email, setEmail] = useState<string>(user?.email || "");
   const [address, setAddress] = useState<string>("");
 
-  const [provinceName, setProvinceName] = useState<string>("");
-  const [districtName, setDistrictName] = useState<string>("");
-  const [wardName, setWardName] = useState<string>("");
-
   const [deliveryMethod, setDeliveryMethod] = useState<string>("Giao Tận Nơi");
 
   useEffect(() => {
@@ -37,8 +43,8 @@ const CartPage = () => {
       axios
         .get(`http://localhost:9999/users?userId=${userId}`)
         .then((response) => {
-          if (response.data && response.data.length > 0) {
-            const user = response.data[0];
+          const user = response.data?.[0];
+          if (user) {
             setName(user.fullName || "");
             setPhone(user.phone || "");
             setEmail(user.email || "");
@@ -46,16 +52,12 @@ const CartPage = () => {
           }
         })
         .catch((error) => console.error("Error fetching user data:", error));
-    } else {
-      console.error("UserId not found in sessionStorage!");
     }
-
 
     const savedCart = localStorage.getItem("cartItems");
     if (savedCart) {
       try {
         const cart = JSON.parse(savedCart);
-   
         dispatch(setCartItems(cart));
       } catch (error) {
         console.error("Error parsing cart items from localStorage", error);
@@ -65,23 +67,18 @@ const CartPage = () => {
 
   const handleRemoveFromCart = (productId: string) => {
     dispatch(removeFromCart(productId));
+    message.success("Sản phẩm đã được xóa khỏi giỏ hàng.");
   };
 
   const handlePayment = () => {
     const userId = sessionStorage.getItem("userId");
     if (!userId) {
-      Modal.error({
-        title: "Lỗi",
-        content: "Vui lòng đăng nhập để thực hiện đặt hàng!",
-      });
+      message.error("Vui lòng đăng nhập để thực hiện đặt hàng!");
       return;
     }
 
     if (!name || !phone || !email || !address) {
-      Modal.error({
-        title: "Lỗi",
-        content: "Vui lòng nhập đầy đủ thông tin!",
-      });
+      message.error("Vui lòng nhập đầy đủ thông tin!");
       return;
     }
 
@@ -134,35 +131,25 @@ const CartPage = () => {
         "ttyVfSHReDFeML0HV"
       )
       .then(
-        (result) => {
-          console.log("Email sent:", result.text);
-          Modal.success({
-            title: "Đặt hàng thành công",
-            content:
-              "Thông tin của bạn đã được gửi, chúng tôi sẽ liên hệ sớm nhất.",
-          });
+        () => {
+          message.success("Đặt hàng thành công! Chúng tôi sẽ liên hệ sớm.");
           dispatch(clearCart());
         },
         (error) => {
           console.error("Failed to send email:", error.text);
-          Modal.error({
-            title: "Lỗi",
-            content: "Gửi email thất bại, vui lòng thử lại.",
-          });
+          message.error("Gửi email thất bại, vui lòng thử lại.");
         }
       );
   };
 
   const handleQuantityChange = (productId: string, newQuantity: number) => {
     if (newQuantity < 1) return;
-
     dispatch(updateCartItemQuantity({ productId, quantity: newQuantity }));
   };
 
   const totalPrice = cartItems.reduce((total, item) => {
-    const price = item.product?.price ? Number(item.product.price) : 0; 
-    const quantity = item.quantity ? Number(item.quantity) : 0; 
-  
+    const price = item.product?.price || 0;
+    const quantity = item.quantity || 0;
     return total + price * quantity;
   }, 0);
 
@@ -198,7 +185,7 @@ const CartPage = () => {
                           className="cart-item-image"
                         />
                         <div className="cart-item-details">
-                          <p>{item.product.price} VND</p>
+                          <p>{item.product.price.toLocaleString()} VND</p>
                         </div>
                       </div>
                     </Link>
@@ -223,37 +210,25 @@ const CartPage = () => {
             <div className="total-price">
               Tổng tiền: <span>{totalPrice.toLocaleString()} VND</span>
             </div>
-
             <h3>Thông tin khách hàng</h3>
-            {user ? (
-              <div>
-                <p>Họ và tên: {name}</p>
-                <p>Điện thoại: {phone}</p>
-                <p>Email: {email}</p>
-              </div>
-            ) : (
-              <>
-                <Input
-                  placeholder="Họ và tên"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  style={{ marginBottom: 10 }}
-                />
-                <Input
-                  placeholder="Điện thoại"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  style={{ marginBottom: 10 }}
-                />
-                <Input
-                  placeholder="Email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  style={{ marginBottom: 10 }}
-                />
-              </>
-            )}
-
+            <Input
+              placeholder="Họ và tên"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              style={{ marginBottom: 10 }}
+            />
+            <Input
+              placeholder="Điện thoại"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              style={{ marginBottom: 10 }}
+            />
+            <Input
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              style={{ marginBottom: 10 }}
+            />
             <h3>Chọn cách thức nhận hàng</h3>
             <Radio.Group
               value={deliveryMethod}
@@ -263,21 +238,12 @@ const CartPage = () => {
               <Radio value="Giao Tận Nơi">Giao tận nơi</Radio>
               <Radio value="Nhận Tại Cửa Hàng">Nhận tại cửa hàng</Radio>
             </Radio.Group>
-
-            <h3>Thông tin nhận hàng</h3>
-            {user ? (
-              <p>
-                Địa chỉ: {provinceName}, {districtName}, {wardName}
-              </p>
-            ) : (
-              <Input
-                placeholder="Địa chỉ"
-                value={address}
-                onChange={(e) => setAddress(e.target.value)}
-                style={{ marginBottom: 10 }}
-              />
-            )}
-
+            <Input
+              placeholder="Địa chỉ"
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+              style={{ marginBottom: 10 }}
+            />
             <Button
               className="buy"
               type="primary"

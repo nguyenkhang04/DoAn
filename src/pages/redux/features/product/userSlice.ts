@@ -11,7 +11,12 @@ interface UserInfo {
 }
 
 interface UserState {
-  loggedInUser: { id: string; name: string; email: string; phone: string; } | null;
+  loggedInUser: {
+    id: string;
+    name: string;
+    email: string;
+    phone: string;
+  } | null;
   userscarts: UserInfo[];
   loading: boolean;
   error: string | null;
@@ -30,7 +35,7 @@ export const submitUserInfo = createAsyncThunk(
     try {
       const response = await axios.post(
         "http://localhost:9999/orders",
-        userInfo 
+        userInfo
       );
       return response.data;
     } catch (error: any) {
@@ -50,12 +55,17 @@ const userSlice = createSlice({
     },
     login: (
       state,
-      action: PayloadAction<{ id: string; name: string; email: string; phone: string; }>
+      action: PayloadAction<{
+        id: string;
+        name: string;
+        email: string;
+        phone: string;
+      }>
     ) => {
-      state.loggedInUser = action.payload; 
+      state.loggedInUser = action.payload;
     },
     logout: (state) => {
-      state.loggedInUser = null; 
+      state.loggedInUser = null;
     },
   },
   extraReducers: (builder) => {
@@ -73,7 +83,6 @@ const userSlice = createSlice({
       });
   },
 });
-
 
 export const userReducer = userSlice.reducer;
 export const { addUserInfo, login, logout } = userSlice.actions;

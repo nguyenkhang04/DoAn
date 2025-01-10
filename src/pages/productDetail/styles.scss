@@ -1,4 +1,4 @@
-$max-width: 1200px;
+$max-width: 1000px;
 $spacing-small: 15px;
 $spacing-medium: 30px;
 $spacing-large: 45px;
@@ -19,7 +19,7 @@ $font-primary: 'Roboto', sans-serif;
 
   .product-detail-page-container {
     display: grid;
-    grid-template-columns: 1fr 1.6fr;
+    grid-template-columns: 1.5fr 1fr;
     gap: $spacing-large;
     max-width: 1121px;
     margin: 0 auto;

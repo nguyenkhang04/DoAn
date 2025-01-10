@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Spin, Button, Input, Select, Checkbox, Collapse } from "antd";
+import { Spin, Button, Input, Select, Checkbox, Collapse, message } from "antd";
 import { productApis } from "../../apis/productApis";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/features/product/cartSlice";
@@ -8,7 +8,6 @@ import "./styles.scss";
 
 const { Panel } = Collapse;
 const { Option } = Select;
-
 
 const ProductPage: React.FC = () => {
   const dispatch = useDispatch();
@@ -24,6 +23,9 @@ const ProductPage: React.FC = () => {
   const [sortOrder, setSortOrder] = useState("none");
   const [searchQuery, setSearchQuery] = useState("");
   const [showFilterOptions, setShowFilterOptions] = useState(false);
+  const [selectedColors, setSelectedColors] = useState<{
+    [key: number]: string;
+  }>({});
   const [showMore, setShowMore] = useState(false);
 
   useEffect(() => {
@@ -46,9 +48,17 @@ const ProductPage: React.FC = () => {
   }, [location.search]);
 
   const handleAddToCart = (product: any) => {
-    console.log("Đang thêm vào giỏ hàng:", product);
-    dispatch(addToCart(product));
+    const selectedColor = selectedColors[product.id];
+    if (!selectedColor) {
+      message.warning("Vui lòng chọn màu sắc trước khi thêm vào giỏ hàng.");
+      return;
+    }
 
+    console.log("Đang thêm vào giỏ hàng:", {
+      ...product,
+      color: selectedColor,
+    });
+    dispatch(addToCart({ ...product, color: selectedColor }));
   };
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -74,11 +84,17 @@ const ProductPage: React.FC = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
-  const toggleShowMore = (category: string) => {
-    if (category === "phone") {
-      setShowMore(!showMore);
-    }
+
+  const handleColorChange = (productId: string, color: string) => {
+    setSelectedColors((prev) => ({
+      ...prev,
+      [productId]: color,
+    }));
   };
+  interface TSubImgs  {
+    color: "white" | "black";
+    url: string;
+  }
 
   const filteredProducts = products.filter((product) => {
     const isManufacturerMatched =
@@ -202,45 +218,70 @@ const ProductPage: React.FC = () => {
         {sortedProducts.length === 0 ? (
           <p>Không có sản phẩm trong danh mục này.</p>
         ) : (
-          sortedProducts
-            .slice(0, showMore ? sortedProducts.length : 8)
-            .map((product) => (
-              <div
-                key={`${product.id}-${product.name}`}
-                className="product-card"
+          sortedProducts.slice(0, showMore ? undefined : 8).map((product) => (
+            <div key={`${product.id}-${product.name}`} className="product-card">
+              <Link
+                to={`/product/${product.id}`}
+                style={{ textDecoration: "none" }}
               >
-                <Link
-                  to={`/product/${product.id}`}
-                  style={{ textDecoration: "none" }}
-                >
-                  <img
-                    src={product.img}
-                    alt={product.name}
-                    className="product-image"
-                    style={{ width: "100%", height: "auto" }}
-                  />
-                  <div className="product-info">
-                    <h2 className="product-name">{product.name}</h2>
-                    <p className="product-price">
-                      {product.price.toLocaleString()} VND
-                    </p>
-                    <p className="product-description">{product.description}</p>
-                  </div>
-                </Link>
-                <Button
-                  type="primary"
-                  className="add-to-cart-btn"
-                  onClick={() => handleAddToCart(product)}
-                >
-                  Thêm vào giỏ hàng
-                </Button>
+                <img
+                  src={product.img}
+                  alt={product.name}
+                  className="product-image"
+                  style={{ width: "100%", height: "auto" }}
+                />
+                <div className="product-info">
+                  <h2 className="product-name">{product.name}</h2>
+                  <p className="product-price">
+                    {product.price.toLocaleString()} VND
+                  </p>
+                  <p className="product-description">{product.description}</p>
+                </div>
+              </Link>
+              <div className="color-options">
+                {product.subImgs.map((img: TSubImgs) => (
+                  <button
+                    key={img.color}
+                    className={
+                      selectedColors[product.id] === img.color ? "selected" : ""
+                    }
+                    style={{
+                      backgroundColor:
+                        img.color === "white"
+                          ? "#fff"
+                          : img.color === "black"
+                          ? "#000"
+                          : "transparent",
+                    }}
+                    onClick={() => handleColorChange(product.id, img.color)}
+                  >
+                    {img.color === "black" || img.color === "white"
+                      ? ""
+                      : img.color}
+                  </button>
+                ))}
               </div>
-            ))
+
+              <Button
+                type="primary"
+                className="add-to-cart-btn"
+                onClick={() => handleAddToCart(product)}
+              >
+                Thêm vào giỏ hàng
+              </Button>
+            </div>
+          ))
         )}
       </div>
-      <button className="btnshowmore" onClick={() => toggleShowMore("phone")}>
-        {showMore ? "Ẩn bớt" : "Xem thêm"}
-      </button>
+
+      <div
+        className="show-more-container"
+        style={{ display: "flex", justifyContent: "center", width: "100%" }}
+      >
+        <Button onClick={() => setShowMore(!showMore)}>
+          {showMore ? "Ẩn bớt" : "Xem thêm"}
+        </Button>
+      </div>
 
       <button className="scroll-to-top" onClick={scrollToTop}>
         ↑

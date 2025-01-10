@@ -2,29 +2,124 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+
+  .review-summary {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    .average-rating {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-right: 20px;
+
+      .rating-value {
+        font-size: 36px;
+        font-weight: bold;
+        color: #f57c00;
+        margin-bottom: 5px;
+      }
+
+      .rating-stars {
+        margin-top: 5px;
+        display: flex;
+        gap: 8px; /* Increased gap for horizontal star alignment */
+      }
+
+      .rating-count {
+        font-size: 14px;
+        color: #555;
+        margin-top: 5px;
+      }
+    }
+
+    .detailed-rating {
+      flex: 1;
+
+      .rating-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        font-size: 14px;
+
+        .rating-label {
+          width: 50px;
+          font-size: 14px;
+          font-weight: 500;
+          color: #333;
+        }
+
+        .rating-bar {
+          flex: 1;
+          height: 8px;
+          margin: 0 10px;
+          background-color: #ddd;
+          border-radius: 4px;
+          position: relative;
+
+          .fill {
+            height: 100%;
+            background-color: #f44336;
+            border-radius: 4px;
+            animation: progressBar 1s ease-in-out;
+          }
+        }
+
+        .rating-count {
+          font-size: 14px;
+          color: #555;
+        }
+      }
+    }
+  }
 
   .reviews-list {
     max-height: 500px;
     overflow-y: auto;
     margin-bottom: 20px;
+    padding-right: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
   .review-card {
     margin-bottom: 15px;
-    padding: 10px;
+    padding: 15px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 8px;
     background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
 
     .review-header {
       display: flex;
       justify-content: space-between;
       margin-bottom: 10px;
       font-weight: bold;
+      font-size: 14px;
+      color: #333;
     }
 
     .review-content {
       font-size: 14px;
+      line-height: 1.5;
+      color: #555;
+      max-height: 100px; /* Limit the height of review content */
+      overflow: hidden; /* Hide excess content */
+      text-overflow: ellipsis; /* Add ellipsis if content exceeds */
     }
   }
 
@@ -40,6 +135,8 @@
       color: white;
       border: none;
       border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
 
       &:hover {
         background-color: #1565c0;
@@ -48,36 +145,73 @@
   }
 
   .add-review-form {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
     .form-title {
       font-size: 18px;
       font-weight: bold;
       margin-bottom: 10px;
     }
 
+    .rating-input {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+
+      .label {
+        font-size: 14px;
+        color: #555;
+        margin-right: 10px;
+      }
+    }
+
     .form-control {
       width: 100%;
-      height: 100px;
+      height: 120px;
       padding: 10px;
       border: 1px solid #ddd;
       border-radius: 5px;
+      font-size: 14px;
+      transition: border 0.3s ease;
+
+      &:focus {
+        border-color: #1976d2;
+        outline: none;
+      }
     }
 
     .login-warning {
       color: #e53935;
+      font-size: 14px;
     }
 
     .text-danger {
       color: #e53935;
+      font-size: 14px;
     }
   }
 }
 
+@keyframes progressBar {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
 
 .product-image-container {
   .main-image {
     max-width: 300px;
     width: 100%;
     margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
   .thumbnail {
@@ -85,6 +219,12 @@
     height: 100px;
     margin-right: 10px;
     cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   .info-section {
@@ -93,33 +233,44 @@
   }
 }
 
-
 @media (max-width: 1024px) {
   .product-review-container {
     padding: 15px;
+  }
 
-    .reviews-list {
-      max-height: 250px;
-    }
+  .reviews-list {
+    max-height: 250px;
+  }
 
+  .review-card {
+    margin-bottom: 12px;
+  }
+
+  .scroll-more .btn {
+    font-size: 12px;
+  }
+
+  .add-review-form .form-control {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-review-container {
+    padding: 10px;
     .review-card {
-      margin-bottom: 12px;
-    }
-
-    .scroll-more .btn {
       font-size: 12px;
     }
-
     .add-review-form .form-control {
+      font-size: 14px;
+      padding: 8px;
+    }
+    .scroll-more .btn {
       font-size: 14px;
     }
   }
 
   .product-image-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
     .main-image {
       max-width: 100%;
     }
@@ -130,55 +281,16 @@
   }
 }
 
-
-@media (max-width: 768px) {
-  .product-review-container {
-    padding: 10px;
-
-    .review-card {
-      font-size: 12px;
-    }
-
-    .add-review-form .form-control {
-      font-size: 14px;
-      padding: 8px;
-    }
-
-    .scroll-more .btn {
-      font-size: 14px;
-    }
-  }
-
-  .product-image-container {
-    .main-image {
-      max-width: 100%;
-    }
-
-    .thumbnail {
-      width: 80px;
-      height: 80px;
-    }
-
-    .info-section {
-      max-width: 100%;
-    }
-  }
-}
-
-
 @media (max-width: 480px) {
   .product-review-container {
     padding: 8px;
-
     .review-card {
       font-size: 10px;
     }
-
     .add-review-form .form-control {
       font-size: 12px;
       padding: 6px;
     }
-
     .scroll-more .btn {
       font-size: 12px;
     }
@@ -188,12 +300,10 @@
     .main-image {
       max-width: 100%;
     }
-
     .thumbnail {
       width: 60px;
       height: 60px;
     }
-
     .info-section {
       padding: 10px;
     }

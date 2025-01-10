@@ -6,7 +6,7 @@ $card-border-radius: 15px;
 $transition-duration: 0.3s;
 $box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 $hover-box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-$max-width-large: 1170px;
+$max-width-large: 1100px;
 $max-width-medium: 600px;
 $max-width-small: 190px;
 $thumbnail-size: 80px;
@@ -108,7 +108,7 @@ body {
         color: #fff;
         border-radius: $card-border-radius;
         padding: 10px 15px;
-        margin:  5px;
+        margin: 5px;
         cursor: pointer;
         transition: background-color $transition-duration;
       }
@@ -171,6 +171,7 @@ button {
   .product-card {
     border-radius: 8px;
     overflow: hidden;
+    background-color: #f5f5f5;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     display: flex;
@@ -190,6 +191,23 @@ button {
       height: 100px;
       object-fit: cover;
       border-bottom: 1px solid $background-color;
+    }
+    .color-options button {
+      width: 30px;
+      height: 30px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      margin: 5px;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .color-options button:hover {
+      transform: scale(1.1);
+    }
+
+    .color-options button.selected {
+      border-color: $primary-color;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
     }
 
     .product-info {

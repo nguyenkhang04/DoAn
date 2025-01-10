@@ -6,8 +6,6 @@ import ProductPage from "./pages/product/ProductPage";
 import LoginPage from "./pages/login/LoginPage";
 import HomeLayout from "./layouts/homeLayout";
 import AdminLayout from "./layouts/adminLayout";
-import AdminUsers from "./pages/admin/users/adminUsers";
-import AdminProduct from "./pages/admin/products/adminProduct";
 import ProductDetailPage from "./pages/productDetail/productDetail";
 import AboutPage from "./pages/about/AboutPage";
 import CartPage from "./pages/cart/CartPage";
@@ -30,8 +28,6 @@ function App() {
             <Route path="/cart" element={<CartPage />} />
           </Route>
           <Route path="/admin" element={<AdminLayout />}>
-            <Route index element={<AdminUsers />} />
-            <Route path="products" element={<AdminProduct />} />
           </Route>
         </Routes>
       </Router>

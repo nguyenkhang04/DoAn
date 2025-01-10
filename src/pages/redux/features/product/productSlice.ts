@@ -7,6 +7,10 @@ import { AxiosError } from "axios";
 interface ErrorResponse {
   message: string;
 }
+interface TSubImgs  {
+  color: "white" | "black";
+  url: string;
+}
 
 export type TProduct = {
   id: string;
@@ -16,10 +20,8 @@ export type TProduct = {
   description: string;
   brandId: string;
   categoryId: string;
-  subImgs: {
-    white: string;
-    black: string;
-  }; 
+  subImgs: TSubImgs[];
+  selectedSubImg?: string;
 };
 
 export type TProductState = {
