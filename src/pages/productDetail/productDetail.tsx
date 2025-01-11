@@ -8,7 +8,6 @@ import { Button, Spin, message } from "antd";
 import ProductReview from "../productreview/ProductReview";
 import "./styles.scss";
 
-
 const ProductDetailPage = () => {
   const { productId } = useParams();
   const dispatch = useDispatch<AppDispatch>();
@@ -17,7 +16,9 @@ const ProductDetailPage = () => {
   const loading = useSelector((state: RootState) => state.product.loading);
   const [animateButton, setAnimateButton] = useState<string | null>(null);
   const [cartNotification, setCartNotification] = useState(false);
-  const [selectedColor, setSelectedColor] = useState<"white" | "black">("white");
+  const [selectedColor, setSelectedColor] = useState<"white" | "black">(
+    "white"
+  );
 
   useEffect(() => {
     if (productId) {
@@ -50,7 +51,6 @@ const ProductDetailPage = () => {
     return <h1>Không tìm thấy sản phẩm</h1>;
   }
 
-
   const selectedImage = product.subImgs.find(
     (img) => img.color === selectedColor
   )?.url;
@@ -59,7 +59,6 @@ const ProductDetailPage = () => {
     <div className="product-detail-page">
       <div className="product-detail-page-container">
         <div className="product-images">
-         
           {selectedImage && (
             <img
               src={selectedImage}
@@ -74,7 +73,9 @@ const ProductDetailPage = () => {
                 src={img.url}
                 alt={img.color}
                 className="thumbnail"
-                onClick={() => handleColorChange(img.color as "white" | "black")}
+                onClick={() =>
+                  handleColorChange(img.color as "white" | "black")
+                }
               />
             ))}
           </div>
@@ -93,9 +94,13 @@ const ProductDetailPage = () => {
                 borderRadius: "8px",
                 border: "none",
                 cursor: "pointer",
-                backgroundColor: selectedColor === "white" ? "#cb1c22" : "#f5f5f5",
+                backgroundColor:
+                  selectedColor === "white" ? "#cb1c22" : "#f5f5f5",
                 color: selectedColor === "white" ? "white" : "#333",
-                boxShadow: selectedColor === "white" ? "0 4px 12px rgba(0, 0, 0, 0.3)" : "0 4px 6px rgba(0, 0, 0, 0.1)",
+                boxShadow:
+                  selectedColor === "white"
+                    ? "0 4px 12px rgba(0, 0, 0, 0.3)"
+                    : "0 4px 6px rgba(0, 0, 0, 0.1)",
                 transition: "all 0.3s ease",
               }}
               type={selectedColor === "white" ? "primary" : "default"}
@@ -111,9 +116,13 @@ const ProductDetailPage = () => {
                 borderRadius: "8px",
                 border: "none",
                 cursor: "pointer",
-                backgroundColor: selectedColor === "black" ? "#cb1c22" : "#f5f5f5",
+                backgroundColor:
+                  selectedColor === "black" ? "#cb1c22" : "#f5f5f5",
                 color: selectedColor === "black" ? "white" : "#333",
-                boxShadow: selectedColor === "black" ? "0 4px 12px rgba(0, 0, 0, 0.3)" : "0 4px 6px rgba(0, 0, 0, 0.1)",
+                boxShadow:
+                  selectedColor === "black"
+                    ? "0 4px 12px rgba(0, 0, 0, 0.3)"
+                    : "0 4px 6px rgba(0, 0, 0, 0.1)",
                 transition: "all 0.3s ease",
               }}
               type={selectedColor === "black" ? "primary" : "default"}
@@ -144,7 +153,7 @@ const ProductDetailPage = () => {
           </div>
         </div>
         <div className="product-review">
-          <ProductReview  />
+          <ProductReview productId={productId!} />
         </div>
 
         <div className="ProductInformation">

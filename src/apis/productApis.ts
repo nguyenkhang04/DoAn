@@ -3,18 +3,15 @@ import axios from "axios";
 export const productApis = {
   getAllProducts: async (params: Record<string, any>) => {
     try {
-
-      const resp = await axios.get(
-        `${process.env.REACT_APP_BE_URL}/products`,
-        { params }  
-      );
+      const resp = await axios.get(`${process.env.REACT_APP_BE_URL}/products`, {
+        params,
+      });
       return resp.data;
     } catch (error) {
       console.error("Error fetching products", error);
-      throw error; 
+      throw error;
     }
   },
-  
 
   getProductById: async (productId: string) => {
     try {
@@ -37,10 +34,12 @@ export const productApis = {
       throw error;
     }
   },
- 
+
   getAllCategories: async () => {
     try {
-      const resp = await axios.get(`${process.env.REACT_APP_BE_URL}/categories`);
+      const resp = await axios.get(
+        `${process.env.REACT_APP_BE_URL}/categories`
+      );
       return resp.data;
     } catch (error) {
       console.error("Error fetching categories", error);
@@ -48,15 +47,13 @@ export const productApis = {
     }
   },
 
-  fetchOrders: async () =>{
+  fetchOrders: async () => {
     try {
       const resp = await axios.get(`${process.env.REACT_APP_BE_URL}/orders`);
       return resp.data;
-
     } catch (error) {
       console.error("Error fetching orders", error);
       throw error;
     }
   },
-  
 };

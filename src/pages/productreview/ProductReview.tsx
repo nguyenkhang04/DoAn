@@ -7,9 +7,14 @@ interface Review {
   content: string;
   date: string;
   rating: number;
+  productId: string;
 }
 
-const ProductReview: React.FC = () => {
+interface ProductReviewProps {
+  productId: string; 
+}
+
+const ProductReview: React.FC<ProductReviewProps> = ({ productId }) => {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [newReview, setNewReview] = useState<string>("");
   const [user, setUser] = useState<any>(null);
@@ -59,6 +64,7 @@ const ProductReview: React.FC = () => {
       content: newReview,
       date: new Date().toLocaleString(),
       rating: newRating,
+      productId, 
     };
 
     const updatedReviews = [...reviews, review];
@@ -68,14 +74,16 @@ const ProductReview: React.FC = () => {
     setNewRating(0);
   };
 
+  const filteredReviews = reviews.filter((review) => review.productId === productId);
+
   const averageRating = (
-    reviews.reduce((sum, review) => sum + review.rating, 0) / reviews.length ||
-    0
+    filteredReviews.reduce((sum, review) => sum + review.rating, 0) /
+      filteredReviews.length || 0
   ).toFixed(1);
 
   const starDistribution = [5, 4, 3, 2, 1].map((star) => ({
     star,
-    count: reviews.filter((review) => review.rating === star).length,
+    count: filteredReviews.filter((review) => review.rating === star).length,
   }));
 
   return (
@@ -86,14 +94,14 @@ const ProductReview: React.FC = () => {
         <div className="average-rating">
           <h1>{averageRating}/5</h1>
           <Rate disabled value={parseFloat(averageRating)} />
-          <p>{reviews.length} đánh giá và nhận xét</p>
+          <p>{filteredReviews.length} đánh giá và nhận xét</p>
         </div>
         <div className="rating-distribution">
           {starDistribution.map((item) => (
             <div className="rating-row" key={item.star}>
               <span>{item.star} Sao</span>
               <Progress
-                percent={(item.count / reviews.length) * 100 || 0}
+                percent={(item.count / filteredReviews.length) * 100 || 0}
                 showInfo={false}
                 strokeColor="#f5222d"
               />
@@ -104,8 +112,8 @@ const ProductReview: React.FC = () => {
       </div>
 
       <div className="reviews-list">
-        {reviews.length > 0 ? (
-          reviews.map((review, index) => (
+        {filteredReviews.length > 0 ? (
+          filteredReviews.map((review, index) => (
             <div key={index} className="review-card">
               <div className="review-header">
                 <strong>{review.user}</strong>
@@ -148,4 +156,4 @@ const ProductReview: React.FC = () => {
   );
 };
 
-export default ProductReview; 
+export default ProductReview;

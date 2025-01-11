@@ -7,7 +7,7 @@ import { AxiosError } from "axios";
 interface ErrorResponse {
   message: string;
 }
-interface TSubImgs  {
+interface TSubImgs {
   color: "white" | "black";
   url: string;
 }
@@ -31,7 +31,6 @@ export type TProductState = {
   searchQuery: string;
   categories: { id: string; name: string }[];
   brands: { id: string; name: string }[];
-  
 };
 
 const initialState: TProductState = {
@@ -50,8 +49,9 @@ export const actFetchAllProducts = createAsyncThunk(
       const response = await productApis.getAllProducts(params);
       return response;
     } catch (error) {
-      const err = error as AxiosError<ErrorResponse>; 
-      const errorMessage = err.response?.data?.message || "Không thể tải danh sách sản phẩm.";
+      const err = error as AxiosError<ErrorResponse>;
+      const errorMessage =
+        err.response?.data?.message || "Không thể tải danh sách sản phẩm.";
       return thunkApi.rejectWithValue(errorMessage);
     }
   }
@@ -64,13 +64,13 @@ export const actFetchProductById = createAsyncThunk(
       const response = await productApis.getProductById(productId);
       return response;
     } catch (error) {
-      const err = error as AxiosError<ErrorResponse>;  
-      const errorMessage = err.response?.data?.message || "Không thể tải sản phẩm.";
+      const err = error as AxiosError<ErrorResponse>;
+      const errorMessage =
+        err.response?.data?.message || "Không thể tải sản phẩm.";
       return thunkApi.rejectWithValue(errorMessage);
     }
   }
 );
-
 
 export const actFetchCategories = createAsyncThunk(
   "products/fetchCategories",
@@ -79,13 +79,13 @@ export const actFetchCategories = createAsyncThunk(
       const response = await productApis.getAllCategories();
       return response;
     } catch (error) {
-      const err = error as AxiosError<ErrorResponse>;  
-      const errorMessage = err.response?.data?.message || "Không thể tải danh mục.";
+      const err = error as AxiosError<ErrorResponse>;
+      const errorMessage =
+        err.response?.data?.message || "Không thể tải danh mục.";
       return thunkApi.rejectWithValue(errorMessage);
     }
   }
 );
-
 
 export const actFetchBrands = createAsyncThunk(
   "products/fetchBrands",
@@ -94,8 +94,9 @@ export const actFetchBrands = createAsyncThunk(
       const response = await productApis.getAllBrands();
       return response;
     } catch (error) {
-      const err = error as AxiosError<ErrorResponse>;  
-      const errorMessage = err.response?.data?.message || "Không thể tải danh sách thương hiệu.";
+      const err = error as AxiosError<ErrorResponse>;
+      const errorMessage =
+        err.response?.data?.message || "Không thể tải danh sách thương hiệu.";
       return thunkApi.rejectWithValue(errorMessage);
     }
   }

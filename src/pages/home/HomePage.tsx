@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { productApis } from "../../apis/productApis";
-import { Button } from "antd";
 import "./styles.scss";
 import Advertisement from "../advertisement/Advertisement";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../redux/features/product/cartSlice";
+
 
 const HomePage = () => {
   const dispatch = useDispatch();
