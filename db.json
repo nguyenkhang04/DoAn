@@ -1834,9 +1834,9 @@
       "gender": "male",
       "dob": "2004-08-14",
       "address": "23/6 Trần Huấn",
-      "province": "46",
-      "district": "481",
-      "ward": "20050",
+      "province": "48",
+      "district": "495",
+      "ward": "20260",
       "userId": 1736342190976,
       "id": 1
     }
@@ -1909,6 +1909,36 @@
       ],
       "userId": 1736342190976,
       "id": 20
+    },
+    {
+      "name": "Khang phạm",
+      "phone": "0981631267",
+      "email": "khangkhangphampham@gmail.com",
+      "address": "23/6 Trần Huấn",
+      "deliveryMethod": "Giao Tận Nơi",
+      "cartItems": [
+        {
+          "productId": "Iphone 16 Plus",
+          "quantity": 1
+        }
+      ],
+      "userId": 1736342190976,
+      "id": 21
+    },
+    {
+      "name": "Khang phạm",
+      "phone": "0981631267",
+      "email": "khangkhangphampham@gmail.com",
+      "address": "23/6 Trần Huấn",
+      "deliveryMethod": "Giao Tận Nơi",
+      "cartItems": [
+        {
+          "productId": "Iphone 16 Plus",
+          "quantity": 2
+        }
+      ],
+      "userId": 1736342190976,
+      "id": 22
     }
   ]
 }

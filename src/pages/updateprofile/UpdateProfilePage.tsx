@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react"; 
 import axios from "axios";
+import { message } from "antd";
 import "./styles.scss";
 
 interface Province {
@@ -19,16 +20,16 @@ interface Ward {
 
 const UpdateProfilePage = () => {
   const [userData, setUserData] = useState({
-    fullName: '',
-    phone: '',
-    email: '',
-    password: '',
-    gender: '', 
-    dob: '',    
-    address: '', 
-    province: '', 
-    district: '', 
-    ward: '',   
+    fullName: "",
+    phone: "",
+    email: "",
+    password: "",
+    gender: "", 
+    dob: "",    
+    address: "", 
+    province: "", 
+    district: "", 
+    ward: "",   
   });
 
   const [provinces, setProvinces] = useState<Province[]>([]);
@@ -37,43 +38,39 @@ const UpdateProfilePage = () => {
 
   useEffect(() => {
     const userId = sessionStorage.getItem("userId");
-    console.log("UserId from sessionStorage:", userId);
-  
     if (userId) {
       axios.get(`http://localhost:9999/users?userId=${userId}`)
         .then((response) => {
-          console.log("Received user data:", response.data); 
           if (response.data && response.data.length > 0) {
-            const user = response.data[0];  
+            const user = response.data[0];
             setUserData({
-              fullName: user.fullName || '',
-              phone: user.phone || '',
-              email: user.email || '',
-              password: user.password || '',
-              gender: user.gender || '', 
-              dob: user.dob || '',    
-              address: user.address || '', 
-              province: user.province || '', 
-              district: user.district || '', 
-              ward: user.ward || '',
+              fullName: user.fullName || "",
+              phone: user.phone || "",
+              email: user.email || "",
+              password: user.password || "",
+              gender: user.gender || "", 
+              dob: user.dob || "",    
+              address: user.address || "", 
+              province: user.province || "", 
+              district: user.district || "", 
+              ward: user.ward || "",
             });
           }
         })
-        .catch((error) => console.error("Error fetching user data:", error));
+        .catch((error) => message.error("Lỗi khi lấy dữ liệu người dùng."));
     } else {
-      console.error("UserId not found in sessionStorage!");
+      message.error("Không tìm thấy thông tin tài khoản. Vui lòng đăng nhập lại.");
     }
   }, []);
 
   useEffect(() => {
-    axios
-      .get("https://esgoo.net/api-tinhthanh/1/0.htm")
+    axios.get("https://esgoo.net/api-tinhthanh/1/0.htm")
       .then((response) => {
         if (response.data.error === 0) {
           setProvinces(response.data.data);
         }
       })
-      .catch((error) => console.error("Error fetching provinces:", error));
+      .catch(() => message.error("Lỗi khi tải danh sách tỉnh/thành phố."));
   }, []);
 
   const handleProvinceChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -84,35 +81,33 @@ const UpdateProfilePage = () => {
       district: "",
       ward: "",
     }));
-    setDistricts([]); 
-    setWards([]); 
+    setDistricts([]);
+    setWards([]);
 
     if (provinceId) {
-      axios
-        .get(`https://esgoo.net/api-tinhthanh/2/${provinceId}.htm`)
+      axios.get(`https://esgoo.net/api-tinhthanh/2/${provinceId}.htm`)
         .then((response) => {
           if (response.data.error === 0) {
             setDistricts(response.data.data);
           }
         })
-        .catch((error) => console.error("Error fetching districts:", error));
+        .catch(() => message.error("Lỗi khi tải danh sách quận/huyện."));
     }
   };
 
   const handleDistrictChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const districtId = e.target.value;
     setUserData((prev) => ({ ...prev, district: districtId, ward: "" }));
-    setWards([]); 
+    setWards([]);
 
     if (districtId) {
-      axios
-        .get(`https://esgoo.net/api-tinhthanh/3/${districtId}.htm`)
+      axios.get(`https://esgoo.net/api-tinhthanh/3/${districtId}.htm`)
         .then((response) => {
           if (response.data.error === 0) {
             setWards(response.data.data);
           }
         })
-        .catch((error) => console.error("Error fetching wards:", error));
+        .catch(() => message.error("Lỗi khi tải danh sách phường/xã."));
     }
   };
 
@@ -130,35 +125,34 @@ const UpdateProfilePage = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-  
     const userId = sessionStorage.getItem("userId");
     if (!userId) {
-      alert("Không tìm thấy thông tin tài khoản. Vui lòng đăng nhập lại.");
+      message.error("Không tìm thấy thông tin tài khoản. Vui lòng đăng nhập lại.");
       return;
     }
-  
+
     try {
       const allUsers = await axios.get("http://localhost:9999/users");
       const user = allUsers.data.find((u: { userId: number }) => u.userId === Number(userId));
-  
+
       if (user) {
         const updatedUserData = {
           ...userData,
           userId: user.userId,
         };
-  
+
         await axios.put(`http://localhost:9999/users/${user.id}`, updatedUserData);
-        alert("Cập nhật thành công!");
-  
+        message.success("Cập nhật thành công!");
+
         const updatedUser = await axios.get(`http://localhost:9999/users/${user.id}`);
         const { province, district } = updatedUser.data;
-  
+
         if (province) {
           const districtResponse = await axios.get(`https://esgoo.net/api-tinhthanh/2/${province}.htm`);
           if (districtResponse.data.error === 0) {
             setDistricts(districtResponse.data.data);
           }
-  
+
           if (district) {
             const wardResponse = await axios.get(`https://esgoo.net/api-tinhthanh/3/${district}.htm`);
             if (wardResponse.data.error === 0) {
@@ -166,17 +160,16 @@ const UpdateProfilePage = () => {
             }
           }
         }
-  
+
         setUserData(updatedUser.data);
       } else {
-        alert("Không tìm thấy người dùng.");
+        message.error("Không tìm thấy người dùng.");
       }
     } catch (error) {
-      alert("Có lỗi xảy ra khi cập nhật thông tin.");
-      console.error("Error:", error);
+      message.error("Có lỗi xảy ra khi cập nhật thông tin.");
     }
   };
-  
+
   return (
     <div className="update-profile">
       <h2>Cập nhật thông tin</h2>
@@ -186,7 +179,7 @@ const UpdateProfilePage = () => {
           <input
             type="text"
             name="fullName" 
-            value={userData.fullName || ''}
+            value={userData.fullName}
             onChange={handleInputChange}
           />
         </label>
@@ -195,7 +188,7 @@ const UpdateProfilePage = () => {
           <input
             type="email"
             name="email"
-            value={userData.email || ''}
+            value={userData.email}
             onChange={handleInputChange}
           />
         </label>
@@ -204,7 +197,7 @@ const UpdateProfilePage = () => {
           <input
             type="text"
             name="password"
-            value={userData.password || ''}
+            value={userData.password}
             onChange={handleInputChange}
           />
         </label>

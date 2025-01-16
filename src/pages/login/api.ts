@@ -5,9 +5,9 @@ export const registerUser = async (
   age: number,
   phone: string,
   email: string,
-  password: string, 
+  password: string
 ) => {
-  const userId = uuidv4(); 
+  const userId = uuidv4();
   const response = await fetch("http://localhost:9999/users", {
     method: "POST",
     body: JSON.stringify({
@@ -26,7 +26,6 @@ export const registerUser = async (
   if (!response.ok) {
     throw new Error("Failed to register user. Please try again.");
   }
-
   return response.json();
 };
 

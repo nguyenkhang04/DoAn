@@ -157,7 +157,7 @@ const CartPage = () => {
     <div className="cart-page">
       <h1 className="title">Giỏ Hàng</h1>
       {cartItems.length === 0 ? (
-        <div>Giỏ hàng của bạn hiện tại trống.</div>
+        <p>Giỏ hàng của bạn hiện tại trống.</p>
       ) : (
         <div className="cart-content">
           <div className="cart-items">

@@ -120,7 +120,7 @@ const HomePage = () => {
           alt=""
         />
       </div>
-      {/* Hiển thị sản phẩm laptop */}
+      
       <div className="category-container">
         <h2>Laptop</h2>
         <div className="product-list">
@@ -181,7 +181,7 @@ const HomePage = () => {
         />
       </div>
 
-      {/* Hiển thị sản phẩm phụ kiện */}
+     
       <div className="category-container">
         <h2>Phụ kiện</h2>
         <div className="product-list">

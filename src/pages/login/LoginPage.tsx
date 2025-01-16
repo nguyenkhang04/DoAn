@@ -1,21 +1,21 @@
 import React, { useState, ChangeEvent, useEffect } from "react";
-import "./styles.scss";
 import { Link } from "react-router-dom";
+import { message } from "antd";
+import "./styles.scss";
 
 const API_URL = "http://localhost:9999/users";
 
 const LoginPage: React.FC = () => {
-  const [isRegistering, setIsRegistering] = useState<boolean>(false);
-  const [fullName, setFullName] = useState<string>("");
+  const [isRegistering, setIsRegistering] = useState(false);
+  const [fullName, setFullName] = useState("");
   const [age, setAge] = useState<number | "">("");
-  const [phone, setPhone] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-  const [confirmPassword, setConfirmPassword] = useState<string>("");
-  const [error, setError] = useState<string>("");
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState<any>(null);
-  const [showAccountForm, setShowAccountForm] = useState<boolean>(false);
 
   useEffect(() => {
     const storedUser = sessionStorage.getItem("user");
@@ -26,12 +26,12 @@ const LoginPage: React.FC = () => {
     }
   }, []);
 
-  const toggleForm = (): void => {
+  const toggleForm = () => {
     setIsRegistering(!isRegistering);
     setError("");
   };
 
-  const handleInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
 
     switch (name) {
@@ -58,7 +58,7 @@ const LoginPage: React.FC = () => {
     }
   };
 
-  const validateForm = (): boolean => {
+  const validateForm = () => {
     if (!fullName || !email || !password || !phone || !age) {
       setError("Vui lòng điền đầy đủ thông tin!");
       return false;
@@ -96,38 +96,38 @@ const LoginPage: React.FC = () => {
     return true;
   };
 
-  const handleSubmit = async (): Promise<void> => {
+  const handleSubmit = async () => {
     setError("");
 
     if (isRegistering) {
       if (!validateForm()) return;
 
-      const response = await fetch(`${API_URL}?email=${email}`);
-      const users = await response.json();
-
-      if (users.length > 0) {
-        setError("Email đã được đăng ký!");
-        return;
-      }
-
-      const phoneResponse = await fetch(`${API_URL}?phone=${phone}`);
-      const phoneUsers = await phoneResponse.json();
-
-      if (phoneUsers.length > 0) {
-        setError("Số điện thoại đã được đăng ký!");
-        return;
-      }
-
-      const newUser = {
-        fullName,
-        age,
-        phone,
-        email,
-        password,
-        userId: Date.now(),
-      };
-
       try {
+        const emailResponse = await fetch(`${API_URL}?email=${email}`);
+        const emailUsers = await emailResponse.json();
+
+        if (emailUsers.length > 0) {
+          setError("Email đã được đăng ký!");
+          return;
+        }
+
+        const phoneResponse = await fetch(`${API_URL}?phone=${phone}`);
+        const phoneUsers = await phoneResponse.json();
+
+        if (phoneUsers.length > 0) {
+          setError("Số điện thoại đã được đăng ký!");
+          return;
+        }
+
+        const newUser = {
+          fullName,
+          age,
+          phone,
+          email,
+          password,
+          userId: Date.now(),
+        };
+
         const registerResponse = await fetch(API_URL, {
           method: "POST",
           headers: {
@@ -137,7 +137,7 @@ const LoginPage: React.FC = () => {
         });
 
         if (registerResponse.ok) {
-          alert("Đăng ký thành công!");
+          message.success("Đăng ký thành công!");
           setIsRegistering(false);
         } else {
           setError("Đăng ký thất bại!");
@@ -158,7 +158,7 @@ const LoginPage: React.FC = () => {
           sessionStorage.setItem("user", JSON.stringify(loggedInUser));
           sessionStorage.setItem("userId", loggedInUser.userId);
 
-          alert("Đăng nhập thành công!");
+          message.success("Đăng nhập thành công!");
         } else {
           setError("Email hoặc mật khẩu không đúng!");
         }
@@ -168,29 +168,19 @@ const LoginPage: React.FC = () => {
     }
   };
 
-  const handleUpdateInfo = () => {
-    console.log("Cập nhật thông tin");
-  };
-
   const handleLogout = () => {
     setIsLoggedIn(false);
     setUser(null);
     sessionStorage.removeItem("user");
     sessionStorage.removeItem("userId");
-  };
-
-  const toggleAccountForm = (): void => {
-    setShowAccountForm((prev) => !prev);
+    message.success("Đăng xuất thành công!");
   };
 
   return (
     <div className="container py-5 h-100">
       <div className="row d-flex justify-content-center align-items-center h-100">
         <div className="col-12 col-md-8 col-lg-6 col-xl-5">
-          <div
-            className="card shadow-2-strong"
-            style={{ borderRadius: "1rem" }}
-          >
+          <div className="card shadow-2-strong" style={{ borderRadius: "1rem" }}>
             <div className="card-body p-5">
               <h3 className="form-header mb-5">
                 {isRegistering
@@ -201,10 +191,8 @@ const LoginPage: React.FC = () => {
               </h3>
 
               {!isLoggedIn ? (
-                <form
-                  className={isRegistering ? "form-register" : "form-login"}
-                >
-                  {isRegistering ? (
+                <form className={isRegistering ? "form-register" : "form-login"}>
+                  {isRegistering && (
                     <div className="form-row row">
                       <div className="col-md-6">
                         <div className="form-group mb-4">
@@ -300,16 +288,15 @@ const LoginPage: React.FC = () => {
                             onChange={handleInputChange}
                             required
                           />
-                          <label
-                            className="form-label"
-                            htmlFor="confirmPassword"
-                          >
+                          <label className="form-label" htmlFor="confirmPassword">
                             Nhập Lại Mật Khẩu
                           </label>
                         </div>
                       </div>
                     </div>
-                  ) : (
+                  )}
+
+                  {!isRegistering && (
                     <div>
                       <div className="form-group mb-4">
                         <input

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col, Button } from "antd";
+import { Row, Col, Button, message } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -40,7 +40,7 @@ const HeaderComponent: React.FC = () => {
     if (isLoggedIn) {
       localStorage.removeItem("user");
       setIsLoggedIn(false);
-      alert("Bạn đã đăng xuất thành công!");
+      message.success("Bạn đã đăng xuất thành công!");
     } else {
       navigate("/login");
     }
